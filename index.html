@@ -69,10 +69,6 @@
     .btn.primary{background:linear-gradient(120deg,#5ef0ff,#8e77ff);color:#050816;border:0}
     .btn:hover{transform:translateY(-3px);border-color:rgba(60,232,255,.55);box-shadow:0 14px 35px rgba(60,232,255,.12)}
 
-    /* MODEL VIEWER */
-    .hero-model-wrap{position:absolute;right:2%;top:50%;transform:translateY(-50%);width:320px;height:320px;z-index:0;pointer-events:none;opacity:.7}
-    model-viewer{width:100%;height:100%;--poster-color:transparent}
-
     /* PROFILE ORBIT */
     .profile-orbit{position:relative;min-height:410px;display:grid;place-items:center;perspective:1000px}
     .portrait-shell{position:relative;width:min(340px,80vw);aspect-ratio:1;border-radius:38% 62% 55% 45%/48% 45% 55% 52%;padding:8px;background:var(--gradient);box-shadow:0 30px 100px rgba(93,110,255,.32);animation:float 6s ease-in-out infinite}
@@ -210,7 +206,6 @@
       .cert-grid{grid-template-columns:repeat(2,1fr)}
       .contact-card{grid-template-columns:1fr}
       .bento-card.hero-card,.bento-card.mid-card,.bento-card.bottom-card{grid-column:span 12;grid-row:auto}
-      .hero-model-wrap{display:none}
       .nav-links{display:none;position:absolute;top:68px;left:20px;right:20px;padding:18px;flex-direction:column;align-items:flex-start;background:#0b1228;border:1px solid var(--line);border-radius:18px}
       .nav-links.open{display:flex}
       .menu-btn{display:block}
@@ -264,17 +259,6 @@
     <!-- HERO -->
     <section class="hero">
       <canvas id="scene3d" aria-hidden="true"></canvas>
-      <div class="hero-model-wrap" aria-hidden="true">
-        <model-viewer
-          src="models/hero.glb"
-          poster="Maythas Bodkennari My Picture.png"
-          alt="3D hero model"
-          auto-rotate
-          camera-controls="false"
-          style="background:transparent;--poster-color:transparent"
-          loading="lazy"
-        ></model-viewer>
-      </div>
       <div class="container">
         <div class="hero-grid">
           <div>
@@ -296,7 +280,7 @@
         <div class="metric-grid reveal">
           <div class="metric"><strong>57,578</strong><span class="en">Influencer profiles — verified snapshot, 30 Jul 2026</span><span class="th">โปรไฟล์ Influencer — ข้อมูลจริง ณ 30 ก.ค. 2569</span></div>
           <div class="metric"><strong>73%</strong><span class="en">Gemini API spend reduction, verified in GCP billing</span><span class="th">ลดค่า Gemini API จาก GCP Billing จริง</span></div>
-          <div class="metric"><strong>77</strong><span class="en">API routes in Mustherd</span><span class="th">API Routes ใน Mustherd</span></div>
+          <div class="metric"><strong>87</strong><span class="en">API routes in Mustherd</span><span class="th">API Routes ใน Mustherd</span></div>
           <div class="metric"><strong>55</strong><span class="en">Prisma data models at production scale</span><span class="th">Prisma Data Models ระดับ Production</span></div>
         </div>
       </div>
@@ -310,10 +294,10 @@
           <article class="project large glass tilt gradient-border reveal" style="--glow:rgba(60,232,255,.16)">
             <div class="project-top"><div class="project-icon"><i class="fa-solid fa-users-viewfinder"></i></div><span class="badge"><i class="fa-solid fa-building"></i> GROFOX / PRODUCTION</span></div>
             <h3>Mustherd — Influencer Intelligence Platform</h3>
-            <p class="en">Next.js platform for discovering, enriching, analyzing, and operating Thai influencer campaigns. I maintain the production data pipeline and scaling roadmap from <strong>57,578 verified profiles</strong> toward <strong>200,000</strong>, using Bright Data datasets, n8n orchestration, a Python worker, Gemini enrichment, cost governors, deduplication, and multi-provider fallbacks.</p>
-            <p class="th">แพลตฟอร์ม Next.js สำหรับค้นหา เติมข้อมูล วิเคราะห์ และบริหารแคมเปญ Influencer ไทย ผมดูแล Production Pipeline และแผนสเกลจาก <strong>57,578 โปรไฟล์</strong> ไปสู่ <strong>200,000</strong> ด้วย Bright Data, n8n, Python Worker, Gemini, Cost Governor, Deduplication และ Provider Fallback</p>
+            <p class="en">Next.js 15 platform with 87 API routes, 60+ pages, and 55 Prisma data models. Multi-engine influencer discovery (Brave Search, Bright Data, Apify, TikTok Explore, Lemon8) scaling from <strong>57,578</strong> toward <strong>200,000</strong> profiles across 6 platforms. Python FastAPI worker with Playwright/Selenium/yt-dlp scrapers. Gemini AI for brand affinity and OCR. Full campaign lifecycle with sales tracking (TikTok Shop, Shopee, Lazada). Accounting system with chart of accounts and tax modes. Facebook Group Intelligence with brand mention detection. My Office — live AI agent team dashboard with ClickUp sync. 19+ scheduled cron jobs.</p>
+            <p class="th">แพลตฟอร์ม Next.js 15 พร้อม 87 API routes, 60+ หน้า, 55 Prisma data models ค้นหา Influencer หลายเครื่องยนต์ (Brave Search, Bright Data, Apify, TikTok Explore, Lemon8) สเกลจาก <strong>57,578</strong> ไปสู่ <strong>200,000</strong> โปรไฟล์ใน 6 แพลตฟอร์ม Python FastAPI Worker พร้อม Playwright/Selenium/yt-dlp Scrapers, Gemini AI สำหรับ Brand Affinity และ OCR ระบบ Campaign ครบวงจรพร้อมติดตามยอดขาย (TikTok Shop, Shopee, Lazada) ระบบบัญชีพร้อม Chart of Accounts และ Tax Mode, Facebook Group Intelligence ตรวจจับ Brand Mention, My Office — AI Agent Team Dashboard พร้อม ClickUp Sync, 19+ Cron Jobs</p>
             <div class="goal"><div class="goal-row"><span>57,578 / 200,000</span><span>28.8%</span></div><div class="bar" aria-label="28.8 percent toward 200,000 influencers"><span></span></div></div>
-            <div class="tags"><span class="tag">Next.js 15</span><span class="tag">React 19</span><span class="tag">Prisma 6</span><span class="tag">PostgreSQL 8.7GB</span><span class="tag">Bright Data</span><span class="tag">n8n</span><span class="tag">Gemini</span><span class="tag">Railway</span></div>
+            <div class="tags"><span class="tag">Next.js 15</span><span class="tag">React 19</span><span class="tag">Prisma 6</span><span class="tag">PostgreSQL</span><span class="tag">FastAPI</span><span class="tag">Playwright</span><span class="tag">Selenium</span><span class="tag">yt-dlp</span><span class="tag">Brave Search</span><span class="tag">Apify</span><span class="tag">Bright Data</span><span class="tag">Gemini</span><span class="tag">Cloudinary</span><span class="tag">ExcelJS</span><span class="tag">ClickUp API</span><span class="tag">Railway</span></div>
           </article>
           <article class="project side glass tilt gradient-border reveal" style="--glow:rgba(83,245,173,.14)">
             <div class="project-top"><div class="project-icon"><i class="fa-solid fa-arrow-trend-down"></i></div><span class="badge">VERIFIED IMPACT</span></div>
@@ -326,16 +310,16 @@
           <article class="project glass tilt gradient-border reveal" style="--glow:rgba(156,120,255,.16)">
             <div class="project-top"><div class="project-icon"><i class="fa-solid fa-chart-network"></i></div><span class="badge">MARKETING.GROWFOX.CO</span></div>
             <h3 class="en">Marketing Data Operations Platform</h3><h3 class="th">แพลตฟอร์ม Marketing Data Operations</h3>
-            <p class="en">Full-stack Django ecosystem covering social page/post analytics, comment sentiment, ads reporting, AI SEO visibility, keyword intelligence, influencer discovery, HR/attendance, campaign gamification, and automated ClickUp workflows. Includes Celery/Redis task isolation, production security middleware, scheduled jobs, and multi-platform scraping.</p>
-            <p class="th">ระบบ Django Full-Stack ครอบคลุม Page/Post Analytics, Comment Sentiment, Ads Reporting, AI SEO, Keyword Intelligence, Influencer Discovery, HR/Attendance, Gamification และ ClickUp Automation พร้อม Celery/Redis, Security Middleware และ Scheduled Jobs</p>
-            <div class="tags"><span class="tag">Django 5.2</span><span class="tag">Python</span><span class="tag">Celery</span><span class="tag">Redis</span><span class="tag">Playwright</span><span class="tag">Meta/TikTok/Google APIs</span><span class="tag">Docker</span></div>
+            <p class="en">Full-stack Django 5.2 ecosystem with 30+ scheduled jobs. Ads Campaign dashboards (Meta, TikTok, Google Ads) with real-time ClickUp integration — midnight executive digest with green/red delta badges pushed to brand channels, monthly scorecards. AI Chat with image generation. AI Sentiment analysis on threaded comments. AI SEO visibility tracking with schema/HTML audits and auto-generated fixes. Competitor intelligence reports (Google Slides MVP). Facebook Group Intelligence with OCR-based product brand detection. Post classification, keyword intelligence, and multi-platform scraping via Playwright/Apify/Bright Data.</p>
+            <p class="th">ระบบ Django 5.2 Full-Stack พร้อม 30+ Scheduled Jobs — Ads Campaign Dashboard (Meta, TikTok, Google Ads) เชื่อม ClickUp แบบ Real-time ส่ง Executive Digest ทุกเที่ยงคืนพร้อม Green/Red Delta Badges ไปยัง Brand Channel, Monthly Scorecard, AI Chat พร้อม Image Generation, AI Sentiment Analysis จาก Comment Thread, AI SEO Visibility Tracking พร้อม Schema/HTML Audit และ Code Fix อัตโนมัติ, รายงาน Competitor Intelligence (Google Slides MVP), Facebook Group Intelligence ตรวจจับ Product Brand ด้วย OCR, Post Classification, Keyword Intelligence และ Multi-platform Scraping ผ่าน Playwright/Apify/Bright Data</p>
+            <div class="tags"><span class="tag">Django 5.2</span><span class="tag">Python</span><span class="tag">Celery</span><span class="tag">Redis</span><span class="tag">Playwright</span><span class="tag">Apify</span><span class="tag">Bright Data</span><span class="tag">Google Slides API</span><span class="tag">AI Image Gen</span><span class="tag">OCR</span><span class="tag">Celery Beat</span><span class="tag">Meta/TikTok/Google APIs</span></div>
           </article>
           <article class="project glass tilt gradient-border reveal" style="--glow:rgba(255,157,77,.16)">
             <div class="project-top"><div class="project-icon"><i class="fa-solid fa-handshake"></i></div><span class="badge">DENCRM.GROWFOX.CO</span></div>
             <h3 class="en">Sales CRM — Lead Pipeline</h3><h3 class="th">Sales CRM — Lead Pipeline</h3>
-            <p class="en">A dedicated Next.js 16 CRM for Growfox sales operations: lead ingestion from website and LINE OA webhooks, role-based visibility, assignment pipeline, follow-up reminders, reporting, CSV workflows, audit history, Google Workspace sign-in, and email notifications. Built as a separate PostgreSQL system to keep CRM lead PII isolated from marketing analytics.</p>
-            <p class="th">CRM ด้วย Next.js 16 สำหรับทีมขาย Growfox: รับ Lead จากเว็บไซต์และ LINE OA Webhook, RBAC, แจก Lead, Pipeline, Follow-up Reminder, Report, CSV, Audit History, Google Workspace Login และ Email Notification แยกฐานข้อมูล PII ออกจากระบบ Marketing Analytics</p>
-            <div class="tags"><span class="tag">Next.js 16</span><span class="tag">React 19</span><span class="tag">Prisma 7</span><span class="tag">Auth.js v5</span><span class="tag">Zod</span><span class="tag">Webhook API</span><span class="tag">Railway</span></div>
+            <p class="en">Next.js 16 CRM with lead pipeline (NEW → CONTACTED → QUOTED → WON → LOST), webhook ingestion from external websites (GeneratePress integration), deduplication by phone/email/LINE, activity timeline with field-level audit trail, follow-up reminders, in-app bell notifications, email alerts, VAT ID verification workflow, Cloudinary-hosted team avatars synced from Google Workspace, and role-based access (Admin/Manager/Sales).</p>
+            <p class="th">CRM ด้วย Next.js 16 พร้อม Lead Pipeline (NEW → CONTACTED → QUOTED → WON → LOST), รับ Lead จาก Webhook (GeneratePress Integration), Deduplication โดย Phone/Email/LINE, Activity Timeline พร้อม Field-level Audit Trail, Follow-up Reminder, In-app Bell Notification, Email Alert, VAT ID Verification Workflow, Cloudinary Avatar Sync จาก Google Workspace และ RBAC (Admin/Manager/Sales)</p>
+            <div class="tags"><span class="tag">Next.js 16</span><span class="tag">React 19</span><span class="tag">Prisma 7</span><span class="tag">Auth.js v5</span><span class="tag">Zod</span><span class="tag">Webhook API</span><span class="tag">Cloudinary</span><span class="tag">Google Workspace</span><span class="tag">Railway</span></div>
           </article>
           <article class="project side glass tilt gradient-border reveal" style="--glow:rgba(255,103,200,.15)">
             <div class="project-top"><div class="project-icon"><i class="fa-solid fa-server"></i></div><span class="badge">INTERNAL AI TOOLING</span></div>
@@ -343,6 +327,20 @@
             <p class="en">Custom Node.js Model Context Protocol server using Admin SDK and Domain-wide Delegation. It synchronizes Workspace users into HR records and lets authorized AI agents work with internal data through controlled natural-language tools.</p>
             <p class="th">MCP Server ด้วย Node.js เชื่อม Admin SDK ผ่าน Domain-wide Delegation ซิงค์ผู้ใช้ Workspace เข้าระบบ HR และให้ AI Agent ที่ได้รับสิทธิ์จัดการข้อมูลผ่านภาษาธรรมชาติ</p>
             <div class="tags"><span class="tag">Node.js</span><span class="tag">MCP</span><span class="tag">Admin SDK</span><span class="tag">Service Account</span></div>
+          </article>
+          <article class="project glass tilt gradient-border reveal" style="--glow:rgba(83,245,173,.16)">
+            <div class="project-top"><div class="project-icon"><i class="fa-solid fa-calendar-check"></i></div><span class="badge">LEAVE.GROWFOX.CO</span></div>
+            <h3 class="en">Leave.Growfox — Employee Leave &amp; Attendance</h3><h3 class="th">Leave.Growfox — ระบบลาและลงเวลา</h3>
+            <p class="en">Django 5.2 leave management with 8 leave types, pro-rated balance calculation, carry-forward with expiry, and CF-first deduction. Fingerprint scan data ingestion (3 frequency bands). WFH check-in/out with GPS and penalty enforcement. ClickUp daily leave reports. Google Workspace employee sync. 10+ scheduled jobs including fingerprint scraping every 5-30 minutes.</p>
+            <p class="th">ระบบจัดการลาด้วย Django 5.2 พร้อม 8 ประเภทลา, คำนวณ Balance แบบ Pro-rated, Carry-forward พร้อมวันหมดอายุ และ CF-first Deduction, ดึงข้อมูล Fingerprint Scan (3 ช่วงเวลา), WFH Check-in/out พร้อม GPS และ Penalty, ส่งรายงานลาประจำวันไป ClickUp, Sync พนักงานจาก Google Workspace, 10+ Scheduled Jobs รวมถึง Fingerprint Scraping ทุก 5-30 นาที</p>
+            <div class="tags"><span class="tag">Django 5.2</span><span class="tag">Celery</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span><span class="tag">ClickUp API</span><span class="tag">Google Workspace</span><span class="tag">Fingerprint</span><span class="tag">GPS</span><span class="tag">Cloudinary</span></div>
+          </article>
+          <article class="project glass tilt gradient-border reveal" style="--glow:rgba(255,157,77,.16)">
+            <div class="project-top"><div class="project-icon"><i class="fa-solid fa-share-nodes"></i></div><span class="badge">CLIENT PROJECT</span></div>
+            <h3 class="en">Thai Watsadu — Employee Share Campaign</h3><h3 class="th">ไทยวัตสดุ — แคมเปญแชร์ข่าวพนักงาน</h3>
+            <p class="en">Full-stack Django + Next.js platform for Thai Watsadu's employee Facebook share campaign. Apify-powered share verification (public check, link/hashtag match, time window). Monthly campaign rounds with branch-level leaderboard. Facebook OAuth login. Branch transfer management (max 3 per employee). News CMS with rich text, categories, and share windows.</p>
+            <p class="th">แพลตฟอร์ม Django + Next.js สำหรับแคมเปญแชร์ข่าว Facebook ของพนักงานไทยวัตสดุ ตรวจสอบการแชร์ด้วย Apify (Public Check, Link/Hashtag Match, Time Window), แคมเปญรายเดือนพร้อม Branch Leaderboard, Facebook OAuth Login, ระบบโอนสาขา (ไม่เกิน 3 ครั้ง), News CMS พร้อม Rich Text, หมวดหมู่ และ Share Window</p>
+            <div class="tags"><span class="tag">Django 5.0</span><span class="tag">Next.js 14</span><span class="tag">Celery</span><span class="tag">Apify</span><span class="tag">Facebook OAuth</span><span class="tag">PostgreSQL</span><span class="tag">Railway</span></div>
           </article>
         </div>
         <div class="system-list reveal">
@@ -357,6 +355,10 @@
           <div class="system-item"><i class="fa-solid fa-chart-column"></i><h4>Client Intelligence</h4><p class="en">Multi-brand Looker dashboards and recurring competitor reports for four client brands.</p><p class="th">Looker Dashboard หลายแบรนด์และรายงานคู่แข่งรายเดือน 4 แบรนด์</p></div>
           <div class="system-item"><i class="fa-solid fa-calendar-check"></i><h4>Leave.Growfox</h4><p class="en">Employee leave/attendance. Fingerprint office clock-in, GPS WFH check-in, leave balances, company calendar, ClickUp integration.</p><p class="th">ระบบลา/ลงเวลาพนักงาน ลายนิ้วมือ, GPS WFH, Leave Balance, ปฏิทินบริษัท, เชื่อม ClickUp</p><div class="tags" style="margin-top:10px"><span class="tag">Django</span><span class="tag">Celery</span><span class="tag">PostgreSQL</span></div></div>
           <div class="system-item"><i class="fa-solid fa-bullhorn"></i><h4>Thai Watsadu FB Campaign</h4><p class="en">Facebook campaign management for Thai Watsadu. Employee sharing system, Apify-powered scraping, Celery background tasks, leaderboard.</p><p class="th">ระบบจัดการ Facebook Campaign ให้ Thai Watsadu ระบบแชร์พนักงาน, Apify Scraping, Celery Background Tasks, Leaderboard</p><div class="tags" style="margin-top:10px"><span class="tag">Django</span><span class="tag">Next.js</span><span class="tag">Apify</span><span class="tag">Railway</span></div></div>
+          <div class="system-item"><i class="fa-solid fa-robot"></i><h4>My Office (AI Agent Dashboard)</h4><p class="en">Live status board for Claude AI agent team, pixel-art office visualization, heartbeat system, pending review queue.</p><p class="th">บอร์ดสถานะ AI Agent Team (Claude) พร้อม Pixel-art Office, Heartbeat System และ Pending Review Queue</p></div>
+          <div class="system-item"><i class="fa-solid fa-users-rectangle"></i><h4>Facebook Group Intelligence</h4><p class="en">Group post tracking, brand mention detection, image transcript OCR, product brand/SKU catalog with competitor matching.</p><p class="th">ติดตาม Group Post, ตรวจจับ Brand Mention, OCR ข้อความในรูปภาพ, แคตตาล็อก Product Brand/SKU พร้อมจับคู่คู่แข่ง</p></div>
+          <div class="system-item"><i class="fa-solid fa-calculator"></i><h4>Accounting &amp; Expenses</h4><p class="en">Chart of accounts (148 items), expense records with auto-generated codes, influencer finance profiles, tax modes (PND36), CSV/XLSX export.</p><p class="th">Chart of Accounts (148 รายการ), บันทึกค่าใช้จ่ายพร้อมรหัสอัตโนมัติ, โปรไฟล์การเงิน Influencer, โหมดภาษี (PND36), ส่งออก CSV/XLSX</p></div>
+          <div class="system-item"><i class="fa-solid fa-chart-mixed"></i><h4>Ads → ClickUp Dashboard</h4><p class="en">Real-time ads data (Meta/TikTok/Google) pushed to ClickUp brand channels. Midnight executive digest with delta badges, monthly scorecards, PNG reports.</p><p class="th">ข้อมูล Ads แบบ Real-time (Meta/TikTok/Google) ส่งไปยัง ClickUp Brand Channel, Executive Digest ทุกเที่ยงคืนพร้อม Delta Badge, Monthly Scorecard, รายงาน PNG</p></div>
         </div>
       </div>
     </section>
@@ -369,10 +371,10 @@
           <!-- OOTDwithU — large card -->
           <div class="bento-card hero-card glass tilt reveal-stagger" style="background:linear-gradient(145deg,rgba(255,103,200,.06),rgba(17,27,55,.84))">
             <div class="glow-orb" style="background:var(--pink);top:-40px;right:-40px"></div>
-            <span class="badge personal"><i class="fa-solid fa-wand-magic-sparkles"></i> PERSONAL · AI FASHION</span>
+            <span class="badge personal"><i class="fa-solid fa-trophy"></i> CURSOR BUILD SALAGA · AI FASHION</span>
             <h3>OOTDwithU — AI Virtual Try-On Fashion</h3>
-            <p class="en">AI-powered virtual try-on app. Upload photos, browse Shopee catalogs, mix-and-match outfits, AI simulates trying on clothes. Face-scan, garment cutout, wardrobe management, studio with collections/events.</p>
-            <p class="th">แอป Virtual Try-On ด้วย AI อัปโหลดรูป เลือกแคตตาล็อก Shopee มิกซ์แอนด์แมตช์เสื้อผ้า AI จำลองการลองเสื้อ Face-scan, ตัดต่อเสื้อผ้า, จัดการตู้เสื้อผ้า, สตูดิโอพร้อมคอลเลกชัน/อีเวนต์</p>
+            <p class="en">Built at the <strong>Cursor Build Salaga</strong> competition. AI-powered virtual try-on app. Upload photos, browse Shopee catalogs, mix-and-match outfits, AI simulates trying on clothes. Face-scan, garment cutout, wardrobe management, studio with collections/events.</p>
+            <p class="th">สร้างในงานแข่ง <strong>Cursor Build Salaga</strong> — แอป Virtual Try-On ด้วย AI อัปโหลดรูป เลือกแคตตาล็อก Shopee มิกซ์แอนด์แมตช์เสื้อผ้า AI จำลองการลองเสื้อ Face-scan, ตัดต่อเสื้อผ้า, จัดการตู้เสื้อผ้า, สตูดิโอพร้อมคอลเลกชัน/อีเวนต์</p>
             <div class="tags">
               <span class="tag">Next.js 16</span><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS 4</span><span class="tag">shadcn/ui</span><span class="tag">Framer Motion</span><span class="tag">Recharts</span>
             </div>
@@ -413,12 +415,12 @@
         <div class="skills-wrap">
           <div class="skill-card glass reveal"><h3><i class="fa-solid fa-code"></i> Backend &amp; Product Engineering</h3><div class="skill-cloud"><span class="skill key">Python</span><span class="skill key">Django 5.2</span><span class="skill key">Next.js 15/16</span><span class="skill key">TypeScript 5</span><span class="skill">React 19</span><span class="skill">Node.js</span><span class="skill">FastAPI</span><span class="skill">Django REST Framework</span><span class="skill">REST APIs</span><span class="skill">Server Actions</span><span class="skill">Webhooks</span></div></div>
           <div class="skill-card glass reveal"><h3><i class="fa-solid fa-database"></i> Data &amp; Architecture</h3><div class="skill-cloud"><span class="skill key">PostgreSQL</span><span class="skill key">Prisma ORM 5–7</span><span class="skill key">SQL</span><span class="skill">Zod</span><span class="skill">Pandas</span><span class="skill">NumPy</span><span class="skill">Data Modeling</span><span class="skill">ETL Pipelines</span><span class="skill">ExcelJS</span><span class="skill">Data Governance</span><span class="skill">Cost Ledgers</span></div></div>
-          <div class="skill-card glass reveal"><h3><i class="fa-solid fa-spider"></i> Discovery, Scraping &amp; Automation</h3><div class="skill-cloud"><span class="skill key">Bright Data Dataset + MCP</span><span class="skill key">n8n</span><span class="skill key">Playwright</span><span class="skill key">Selenium</span><span class="skill">BeautifulSoup4</span><span class="skill">lxml</span><span class="skill">Apify</span><span class="skill">undetected-chromedriver</span><span class="skill">Celery</span><span class="skill">APScheduler</span><span class="skill">Celery Beat</span><span class="skill">Cron</span><span class="skill">Provider Fallbacks</span><span class="skill">Budget Guards</span></div></div>
-          <div class="skill-card glass reveal"><h3><i class="fa-solid fa-brain"></i> AI &amp; Applied ML</h3><div class="skill-cloud"><span class="skill key">Gemini API</span><span class="skill key">OpenAI API</span><span class="skill key">Anthropic API</span><span class="skill">Multimodal AI</span><span class="skill">Prompt Engineering</span><span class="skill">Token Optimization</span><span class="skill">AI Sentiment</span><span class="skill">OCR</span><span class="skill">ONNX Runtime</span><span class="skill">MobileSAM</span><span class="skill">MCP Server Development</span><span class="skill">AI Agent Workflows</span></div></div>
-          <div class="skill-card glass reveal"><h3><i class="fa-solid fa-chart-line"></i> Marketing Analytics &amp; Integrations</h3><div class="skill-cloud"><span class="skill key">GA4</span><span class="skill key">GTM</span><span class="skill key">Meta Marketing API</span><span class="skill key">Google Ads API</span><span class="skill">TikTok Business API</span><span class="skill">Looker Studio</span><span class="skill">Power BI</span><span class="skill">Google Workspace Admin SDK</span><span class="skill">Sheets / Drive API</span><span class="skill">ClickUp API</span><span class="skill">LINE OA Webhooks</span><span class="skill">Bitly API</span><span class="skill">SEO / AIO</span><span class="skill">Attribution</span></div></div>
+          <div class="skill-card glass reveal"><h3><i class="fa-solid fa-spider"></i> Discovery, Scraping &amp; Automation</h3><div class="skill-cloud"><span class="skill key">Bright Data Dataset + MCP</span><span class="skill key">n8n</span><span class="skill key">Playwright</span><span class="skill key">Selenium</span><span class="skill">BeautifulSoup4</span><span class="skill">lxml</span><span class="skill">Apify</span><span class="skill">undetected-chromedriver</span><span class="skill">yt-dlp</span><span class="skill">instagrapi</span><span class="skill">curl-cffi</span><span class="skill">Celery</span><span class="skill">APScheduler</span><span class="skill">Celery Beat</span><span class="skill">Cron</span><span class="skill">Provider Fallbacks</span><span class="skill">Budget Guards</span></div></div>
+          <div class="skill-card glass reveal"><h3><i class="fa-solid fa-brain"></i> AI &amp; Applied ML</h3><div class="skill-cloud"><span class="skill key">Gemini API</span><span class="skill key">OpenAI API</span><span class="skill key">Anthropic API</span><span class="skill">Google Gemini (Vertex AI)</span><span class="skill">Multimodal AI</span><span class="skill">Prompt Engineering</span><span class="skill">Token Optimization</span><span class="skill">AI Sentiment</span><span class="skill">OCR</span><span class="skill">ONNX Runtime</span><span class="skill">MobileSAM</span><span class="skill">MCP Server Development</span><span class="skill">AI Agent Workflows</span></div></div>
+          <div class="skill-card glass reveal"><h3><i class="fa-solid fa-chart-line"></i> Marketing Analytics &amp; Integrations</h3><div class="skill-cloud"><span class="skill key">GA4</span><span class="skill key">GTM</span><span class="skill key">Meta Marketing API</span><span class="skill key">Google Ads API</span><span class="skill">Facebook Graph API</span><span class="skill">TikTok Business API</span><span class="skill">Looker Studio</span><span class="skill">Power BI</span><span class="skill">Google Workspace Admin SDK</span><span class="skill">Sheets / Drive API</span><span class="skill">ClickUp API</span><span class="skill">LINE OA Webhooks</span><span class="skill">Bitly API</span><span class="skill">Apify</span><span class="skill">SEO / AIO</span><span class="skill">Attribution</span></div></div>
           <div class="skill-card glass reveal"><h3><i class="fa-solid fa-shield-halved"></i> Authentication &amp; Security</h3><div class="skill-cloud"><span class="skill key">Auth.js / NextAuth v5</span><span class="skill key">Google OAuth</span><span class="skill">JWT</span><span class="skill">RBAC</span><span class="skill">bcrypt</span><span class="skill">HMAC Verification</span><span class="skill">Rate Limiting</span><span class="skill">IP Blacklisting</span><span class="skill">Domain-wide Delegation</span><span class="skill">Service Accounts</span><span class="skill">CORS</span></div></div>
           <div class="skill-card glass reveal"><h3><i class="fa-solid fa-wand-magic-sparkles"></i> Frontend, Real-time &amp; Creative Tech</h3><div class="skill-cloud"><span class="skill key">Tailwind CSS 3/4</span><span class="skill key">Socket.io</span><span class="skill key">LiveKit / WebRTC</span><span class="skill">Recharts</span><span class="skill">Chart.js</span><span class="skill">Framer Motion</span><span class="skill">Zustand</span><span class="skill">React Hook Form</span><span class="skill">Three.js</span><span class="skill">Responsive UI</span><span class="skill">Pixel Art Pipelines</span><span class="skill">Figma</span></div></div>
-          <div class="skill-card glass reveal"><h3><i class="fa-solid fa-cloud"></i> Cloud, DevOps &amp; Media</h3><div class="skill-cloud"><span class="skill key">Railway</span><span class="skill key">Docker</span><span class="skill key">Redis</span><span class="skill">Cloudinary</span><span class="skill">Cloudflare R2 / S3</span><span class="skill">AWS SDK / boto3</span><span class="skill">Gunicorn</span><span class="skill">WhiteNoise</span><span class="skill">Git / GitHub</span><span class="skill">GitHub Actions</span><span class="skill">Cloudflare DNS</span><span class="skill">Nodemailer / SMTP</span><span class="skill">yt-dlp</span><span class="skill">FFmpeg</span><span class="skill">WeasyPrint / pypdf</span></div></div>
+          <div class="skill-card glass reveal"><h3><i class="fa-solid fa-cloud"></i> Cloud, DevOps &amp; Media</h3><div class="skill-cloud"><span class="skill key">Railway</span><span class="skill key">Docker</span><span class="skill key">Redis</span><span class="skill">Nixpacks</span><span class="skill">Cloudinary</span><span class="skill">Cloudflare R2 / S3</span><span class="skill">AWS SDK / boto3</span><span class="skill">Gunicorn</span><span class="skill">WhiteNoise</span><span class="skill">Git / GitHub</span><span class="skill">GitHub Actions</span><span class="skill">Cloudflare DNS</span><span class="skill">Nodemailer / SMTP</span><span class="skill">yt-dlp</span><span class="skill">FFmpeg</span><span class="skill">WeasyPrint / pypdf</span></div></div>
         </div>
       </div>
     </section>
@@ -447,17 +449,6 @@
 
   <footer><div class="container" style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap"><span>© 2026 Maythas Bodkennari</span><span class="mono">DESIGNED + ENGINEERED WITH DATA</span></div></footer>
 
-  <!-- Lazy-load model-viewer -->
-  <script>
-    window.addEventListener('load',()=>{
-      if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
-        const s=document.createElement('script');
-        s.type='module';
-        s.src='https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js';
-        document.head.appendChild(s);
-      }
-    });
-  </script>
 
   <script>
     const body=document.body, buttons=document.querySelectorAll('.lang-btn');
