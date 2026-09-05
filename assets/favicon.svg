@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="mgrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6bffb8"/>
+      <stop offset="1" stop-color="#2fd695"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="512" height="512" fill="#0b0f0d"/>
+  <g stroke="#53f5ad" stroke-opacity=".32" stroke-width="5" stroke-linecap="round">
+    <line x1="126" y1="176" x2="72" y2="106"/>
+    <line x1="386" y1="176" x2="440" y2="106"/>
+    <line x1="256" y1="300" x2="256" y2="408"/>
+  </g>
+  <g fill="#d9a94f">
+    <circle cx="72" cy="106" r="10"/>
+    <circle cx="440" cy="106" r="10"/>
+  </g>
+  <circle cx="256" cy="408" r="9" fill="#53f5ad"/>
+  <path d="M126 372 V176 L256 300 L386 176 V372" fill="none" stroke="url(#mgrad)" stroke-width="46" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+  <g fill="#e8b45a">
+    <circle cx="126" cy="176" r="17"/>
+    <circle cx="256" cy="300" r="17"/>
+    <circle cx="386" cy="176" r="17"/>
+  </g>
+  <g fill="#6bffb8">
+    <circle cx="126" cy="372" r="11"/>
+    <circle cx="386" cy="372" r="11"/>
+  </g>
+</svg>
