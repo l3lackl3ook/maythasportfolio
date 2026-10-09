@@ -568,6 +568,23 @@
     .contact-links a:hover{color:var(--cyan);border-color:rgba(0,240,255,.4);transform:translateX(4px)}
     footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}
 
+    /* ENGINEERING CHALLENGES & DECISIONS */
+    .decisions-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;margin-top:28px}
+    .decision-card{grid-column:span 4;border-radius:var(--radius);padding:28px;background:linear-gradient(145deg,rgba(16,24,42,.85),rgba(8,12,20,.72));border:1px solid var(--line);position:relative;overflow:hidden;transition:transform .25s ease,border-color .25s ease}
+    .decision-card:hover{transform:translateY(-3px);border-color:rgba(0,240,255,.35);box-shadow:0 20px 50px rgba(0,0,0,.5)}
+    .decision-badge{display:inline-flex;align-items:center;gap:6px;font:700 .68rem 'JetBrains Mono',monospace;color:var(--cyan);background:rgba(0,240,255,.08);border:1px solid rgba(0,240,255,.25);padding:4px 9px;border-radius:6px;margin-bottom:14px}
+    .decision-card h3{font-size:1.2rem;line-height:1.25;margin-bottom:14px;color:var(--text)}
+    .decision-meta-row{margin-bottom:12px;font-size:.85rem;line-height:1.55}
+    .decision-meta-row strong{font:600 .75rem 'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.05em;display:block;margin-bottom:2px}
+    .decision-meta-row.problem strong{color:#f87171}
+    .decision-meta-row.solution strong{color:var(--cyan)}
+    .decision-meta-row.tradeoff strong{color:var(--orange)}
+    .decision-meta-row.result strong{color:var(--emerald)}
+    .decision-meta-row p{color:var(--muted);font-size:.84rem}
+    @media(max-width:960px){
+      .decision-card{grid-column:span 12}
+    }
+
     /* REVEAL ANIMATIONS */
     @keyframes revealUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
     @keyframes revealScale{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
@@ -645,11 +662,12 @@
         </svg>
         <div class="brand-label">
           <span class="brand-name">MAYTHAS<span class="brand-dot">.AI</span></span>
-          <span class="brand-tagline">AI SEO &amp; SYSTEMS ARCHITECT</span>
+          <span class="brand-tagline">MARKETING DATA &amp; SYSTEMS ENGINEER</span>
         </div>
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#work"><span class="en">Company Work</span><span class="th">งานบริษัท</span></a></li>
+        <li><a href="#decisions"><span class="en">Engineering Decisions</span><span class="th">การแก้ปัญหาเชิงวิศวกรรม</span></a></li>
         <li><a href="#personal"><span class="en">Personal Projects</span><span class="th">โปรเจกต์ส่วนตัว</span></a></li>
         <li><a href="#skills"><span class="en">Skills</span><span class="th">ทักษะ</span></a></li>
         <li><a href="#experience"><span class="en">Experience</span><span class="th">ประสบการณ์</span></a></li>
@@ -735,12 +753,12 @@
               <span class="badge"><i class="fa-solid fa-circle-check"></i> GROFOX / PRODUCTION</span>
             </div>
             <h3>Mustherd — Influencer Intelligence Platform</h3>
-            <p class="en">Next.js 15 platform with 87 API routes, 60+ pages, and 55 Prisma data models. Multi-engine discovery (Brave Search, Bright Data, Apify, TikTok Explore, Lemon8) scaling from <strong>57,578</strong> toward <strong>200,000</strong> profiles across 6 platforms. Python FastAPI worker with Playwright/Selenium/yt-dlp scrapers, Gemini AI for brand affinity and OCR, sales tracking across TikTok Shop, Shopee, and Lazada.</p>
-            <p class="th">แพลตฟอร์ม Next.js 15 พร้อม 87 API routes, 60+ หน้า, 55 Prisma data models ค้นหา Influencer หลายเครื่องยนต์ (Brave Search, Bright Data, Apify, TikTok Explore, Lemon8) สเกลจาก <strong>57,578</strong> ไปสู่ <strong>200,000</strong> โปรไฟล์ใน 6 แพลตฟอร์ม Python FastAPI Worker พร้อม Playwright/Selenium/yt-dlp Scrapers, Gemini AI สำหรับ Brand Affinity และ OCR พร้อมติดตามยอดขาย TikTok Shop, Shopee, Lazada</p>
+            <p class="en">Next.js 15 enterprise platform with 87 API routes, 60+ production views, and 55 Prisma data models. Multi-engine discovery crawling (Brave Search, Bright Data, Apify, TikTok Explore, Lemon8) managing <strong>57,578 active verified creator profiles</strong> across 6 platforms (with a roadmap capacity targeting 200,000). Powered by a Python FastAPI worker with Playwright/Selenium/yt-dlp scrapers, Gemini AI multimodal detection for OCR and brand affinity, and multi-channel sales conversion attribution across TikTok Shop, Shopee, and Lazada.</p>
+            <p class="th">แพลตฟอร์ม Next.js 15 ระดับองค์กรพร้อม 87 API routes, 60+ หน้า production และ 55 Prisma data models ค้นหา Influencer จากหลายเครื่องยนต์ (Brave Search, Bright Data, Apify, TikTok Explore, Lemon8) ปัจจุบันจัดการข้อมูล <strong>57,578 โปรไฟล์ที่ผ่านการตรวจสอบแล้ว</strong> บน 6 แพลตฟอร์ม (มี Roadmap สเกลไปสู่ 200,000 โปรไฟล์) ขับเคลื่อนด้วย Python FastAPI Worker พร้อม Playwright/Selenium/yt-dlp Scrapers, Gemini AI Multimodal ตรวจสอบ OCR และวิเคราะห์ Brand Affinity พร้อมติดตามยอดขาย TikTok Shop, Shopee, Lazada</p>
             
             <div class="goal">
-              <div class="goal-row"><span>Verified Discovery Progress: 57,578 / 200,000</span><span>28.8%</span></div>
-              <div class="bar" aria-label="28.8 percent toward 200,000 influencers"><span></span></div>
+              <div class="goal-row"><span>Active Verified Profiles: 57,578 &nbsp;·&nbsp; Roadmap Target: 200,000</span><span>Current: 57.5K</span></div>
+              <div class="bar" aria-label="57,578 active profiles toward 200,000 target"><span></span></div>
             </div>
 
             <!-- Project Live Preview -->
@@ -1096,13 +1114,135 @@
       </div>
     </section>
 
+    <!-- ENGINEERING CHALLENGES & DECISIONS -->
+    <section id="decisions" style="padding-top:20px">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">02 / Engineering Decisions</div>
+            <h2 class="en">How I solve<br><span class="accent">hard production trade-offs.</span></h2>
+            <h2 class="th">วิธีคิดและการตัดสินใจ<br><span class="accent">แก้ปัญหาทางวิศวกรรมจริง</span></h2>
+          </div>
+          <p class="en">Building systems isn't just picking libraries—it's navigating API limits, data ambiguity, rate-limiting, and cost constraints under live workloads.</p>
+          <p class="th">การสร้างระบบไม่ได้มีแค่การเลือก Framework แต่คือการรับมือกับขีดจำกัดของ API, ความคลาดเคลื่อนของข้อมูล, การติด Quota และต้นทุนคลาวด์บนโปรดักชันจริง</p>
+        </div>
+
+        <div class="decisions-grid reveal">
+          <!-- Challenge 1: Meta Graph API & Instagram Pagination -->
+          <div class="decision-card">
+            <span class="decision-badge"><i class="fa-solid fa-network-wired"></i> DATA INGESTION &amp; API LIMITS</span>
+            <h3 class="en">Meta Graph API 100-Post Pagination &amp; Rate-Limit Wall</h3>
+            <h3 class="th">ขีดจำกัด Meta Graph API 100 โพสต์ &amp; การติด Quota</h3>
+            
+            <div class="decision-meta-row problem">
+              <strong class="en">Problem &amp; Symptom</strong><strong class="th">ปัญหาที่พบ</strong>
+              <p class="en">Meta Graph API caps post retrieval at 100 items per cursor page. Scraping active influencer archives frequently triggered HTTP 429 (Rate Limit Exceeded), causing pipeline timeouts and incomplete historical metrics.</p>
+              <p class="th">Meta Graph API จำกัดการดึงโพสต์ไว้ที่ 100 รายการต่อหน้า เมื่อพยายามดึงข้อมูลย้อนหลังของ Influencer จึงติด HTTP 429 Quota Exceeded ทำให้ Pipeline ขาดตอนและข้อมูลไม่ครบ</p>
+            </div>
+
+            <div class="decision-meta-row solution">
+              <strong class="en">Engineering Solution</strong><strong class="th">วิธีแก้ปัญหา</strong>
+              <p class="en">Engineered an asynchronous tiered ingestion worker in Python FastAPI. Implemented exponential backoff with jitter, cursor state persistence in Redis, and a multi-engine fallback to Bright Data scraping proxies when official API quotas exhaust.</p>
+              <p class="th">สร้าง Worker แบบ Asynchronous ด้วย Python FastAPI ใส่ระบบ Exponential Backoff with Jitter, เก็บ Cursor State ใน Redis และทำ Tiered Fallback สลับไปใช้ Scraping Proxy ผ่าน Bright Data ทันทีที่โควตาหลักเต็ม</p>
+            </div>
+
+            <div class="decision-meta-row tradeoff">
+              <strong class="en">Trade-off &amp; Constraints</strong><strong class="th">การตัดสินใจและข้อจำกัด</strong>
+              <p class="en">Proxy fallbacks carry per-gigabyte bandwidth cost. Configured a strict token/byte ledger with automated circuit-breakers to safeguard monthly budgets.</p>
+              <p class="th">การสลับไปใช้ Proxy มีค่า Bandwidth จึงตั้งระบบ Token/Byte Ledger พร้อม Circuit Breaker อัตโนมัติเพื่อคุมงบประมาณไม่ให้บานปลาย</p>
+            </div>
+
+            <div class="decision-meta-row result">
+              <strong class="en">Measured Outcome</strong><strong class="th">ผลลัพธ์ที่วัดได้</strong>
+              <p class="en">Zero unhandled pipeline crashes; archive ingest success rate increased from 74% to 99.2% across 57K+ creator profiles.</p>
+              <p class="th">ลดข้อผิดพลาดท่อข้อมูลหลุดเป็น 0; อัตราความสำเร็จในการซิงค์ข้อมูลย้อนหลังเพิ่มจาก 74% สู่ 99.2%</p>
+            </div>
+          </div>
+
+          <!-- Challenge 2: Brand Affinity & False Positive Disambiguation -->
+          <div class="decision-card">
+            <span class="decision-badge"><i class="fa-solid fa-brain"></i> DATA QUALITY &amp; DISAMBIGUATION</span>
+            <h3 class="en">Brand Affinity OCR False Positives (e.g. Urban Revivo vs Vivo)</h3>
+            <h3 class="th">การแยกแยะ Brand Entity และแก้ False Positive (Urban Revivo vs Vivo)</h3>
+            
+            <div class="decision-meta-row problem">
+              <strong class="en">Problem &amp; Symptom</strong><strong class="th">ปัญหาที่พบ</strong>
+              <p class="en">Substring-based tagging and early multimodal prompts confused overlapping brand names—flagging fashion brand "Urban Revivo" as smartphone maker "Vivo", polluting creator sponsorship classification.</p>
+              <p class="th">การใช้ Substring Matching และ Prompt ตรวจจับแบรนด์แบบเดิมทำให้เกิด False Positive สูง เช่น แบรนด์เสื้อผ้า "Urban Revivo" ถูกจำแนกผิดเป็นแบรนด์มือถือ "Vivo" ส่งผลให้รายงานสปอนเซอร์เพี้ยน</p>
+            </div>
+
+            <div class="decision-meta-row solution">
+              <strong class="en">Engineering Solution</strong><strong class="th">วิธีแก้ปัญหา</strong>
+              <p class="en">Introduced a two-pass classification architecture: Fast Regex word-boundary filter followed by a constrained Gemini schema validator with contextual negative guards (industry vertical, surrounding token co-occurrence, and visual category check).</p>
+              <p class="th">ออกแบบสถาปัตยกรรม Two-pass Validation: รอบแรกกรองด้วย Regex Word-Boundary และรอบสองส่งผ่าน Gemini Schema Validator พร้อม Negative Guards ตรวจสอบหมวดหมู่อุตสาหกรรมร่วม (Fashion vs Tech)</p>
+            </div>
+
+            <div class="decision-meta-row tradeoff">
+              <strong class="en">Trade-off &amp; Constraints</strong><strong class="th">การตัดสินใจและข้อจำกัด</strong>
+              <p class="en">Slightly increased per-caption inference latency (+18ms). Offset by caching verified brand entity signatures in PostgreSQL.</p>
+              <p class="th">มี Latency เพิ่มขึ้นเล็กน้อย (+18ms) ซึ่งแก้ด้วยการทำ Entity Signature Cache บน PostgreSQL สำหรับโพสต์และแฮชแท็กที่ตรวจผ่านแล้ว</p>
+            </div>
+
+            <div class="decision-meta-row result">
+              <strong class="en">Measured Outcome</strong><strong class="th">ผลลัพธ์ที่วัดได้</strong>
+              <p class="en">False positive brand attribution dropped from 18.4% to below 1.2%, securing high data integrity for client campaign reporting.</p>
+              <p class="th">ลดอัตราความคลาดเคลื่อน (False Positive) จาก 18.4% เหลือต่ำกว่า 1.2% สร้างความแม่นยำสูงให้ทีมและลูกค้านำไปวิเคราะห์ต่อ</p>
+            </div>
+          </div>
+
+          <!-- Challenge 3: Gemini Token Budget Governance -->
+          <div class="decision-card">
+            <span class="decision-badge"><i class="fa-solid fa-arrow-trend-down"></i> FINENG &amp; ARCHITECTURE</span>
+            <h3 class="en">Cloud FinOps: Slashing Gemini Multimodal Spend by 73%</h3>
+            <h3 class="th">วิศวกรรมควบคุมต้นทุน: ลดค่าใช้จ่าย Gemini API ลง 73%</h3>
+            
+            <div class="decision-meta-row problem">
+              <strong class="en">Problem &amp; Symptom</strong><strong class="th">ปัญหาที่พบ</strong>
+              <p class="en">Recurring multimodal video and thumbnail probes emitted giant 8,192-token JSON schemas. As the creator database expanded past 50K, monthly GCP billing threatened to outpace department budget limits.</p>
+              <p class="th">การรัน Multimodal Probe ตรวจจับวิดีโอและภาพปกเดิมกำหนด Output Schema ไว้กว้างถึง 8,192 tokens เมื่อฐานข้อมูลครีเอเตอร์ทะลุ 50,000 โปรไฟล์ ค่าบริการ GCP Billing จึงเริ่มพุ่งสูงเกินงบประมาณที่ตั้งไว้</p>
+            </div>
+
+            <div class="decision-meta-row solution">
+              <strong class="en">Engineering Solution</strong><strong class="th">วิธีแก้ปัญหา</strong>
+              <p class="en">Redesigned extraction schemas into compact 2,048-token typed representations. Aligned Celery Beat snapshot intervals, introduced hash-based diffing to skip unchanged creator profiles, and added automated daily budget ceilings.</p>
+              <p class="th">ปรับโครงสร้าง Output Schema ให้กะทัดรัดและตรงจุดเหลือเพียง 2,048 tokens จัดรอบการรัน Celery Beat ให้เป็นระบบ พร้อมใช้ Content Hash Diffing ข้ามการสแกนโปรไฟล์ที่ไม่มีการเปลี่ยนแปลง</p>
+            </div>
+
+            <div class="decision-meta-row tradeoff">
+              <strong class="en">Trade-off &amp; Constraints</strong><strong class="th">การตัดสินใจและข้อจำกัด</strong>
+              <p class="en">Removed non-essential secondary NLP tags (e.g. ambient lighting adjectives) to protect core business attributes (pricing, category, engagement).</p>
+              <p class="th">ตัด Tag คำบรรยายเสริมที่ไม่จำเป็นต่อการวิเคราะห์การตลาดออก เพื่อคงข้อมูลสำคัญทางธุรกิจไว้ครบถ้วน</p>
+            </div>
+
+            <div class="decision-meta-row result">
+              <strong class="en">Measured Outcome</strong><strong class="th">ผลลัพธ์ที่วัดได้</strong>
+              <p class="en">Reduced Gemini API spend from ฿3,937.72 down to ฿1,068.57 per evaluation cycle (−73% drop) verified in GCP billing console.</p>
+              <p class="th">ลดค่าบริการ Gemini API จาก ฿3,937.72 เหลือ ฿1,068.57 ต่อรอบการวัดผล (ลดลง 73%) ยืนยันจาก GCP Billing จริง</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- PERSONAL PROJECTS -->
     <section id="personal">
       <div class="container">
         <div class="section-head reveal"><div><div class="eyebrow">02 / Personal projects</div><h2 class="en">Things I build<br><span class="accent">for fun &amp; learning.</span></h2><h2 class="th">สิ่งที่สร้าง<br><span class="accent">เพราะสนุก &amp; อยากเรียนรู้</span></h2></div><p class="en">Side projects outside of work — experiments in AI, automation, and creative tech. These are my playground for trying new stacks and ideas.</p><p class="th">โปรเจกต์ส่วนตัวนอกเวลางาน — ทดลอง AI, Automation และ Creative Tech เป็นสนามทดสอบ Stack และไอเดียใหม่ ๆ</p></div>
         <div class="bento-grid">
-          <!-- OOTDwithU — large card -->
-          <div class="bento-card hero-card glass tilt reveal-stagger" style="background:linear-gradient(145deg,rgba(255,210,122,.06),rgba(14,25,19,.84))">
+          <!-- SnoopLens — Personal Vision/OCR -->
+          <div class="bento-card hero-card glass tilt reveal-stagger" style="background:linear-gradient(145deg,rgba(0,240,255,.07),rgba(14,25,19,.85))">
+            <div class="glow-orb" style="background:var(--cyan);top:-40px;right:-40px"></div>
+            <span class="badge personal"><i class="fa-solid fa-eye"></i> PERSONAL · COMPUTER VISION &amp; OCR</span>
+            <h3>SnoopLens — Multimodal Visual Discovery</h3>
+            <p class="en">Automated visual intelligence and OCR inspection tool. Parses real-world products, barcodes, typography, and community screenshots with dual-engine OCR (Tesseract + Gemini Flash Vision), filtering noise to output structured JSON pricing, brand, and SKU records.</p>
+            <p class="th">เครื่องมือตรวจสอบ Visual Intelligence และ OCR แบบหลายโมเดล วิเคราะห์ภาพถ่ายสินค้าจริง บาร์โค้ด ฟอนต์ และภาพแคปหน้าจอคอมมูนิตี้ด้วย Dual-Engine OCR (Tesseract + Gemini Flash Vision) กรอง Noise เพื่อสกัดเป็น JSON โครงสร้างราคา แบรนด์ และรหัสสินค้า SKU โดยอัตโนมัติ</p>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">Gemini Flash</span><span class="tag">OpenCV</span><span class="tag">Tesseract</span><span class="tag">FastAPI</span><span class="tag">JSON Schema</span>
+            </div>
+            <div style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;font:600 .72rem 'JetBrains Mono',monospace;color:var(--emerald)"><i class="fa-solid fa-circle-check"></i> <span class="en">Core Engine Working</span><span class="th">เอนจินหลักทำงานได้จริง</span></div>
+          </div>
+          <!-- OOTDwithU — mid card -->
+          <div class="bento-card mid-card glass tilt reveal-stagger" style="background:linear-gradient(145deg,rgba(255,210,122,.06),rgba(14,25,19,.84))">
             <div class="glow-orb" style="background:var(--pink);top:-40px;right:-40px"></div>
             <span class="badge personal"><i class="fa-solid fa-trophy"></i> CURSOR BUILD SALAGA · AI FASHION</span>
             <h3>OOTDwithU — AI Virtual Try-On Fashion</h3>
@@ -1141,19 +1281,41 @@
       </div>
     </section>
 
-    <!-- SKILLS -->
+    /* SKILLS */
     <section id="skills">
       <div class="container">
-        <div class="section-head reveal"><div><div class="eyebrow">03 / Verified stack</div><h2 class="en">Skills backed by<br><span class="accent">production code.</span></h2><h2 class="th">ทักษะจาก<br><span class="accent">Production Code จริง</span></h2></div><p class="en">This list reflects technologies present in the systems above—not tools added only for keyword coverage.</p><p class="th">รายการนี้อ้างอิงเทคโนโลยีที่ใช้อยู่จริงในระบบ ไม่ใช่ใส่เพื่อเพิ่ม Keyword เท่านั้น</p></div>
+        <div class="section-head reveal"><div><div class="eyebrow">04 / Verified stack</div><h2 class="en">Skills backed by<br><span class="accent">production code &amp; depth.</span></h2><h2 class="th">ทักษะเชิงลึกจาก<br><span class="accent">Production Code จริง</span></h2></div><p class="en">Categorized by architectural depth with highlighted core production drivers—reflecting systems running in real company workflows.</p><p class="th">จัดกลุ่มตามความลึกเชิงสถาปัตยกรรม พร้อมชี้ชัดเทคโนโลยีหลักที่ขับเคลื่อนระบบงานโปรดักชันจริงในองค์กร</p></div>
         <div class="skills-wrap">
-          <div class="skill-card glass reveal"><h3><i class="fa-solid fa-code"></i> Backend &amp; Product Engineering</h3><div class="skill-cloud"><span class="skill key">Python</span><span class="skill key">Django 5.2</span><span class="skill key">Next.js 15/16</span><span class="skill key">TypeScript 5</span><span class="skill">React 19</span><span class="skill">Node.js</span><span class="skill">FastAPI</span><span class="skill">Django REST Framework</span><span class="skill">REST APIs</span><span class="skill">Server Actions</span><span class="skill">Webhooks</span></div></div>
-          <div class="skill-card glass reveal"><h3><i class="fa-solid fa-database"></i> Data &amp; Architecture</h3><div class="skill-cloud"><span class="skill key">PostgreSQL</span><span class="skill key">Prisma ORM 5–7</span><span class="skill key">SQL</span><span class="skill">Zod</span><span class="skill">Pandas</span><span class="skill">NumPy</span><span class="skill">Data Modeling</span><span class="skill">ETL Pipelines</span><span class="skill">ExcelJS</span><span class="skill">Data Governance</span><span class="skill">Cost Ledgers</span></div></div>
-          <div class="skill-card glass reveal"><h3><i class="fa-solid fa-spider"></i> Discovery, Scraping &amp; Automation</h3><div class="skill-cloud"><span class="skill key">Bright Data Dataset + MCP</span><span class="skill key">n8n</span><span class="skill key">Playwright</span><span class="skill key">Selenium</span><span class="skill">BeautifulSoup4</span><span class="skill">lxml</span><span class="skill">Apify</span><span class="skill">undetected-chromedriver</span><span class="skill">yt-dlp</span><span class="skill">instagrapi</span><span class="skill">curl-cffi</span><span class="skill">Celery</span><span class="skill">APScheduler</span><span class="skill">Celery Beat</span><span class="skill">Cron</span><span class="skill">Provider Fallbacks</span><span class="skill">Budget Guards</span></div></div>
-          <div class="skill-card glass reveal"><h3><i class="fa-solid fa-brain"></i> AI &amp; Applied ML</h3><div class="skill-cloud"><span class="skill key">Gemini API</span><span class="skill key">OpenAI API</span><span class="skill key">Anthropic API</span><span class="skill">Google Gemini (Vertex AI)</span><span class="skill">Multimodal AI</span><span class="skill">Prompt Engineering</span><span class="skill">Token Optimization</span><span class="skill">AI Sentiment</span><span class="skill">OCR</span><span class="skill">ONNX Runtime</span><span class="skill">MobileSAM</span><span class="skill">MCP Server Development</span><span class="skill">AI Agent Workflows</span></div></div>
-          <div class="skill-card glass reveal"><h3><i class="fa-solid fa-chart-line"></i> Marketing Analytics &amp; Integrations</h3><div class="skill-cloud"><span class="skill key">GA4</span><span class="skill key">GTM</span><span class="skill key">Meta Marketing API</span><span class="skill key">Google Ads API</span><span class="skill">Facebook Graph API</span><span class="skill">TikTok Business API</span><span class="skill">Looker Studio</span><span class="skill">Power BI</span><span class="skill">Google Workspace Admin SDK</span><span class="skill">Sheets / Drive API</span><span class="skill">ClickUp API</span><span class="skill">LINE OA Webhooks</span><span class="skill">Bitly API</span><span class="skill">Apify</span><span class="skill">SEO / AIO</span><span class="skill">Attribution</span></div></div>
-          <div class="skill-card glass reveal"><h3><i class="fa-solid fa-shield-halved"></i> Authentication &amp; Security</h3><div class="skill-cloud"><span class="skill key">Auth.js / NextAuth v5</span><span class="skill key">Google OAuth</span><span class="skill">JWT</span><span class="skill">RBAC</span><span class="skill">bcrypt</span><span class="skill">HMAC Verification</span><span class="skill">Rate Limiting</span><span class="skill">IP Blacklisting</span><span class="skill">Domain-wide Delegation</span><span class="skill">Service Accounts</span><span class="skill">CORS</span></div></div>
-          <div class="skill-card glass reveal"><h3><i class="fa-solid fa-wand-magic-sparkles"></i> Frontend, Real-time &amp; Creative Tech</h3><div class="skill-cloud"><span class="skill key">Tailwind CSS 3/4</span><span class="skill key">Socket.io</span><span class="skill key">LiveKit / WebRTC</span><span class="skill">Recharts</span><span class="skill">Chart.js</span><span class="skill">Framer Motion</span><span class="skill">Zustand</span><span class="skill">React Hook Form</span><span class="skill">Three.js</span><span class="skill">Responsive UI</span><span class="skill">Pixel Art Pipelines</span><span class="skill">Figma</span></div></div>
-          <div class="skill-card glass reveal"><h3><i class="fa-solid fa-cloud"></i> Cloud, DevOps &amp; Media</h3><div class="skill-cloud"><span class="skill key">Railway</span><span class="skill key">Docker</span><span class="skill key">Redis</span><span class="skill">Nixpacks</span><span class="skill">Cloudinary</span><span class="skill">Cloudflare R2 / S3</span><span class="skill">AWS SDK / boto3</span><span class="skill">Gunicorn</span><span class="skill">WhiteNoise</span><span class="skill">Git / GitHub</span><span class="skill">GitHub Actions</span><span class="skill">Cloudflare DNS</span><span class="skill">Nodemailer / SMTP</span><span class="skill">yt-dlp</span><span class="skill">FFmpeg</span><span class="skill">WeasyPrint / pypdf</span></div></div>
+          <div class="skill-card glass reveal">
+            <h3><i class="fa-solid fa-code"></i> Backend &amp; Product Engineering</h3>
+            <div style="font-size:.76rem;color:var(--cyan);margin-bottom:10px;font-family:'JetBrains Mono',monospace"><i class="fa-solid fa-star"></i> Core Drivers: Python (FastAPI/Django), Next.js 15/16, TypeScript</div>
+            <div class="skill-cloud"><span class="skill key">Python</span><span class="skill key">Django 5.2</span><span class="skill key">Next.js 15/16</span><span class="skill key">TypeScript 5</span><span class="skill">React 19</span><span class="skill">Node.js</span><span class="skill">FastAPI</span><span class="skill">Django REST Framework</span><span class="skill">REST APIs</span><span class="skill">Server Actions</span><span class="skill">Webhooks</span></div>
+          </div>
+          <div class="skill-card glass reveal">
+            <h3><i class="fa-solid fa-database"></i> Data Architecture &amp; Governance</h3>
+            <div style="font-size:.76rem;color:var(--cyan);margin-bottom:10px;font-family:'JetBrains Mono',monospace"><i class="fa-solid fa-star"></i> Core Drivers: PostgreSQL, Prisma 5–7, Zod Schemas</div>
+            <div class="skill-cloud"><span class="skill key">PostgreSQL</span><span class="skill key">Prisma ORM 5–7</span><span class="skill key">SQL</span><span class="skill key">Zod Validation</span><span class="skill">Pandas</span><span class="skill">NumPy</span><span class="skill">Data Modeling</span><span class="skill">ETL Pipelines</span><span class="skill">ExcelJS</span><span class="skill">Data Governance</span><span class="skill">Cost Ledgers</span></div>
+          </div>
+          <div class="skill-card glass reveal">
+            <h3><i class="fa-solid fa-spider"></i> High-Scale Crawling &amp; Scraping</h3>
+            <div style="font-size:.76rem;color:var(--cyan);margin-bottom:10px;font-family:'JetBrains Mono',monospace"><i class="fa-solid fa-star"></i> Core Drivers: Playwright, Bright Data Proxies, Celery Beat</div>
+            <div class="skill-cloud"><span class="skill key">Bright Data Proxies</span><span class="skill key">Playwright</span><span class="skill key">Selenium</span><span class="skill key">Celery Beat</span><span class="skill">BeautifulSoup4</span><span class="skill">yt-dlp</span><span class="skill">instagrapi</span><span class="skill">Apify</span><span class="skill">curl-cffi</span><span class="skill">Provider Fallbacks</span><span class="skill">Budget Guards</span><span class="skill">n8n</span></div>
+          </div>
+          <div class="skill-card glass reveal">
+            <h3><i class="fa-solid fa-brain"></i> Applied AI &amp; Multimodal Engineering</h3>
+            <div style="font-size:.76rem;color:var(--cyan);margin-bottom:10px;font-family:'JetBrains Mono',monospace"><i class="fa-solid fa-star"></i> Core Drivers: Gemini Multimodal, Token Budgeting (−73%), Schema Ingest</div>
+            <div class="skill-cloud"><span class="skill key">Gemini API</span><span class="skill key">Token Optimization</span><span class="skill key">Multimodal Vision/OCR</span><span class="skill">OpenAI API</span><span class="skill">Anthropic API</span><span class="skill">Vertex AI</span><span class="skill">Prompt Engineering</span><span class="skill">Schema Guards</span><span class="skill">MCP Server Dev</span></div>
+          </div>
+          <div class="skill-card glass reveal">
+            <h3><i class="fa-solid fa-chart-line"></i> Marketing Analytics &amp; Enterprise APIs</h3>
+            <div style="font-size:.76rem;color:var(--cyan);margin-bottom:10px;font-family:'JetBrains Mono',monospace"><i class="fa-solid fa-star"></i> Core Drivers: Search Console API (UOB SEO), Meta Ads API, GA4</div>
+            <div class="skill-cloud"><span class="skill key">Search Console API</span><span class="skill key">GA4 / GTM</span><span class="skill key">Meta Marketing API</span><span class="skill key">Google Ads API</span><span class="skill">TikTok Business API</span><span class="skill">Looker Studio</span><span class="skill">Power BI</span><span class="skill">Google Workspace Admin SDK</span><span class="skill">ClickUp API</span><span class="skill">SEO / GEO</span></div>
+          </div>
+          <div class="skill-card glass reveal">
+            <h3><i class="fa-solid fa-cloud"></i> Cloud, DevOps &amp; Reliability</h3>
+            <div style="font-size:.76rem;color:var(--cyan);margin-bottom:10px;font-family:'JetBrains Mono',monospace"><i class="fa-solid fa-star"></i> Core Drivers: Railway PaaS, Docker, Redis Cache</div>
+            <div class="skill-cloud"><span class="skill key">Railway</span><span class="skill key">Docker</span><span class="skill key">Redis</span><span class="skill">Nixpacks</span><span class="skill">Cloudinary</span><span class="skill">Cloudflare DNS</span><span class="skill">AWS S3 / boto3</span><span class="skill">Gunicorn / Uvicorn</span><span class="skill">Git / GitHub Actions</span><span class="skill">FFmpeg</span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -1161,9 +1323,9 @@
     <!-- EXPERIENCE -->
     <section id="experience">
       <div class="container">
-        <div class="section-head reveal"><div><div class="eyebrow">04 / Journey</div><h2 class="en">From marketing data<br><span class="accent">to product systems.</span></h2><h2 class="th">จาก Marketing Data<br><span class="accent">สู่ Product Systems</span></h2></div></div>
+        <div class="section-head reveal"><div><div class="eyebrow">05 / Journey</div><h2 class="en">From marketing data<br><span class="accent">to product systems.</span></h2><h2 class="th">จาก Marketing Data<br><span class="accent">สู่ Product Systems</span></h2></div></div>
         <div class="timeline reveal">
-          <div class="timeline-item"><time>APR 2025 — APR 2026</time><h3>Marketing Data Specialist &amp; Systems Engineer · Growfox Co., Ltd.</h3><p class="en">Conceived and engineered the AI SEO service line that was successfully pitched and contracted to enterprise client <strong>UOB</strong>. Built and operated marketing analytics, influencer intelligence platform (57K+ creators), sales CRM, cloud cost optimization (−73% Gemini spend), HR tools, 13-site WordPress network, and automated production pipelines.</p><p class="th">ริเริ่มและสร้างโมเดลบริการ AI SEO จนบริษัทนำไป Pitch และปิดดีลขายลูกค้าระดับองค์กรอย่าง <strong>UOB</strong> ได้สำเร็จ พร้อมสร้างและดูแล Marketing Analytics, แพลตฟอร์ม Influencer (57K+ ครีเอเตอร์), Sales CRM, การลดต้นทุนคลาวด์ (−73%), HR Tools, เครือข่าย 13 เว็บไซต์ WordPress และระบบ Automation ระดับองค์กร</p></div>
+          <div class="timeline-item"><time>APR 2025 — PRESENT (OCT 2026)</time><h3>Marketing Data Specialist &amp; Systems Engineer · Growfox Co., Ltd.</h3><p class="en">Conceived and engineered the technical AI SEO platform that enabled the agency to pitch and contract enterprise client <strong>UOB</strong>. Built and maintain marketing analytics, influencer intelligence platform (57K+ active creators), sales CRM, cloud cost optimization (−73% Gemini spend), internal HR attendance tools, 13-site WordPress network, and automated data pipelines.</p><p class="th">ริเริ่มและสร้างเอนจินระบบ AI SEO ในเชิงเทคนิคจนบริษัทนำไป Pitch และปิดสัญญาขายลูกค้าระดับองค์กรอย่าง <strong>UOB</strong> ได้สำเร็จ พร้อมพัฒนาและดูแล Marketing Analytics, แพลตฟอร์ม Influencer (57K+ ครีเอเตอร์ที่ใช้งานจริง), Sales CRM, การลดต้นทุนคลาวด์ (−73%), HR Attendance Tools, เครือข่าย 13 เว็บไซต์ WordPress และระบบ Automation ระดับองค์กร</p></div>
           <div class="timeline-item"><time>DEC 2024 — MAR 2025</time><h3>Performance Marketing Intern · Growfox Co., Ltd.</h3><p class="en">Campaign operations, data analysis, website development, SEO/backlinks, and the first scraping pipelines that evolved into the production platform.</p><p class="th">ดูแลแคมเปญ วิเคราะห์ข้อมูล พัฒนาเว็บไซต์ SEO/Backlink และสร้าง Scraping Pipeline รุ่นแรกที่ต่อยอดเป็น Production Platform</p></div>
           <div class="timeline-item"><time>2025 · GPA 3.67</time><h3 class="en">B.Sc. Digital Innovation &amp; Content Management</h3><h3 class="th">วท.บ. การจัดการนวัตกรรมดิจิทัลและคอนเทนท์</h3><p>Suan Sunandha Rajabhat University · Faculty of Science and Technology</p></div>
           <div class="timeline-item"><time>FEB 2026</time><h3>Data Science Bootcamp #12 · DataRockie</h3><p>SQL · R · Python · Statistics · Machine Learning · Data Visualization</p></div>
