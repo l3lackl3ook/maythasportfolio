@@ -80,7 +80,7 @@
     .btn.primary{background:linear-gradient(120deg,#00f0ff,#6366f1 55%,#10b981);color:#07090e;border:0;font-weight:800;box-shadow:0 10px 30px rgba(0,240,255,.24)}
     .btn:hover{transform:translateY(-3px);border-color:rgba(0,240,255,.55);box-shadow:0 14px 35px rgba(0,240,255,.16)}
 
-    /* PROFILE ORBIT & 3D ANIME AVATAR */
+    /* PROFILE ORBIT & 3D DIGITAL TWIN AVATAR */
     .profile-orbit{position:relative;min-height:430px;display:grid;place-items:center;perspective:1000px}
     .portrait-shell{position:relative;width:min(340px,80vw);aspect-ratio:1;border-radius:38% 62% 55% 45%/48% 45% 55% 52%;padding:8px;background:var(--gradient);box-shadow:0 30px 100px rgba(99,102,241,.32);animation:float 6s ease-in-out infinite;overflow:hidden}
     .portrait-shell img{width:100%;height:100%;object-fit:cover;border-radius:inherit;background:#0d131f;transition:opacity .4s ease}
@@ -704,12 +704,12 @@
           <div class="profile-orbit" aria-label="Maythas portrait">
             <div class="orbit one"><span class="orbit-dot"></span></div><div class="orbit two"><span class="orbit-dot"></span></div>
             <div class="portrait-shell">
-              <img id="avatarImg" src="assets/3d/maythas-anime-preview.png" alt="Maythas Bodkennari 3D Anime Avatar" loading="eager" data-real="Maythas Bodkennari My Picture.png" data-anime="assets/3d/maythas-anime-preview.png">
+              <img id="avatarImg" src="assets/3d/maythas-character-preview.png" alt="Maythas Bodkennari 3D Character Model" loading="eager" data-real="Maythas Bodkennari My Picture.png" data-model="assets/3d/maythas-character-preview.png">
             </div>
-            <button class="avatar-mode-switch" id="avatarSwitch" type="button" aria-label="Toggle Anime/Real Photo">
-              <i class="fa-solid fa-wand-magic-sparkles"></i>
-              <span class="en">Anime 3D / Real</span>
-              <span class="th">สลับ 3D Anime / รูปจริง</span>
+            <button class="avatar-mode-switch" id="avatarSwitch" type="button" aria-label="Toggle 3D Model / Real Photo">
+              <i class="fa-solid fa-cube"></i>
+              <span class="en">3D Model / Real</span>
+              <span class="th">สลับ 3D โมเดล / รูปจริง</span>
             </button>
           </div>
         </div>
@@ -1312,6 +1312,11 @@
             <div class="skill-cloud"><span class="skill key">Search Console API</span><span class="skill key">GA4 / GTM</span><span class="skill key">Meta Marketing API</span><span class="skill key">Google Ads API</span><span class="skill">TikTok Business API</span><span class="skill">Looker Studio</span><span class="skill">Power BI</span><span class="skill">Google Workspace Admin SDK</span><span class="skill">ClickUp API</span><span class="skill">SEO / GEO</span></div>
           </div>
           <div class="skill-card glass reveal">
+            <h3><i class="fa-solid fa-cube"></i> 3D Modeling &amp; Creative Tech</h3>
+            <div style="font-size:.76rem;color:var(--cyan);margin-bottom:10px;font-family:'JetBrains Mono',monospace"><i class="fa-solid fa-star"></i> Core Drivers: Blender 3D, Meshy AI, Three.js WebGL Engine</div>
+            <div class="skill-cloud"><span class="skill key">Blender 3D Modeling</span><span class="skill key">Meshy AI 3D</span><span class="skill key">Three.js</span><span class="skill key">GLTF / GLB Pipeline</span><span class="skill">WebGL Shaders</span><span class="skill">Texturing &amp; UV</span><span class="skill">Tailwind CSS 3/4</span><span class="skill">Framer Motion</span><span class="skill">Recharts</span><span class="skill">Socket.io</span><span class="skill">Figma</span></div>
+          </div>
+          <div class="skill-card glass reveal">
             <h3><i class="fa-solid fa-cloud"></i> Cloud, DevOps &amp; Reliability</h3>
             <div style="font-size:.76rem;color:var(--cyan);margin-bottom:10px;font-family:'JetBrains Mono',monospace"><i class="fa-solid fa-star"></i> Core Drivers: Railway PaaS, Docker, Redis Cache</div>
             <div class="skill-cloud"><span class="skill key">Railway</span><span class="skill key">Docker</span><span class="skill key">Redis</span><span class="skill">Nixpacks</span><span class="skill">Cloudinary</span><span class="skill">Cloudflare DNS</span><span class="skill">AWS S3 / boto3</span><span class="skill">Gunicorn / Uvicorn</span><span class="skill">Git / GitHub Actions</span><span class="skill">FFmpeg</span></div>
@@ -1478,15 +1483,15 @@
     document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
     document.querySelectorAll('.bento-grid').forEach(el=>observer.observe(el));
 
-    /* Avatar Mode Switcher (Anime 3D / Real Photo) */
+    /* Avatar Mode Switcher (3D Character / Real Photo) */
     const avatarImg = document.getElementById('avatarImg');
     const avatarSwitch = document.getElementById('avatarSwitch');
     if (avatarImg && avatarSwitch) {
       avatarSwitch.addEventListener('click', () => {
-        const isAnime = avatarImg.src.includes('anime');
+        const isModel = avatarImg.src.includes('character-preview');
         avatarImg.style.opacity = '0';
         setTimeout(() => {
-          avatarImg.src = isAnime ? avatarImg.dataset.real : avatarImg.dataset.anime;
+          avatarImg.src = isModel ? avatarImg.dataset.real : avatarImg.dataset.model;
           avatarImg.style.opacity = '1';
         }, 200);
       });
@@ -1519,23 +1524,23 @@
         // Torus knot fallback & companion
         const knot=new THREE.Mesh(new THREE.TorusKnotGeometry(.74,.18,100,16),new THREE.MeshStandardMaterial({color:0x6366f1,metalness:.82,roughness:.25,transparent:true,opacity:.8}));knot.position.set(-3,-1,-.5);group.add(knot);
 
-        // Meshy AI Generated Japanese Anime 3D Character (GLTF)
-        let animeModel = null;
+        // Custom 3D Character Model (GLTF)
+        let customModel = null;
         const loader = new GLTFLoader();
-        loader.load('assets/3d/maythas-anime-character.glb', gltf => {
-          animeModel = gltf.scene;
-          animeModel.scale.set(1.9, 1.9, 1.9);
-          animeModel.position.set(2.8, -1.8, -0.2);
+        loader.load('assets/3d/maythas-character.glb', gltf => {
+          customModel = gltf.scene;
+          customModel.scale.set(1.85, 1.85, 1.85);
+          customModel.position.set(2.8, -1.8, -0.2);
           
-          animeModel.traverse(child => {
+          customModel.traverse(child => {
             if (child.isMesh && child.material) {
-              child.material.metalness = 0.15;
-              child.material.roughness = 0.55;
+              child.material.metalness = 0.1;
+              child.material.roughness = 0.6;
             }
           });
-          group.add(animeModel);
+          group.add(customModel);
         }, undefined, err => {
-          console.warn('Anime 3D character fallback active', err);
+          console.warn('3D character model fallback active', err);
         });
 
         const positions=new Float32Array(380*3);for(let i=0;i<380;i++){positions[i*3]=(Math.random()-.5)*18;positions[i*3+1]=(Math.random()-.5)*11;positions[i*3+2]=(Math.random()-.5)*8}
@@ -1552,8 +1557,8 @@
           wire.rotation.z=t*.00008;
           knot.rotation.x=t*.00022;
           knot.rotation.y=t*.00016;
-          if(animeModel){
-            animeModel.rotation.y = t * .0004 + mx;
+          if(customModel){
+            customModel.rotation.y = t * .0004 + mx;
           }
           points.rotation.y=t*.000015;
           renderer.render(scene,camera);

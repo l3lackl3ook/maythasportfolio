@@ -21,5 +21,5 @@ Portfolio of **Maythas Bodkennari** — Marketing Data Specialist & Systems Engi
 ## Tech Stack & Architecture
 
 - **Frontend:** Vanilla HTML5 / Modern CSS (Dark Glassmorphism, Bento Grid, Responsive, Bilingual EN/TH)
-- **3D Graphics:** Three.js + Meshy AI 3D Japanese Anime model (`GLTFLoader`), interactive particles, and camera motion
+- **3D Graphics:** Three.js + Custom 3D Character Model (`GLTFLoader`), Blender/Meshy 3D modeling pipeline, interactive particles, and camera motion
 - **Web Server:** Caddy Server (auto port binding, gzip compression, static file server)
