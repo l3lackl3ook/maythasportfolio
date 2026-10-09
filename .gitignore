@@ -1,5 +1,6 @@
 .env
 .DS_Store
+.qwen/
 mybabetookthispicforme.jpg
 *.pdf
 ใบ*
