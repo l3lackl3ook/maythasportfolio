@@ -1,0 +1,14 @@
+{
+  "name": "Maythas Portfolio",
+  "install": "bash .cursor/install.sh",
+  "terminals": [
+    {
+      "name": "caddy",
+      "command": "PORT=3000 caddy run --config Caddyfile --adapter caddyfile",
+      "description": "Serves the static portfolio site on http://localhost:3000 using the production Caddyfile (gzip + file_server)."
+    }
+  ],
+  "ports": [
+    { "name": "web", "port": 3000 }
+  ]
+}
