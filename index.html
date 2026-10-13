@@ -72,7 +72,7 @@
     .hero::after{content:"";position:absolute;inset:auto 8% 8%;height:18%;background:radial-gradient(ellipse,rgba(0,240,255,.14),rgba(99,102,241,.12),transparent 68%);filter:blur(24px);z-index:-1}
     .hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.65fr);align-items:center;gap:60px}
     .hero h1{font-size:clamp(3.5rem,8vw,7.5rem);line-height:.9;letter-spacing:-.07em;margin:15px 0 24px}
-    .hero-lead{font-size:clamp(1.05rem,2.2vw,1.35rem);color:#cbd5e1;max-width:760px}
+    .hero-lead{font-size:clamp(1.05rem,2.2vw,1.35rem);color:#cbd5e1;max-width:800px}
     .hero-kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid rgba(0,240,255,.32);background:linear-gradient(135deg,rgba(0,240,255,.08),rgba(99,102,241,.08));border-radius:99px;color:var(--cyan);font:600 .75rem 'JetBrains Mono',monospace;box-shadow:0 0 24px rgba(0,240,255,.12)}
     .pulse{width:8px;height:8px;border-radius:50%;background:var(--emerald);box-shadow:0 0 16px var(--emerald)}
     .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
@@ -1229,17 +1229,17 @@
       <div class="container">
         <div class="section-head reveal"><div><div class="eyebrow">02 / Personal projects</div><h2 class="en">Things I build<br><span class="accent">for fun &amp; learning.</span></h2><h2 class="th">สิ่งที่สร้าง<br><span class="accent">เพราะสนุก &amp; อยากเรียนรู้</span></h2></div><p class="en">Side projects outside of work — experiments in AI, automation, and creative tech. These are my playground for trying new stacks and ideas.</p><p class="th">โปรเจกต์ส่วนตัวนอกเวลางาน — ทดลอง AI, Automation และ Creative Tech เป็นสนามทดสอบ Stack และไอเดียใหม่ ๆ</p></div>
         <div class="bento-grid">
-          <!-- SnoopLens — Personal Vision/OCR -->
+          <!-- SnoopLens — Personal Search Intelligence (Radar & AI Visibility) -->
           <div class="bento-card hero-card glass tilt reveal-stagger" style="background:linear-gradient(145deg,rgba(0,240,255,.07),rgba(14,25,19,.85))">
             <div class="glow-orb" style="background:var(--cyan);top:-40px;right:-40px"></div>
-            <span class="badge personal"><i class="fa-solid fa-eye"></i> PERSONAL · COMPUTER VISION &amp; OCR</span>
-            <h3>SnoopLens — Multimodal Visual Discovery</h3>
-            <p class="en">Automated visual intelligence and OCR inspection tool. Parses real-world products, barcodes, typography, and community screenshots with dual-engine OCR (Tesseract + Gemini Flash Vision), filtering noise to output structured JSON pricing, brand, and SKU records.</p>
-            <p class="th">เครื่องมือตรวจสอบ Visual Intelligence และ OCR แบบหลายโมเดล วิเคราะห์ภาพถ่ายสินค้าจริง บาร์โค้ด ฟอนต์ และภาพแคปหน้าจอคอมมูนิตี้ด้วย Dual-Engine OCR (Tesseract + Gemini Flash Vision) กรอง Noise เพื่อสกัดเป็น JSON โครงสร้างราคา แบรนด์ และรหัสสินค้า SKU โดยอัตโนมัติ</p>
+            <span class="badge personal"><i class="fa-solid fa-radar"></i> PERSONAL · THAI QUESTION RADAR &amp; AI VISIBILITY</span>
+            <h3>SnoopLens — Thai Search Intelligence &amp; AI Visibility</h3>
+            <p class="en">Search intelligence web app built with Next.js 15 &amp; React 19. Aggregates multi-channel search suggestions across Google, YouTube, Bing, and DuckDuckGo alongside Google Trends TH. Features intent classification, daily automated disk snapshots (POST /api/collect), and a Prompt Lab measuring whether AI models attribute Thai brands in generated responses.</p>
+            <p class="th">เว็บแอป Search Intelligence สร้างด้วย Next.js 15 &amp; React 19 รวมคำค้นหาและ Suggestion สด 4 ช่องทาง (Google, YouTube, Bing, DuckDuckGo) ควบคู่กับ Google Trends TH มีระบบแยกประเภท Intent, Snapshot ข้อมูลลง Disk ทุกวันผ่าน Cron API และ Prompt Lab ตรวจวัดว่า AI ให้เครดิตแบรนด์ไทยในคำตอบหรือไม่</p>
             <div class="tags">
-              <span class="tag">Python</span><span class="tag">Gemini Flash</span><span class="tag">OpenCV</span><span class="tag">Tesseract</span><span class="tag">FastAPI</span><span class="tag">JSON Schema</span>
+              <span class="tag">Next.js 15</span><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span><span class="tag">Supabase</span><span class="tag">Gemini API</span><span class="tag">Daily Cron</span><span class="tag">Vitest</span>
             </div>
-            <div style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;font:600 .72rem 'JetBrains Mono',monospace;color:var(--emerald)"><i class="fa-solid fa-circle-check"></i> <span class="en">Core Engine Working</span><span class="th">เอนจินหลักทำงานได้จริง</span></div>
+            <div style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;font:600 .72rem 'JetBrains Mono',monospace;color:var(--emerald)"><i class="fa-solid fa-circle-check"></i> <span class="en">Working Prototype · 4 Live Search Lanes</span><span class="th">ระบบทำงานจริง · 4 ช่องทางค้นหาสด</span></div>
           </div>
           <!-- OOTDwithU — mid card -->
           <div class="bento-card mid-card glass tilt reveal-stagger" style="background:linear-gradient(145deg,rgba(255,210,122,.06),rgba(14,25,19,.84))">
@@ -1348,7 +1348,12 @@
 
     <!-- CONTACT -->
     <section id="contact">
-      <div class="container"><div class="contact-card glass reveal"><div><div class="eyebrow">05 / Contact</div><h2 class="en">Let's build something<br><span class="accent">measurable.</span></h2><h2 class="th">มาสร้างสิ่งที่<br><span class="accent">วัดผลได้จริง</span></h2><p class="muted en" style="margin-top:18px">Bangkok, Thailand · Open to product, data, automation, and marketing technology opportunities.</p><p class="muted th" style="margin-top:18px">กรุงเทพมหานคร · สนใจโอกาสด้าน Product, Data, Automation และ Marketing Technology</p></div><div class="contact-links"><a href="mailto:maythaser2014@hotmail.com"><i class="fa-regular fa-envelope"></i>maythaser2014@hotmail.com</a><a href="tel:+66804573116"><i class="fa-solid fa-phone"></i>080-457-3116</a><a href="https://www.linkedin.com/in/maythas-bodkennari/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i>LinkedIn</a><a href="https://github.com/l3lackl3ook" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>GitHub</a><a href="https://blogeverydayth.com" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i>blogeverydayth.com</a></div></div></div>
+      <div class="container"><div class="contact-card glass reveal"><div><div class="eyebrow">05 / Contact</div><h2 class="en">Let's build something<br><span class="accent">measurable.</span></h2><h2 class="th">มาสร้างสิ่งที่<br><span class="accent">วัดผลได้จริง</span></h2><p class="muted en" style="margin-top:18px">Bangkok, Thailand · Open to product, data, automation, and marketing technology opportunities.</p><p class="muted th" style="margin-top:18px">กรุงเทพมหานคร · สนใจโอกาสด้าน Product, Data, Automation และ Marketing Technology</p></div>        <div class="contact-links">
+          <a href="mailto:maythaser2014@hotmail.com"><i class="fa-regular fa-envelope"></i>maythaser2014@hotmail.com</a>
+          <a href="https://www.linkedin.com/in/maythas-bodkennari/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+          <a href="https://github.com/l3lackl3ook" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>GitHub</a>
+          <a href="https://blogeverydayth.com" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i>blogeverydayth.com</a>
+        </div></div></div>
     </section>
   </main>
 
