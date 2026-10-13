@@ -19,45 +19,46 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     :root{
-      --bg:#07090e;--bg-2:#0c111d;--panel:rgba(13,20,34,.78);--panel-strong:#111a2d;
-      --text:#f8fafc;--muted:#94a3b8;--line:rgba(56,189,248,.16);--line-glow:rgba(99,102,241,.32);
-      --cyan:#00f0ff;--indigo:#6366f1;--emerald:#10b981;--green:#10b981;
-      --orange:#f59e0b;--pink:#38bdf8;--violet:#8b5cf6;--rose:#f43f5e;
-      --gradient:linear-gradient(135deg,#00f0ff 0%,#6366f1 48%,#10b981 100%);
-      --gradient-text:linear-gradient(135deg,#38bdf8 0%,#818cf8 46%,#34d399 100%);
-      --gradient-badge:linear-gradient(135deg,rgba(0,240,255,.14),rgba(99,102,241,.14));
-      --shadow:0 25px 70px rgba(0,0,0,.45);--radius:24px;
+      /* Wednesday Lucky Colors: Emerald Green, Deep Forest, Cyber Toxic Lime, Obsidian Black, Subtle Gold Accent */
+      --bg:#050a07;--bg-2:#09140e;--panel:rgba(10,22,15,.78);--panel-strong:#0e2015;
+      --text:#f5fbf7;--muted:#8ea899;--line:rgba(52,211,153,.18);--line-glow:rgba(16,185,129,.35);
+      --emerald:#10b981;--green:#10b981;--lime:#22c55e;--toxic:#10f38d;--dark-emerald:#065f46;
+      --cyan:#00f0ff;--orange:#f59e0b;--gold:#eab308;--violet:#8b5cf6;--rose:#f43f5e;
+      --gradient:linear-gradient(135deg,#10f38d 0%,#10b981 50%,#059669 100%);
+      --gradient-text:linear-gradient(135deg,#34d399 0%,#10f38d 45%,#00f0ff 100%);
+      --gradient-badge:linear-gradient(135deg,rgba(16,243,141,.16),rgba(16,185,129,.14));
+      --shadow:0 25px 70px rgba(0,0,0,.55);--radius:24px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;scroll-padding-top:92px}
     body{font-family:'Space Grotesk','Noto Sans Thai',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}
-    body::before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(circle at 14% 16%,rgba(0,240,255,.09),transparent 34%),radial-gradient(circle at 82% 22%,rgba(99,102,241,.13),transparent 36%),radial-gradient(circle at 50% 86%,rgba(16,185,129,.07),transparent 42%),linear-gradient(180deg,#07090e,#0b111d 45%,#07090e)}
-    body::after{content:"";position:fixed;inset:0;z-index:-2;opacity:.18;background-image:linear-gradient(rgba(56,189,248,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.04) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 78%)}
+    body::before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(circle at 14% 16%,rgba(16,243,141,.1),transparent 36%),radial-gradient(circle at 82% 22%,rgba(5,150,105,.14),transparent 38%),radial-gradient(circle at 50% 86%,rgba(0,240,255,.06),transparent 44%),linear-gradient(180deg,#050a07,#08130d 45%,#050a07)}
+    body::after{content:"";position:fixed;inset:0;z-index:-2;opacity:.18;background-image:linear-gradient(rgba(16,243,141,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(16,243,141,.04) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 78%)}
     a{color:inherit}
     .container{width:min(1180px,calc(100% - 40px));margin:auto}
     .mono{font-family:'JetBrains Mono',monospace}
     .accent{background:var(--gradient-text);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .eyebrow{font:600 .75rem 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:.7rem}
+    .eyebrow{font:600 .75rem 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--toxic);margin-bottom:.7rem}
     .muted{color:var(--muted)}
     .th{display:none!important}body.lang-th .en{display:none!important}body.lang-th .th{display:revert!important}
 
     /* NAV */
-    nav{position:fixed;inset:0 0 auto;z-index:100;padding:14px 0;background:rgba(7,9,14,.76);backdrop-filter:blur(22px);border-bottom:1px solid var(--line)}
+    nav{position:fixed;inset:0 0 auto;z-index:100;padding:14px 0;background:rgba(5,10,7,.8);backdrop-filter:blur(22px);border-bottom:1px solid var(--line)}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
     .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:700}
-    .brand-symbol{flex-shrink:0;filter:drop-shadow(0 0 16px rgba(0,240,255,.25));transition:transform .3s ease,filter .3s ease}
-    .brand:hover .brand-symbol{transform:scale(1.05) rotate(1deg);filter:drop-shadow(0 0 22px rgba(99,102,241,.45))}
+    .brand-symbol{flex-shrink:0;filter:drop-shadow(0 0 16px rgba(16,243,141,.3));transition:transform .3s ease,filter .3s ease}
+    .brand:hover .brand-symbol{transform:scale(1.05) rotate(1deg);filter:drop-shadow(0 0 24px rgba(16,243,141,.5))}
     .brand-label{display:flex;flex-direction:column;line-height:1.15}
     .brand-name{font-size:1.05rem;letter-spacing:-.02em;color:var(--text);font-weight:700}
     .brand-dot{background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .brand-tagline{font:600 .58rem 'JetBrains Mono',monospace;letter-spacing:.12em;color:var(--cyan);opacity:.9}
+    .brand-tagline{font:600 .58rem 'JetBrains Mono',monospace;letter-spacing:.12em;color:var(--toxic);opacity:.95}
     .nav-links{display:flex;align-items:center;gap:22px;list-style:none}
     .nav-links a{text-decoration:none;color:var(--muted);font-size:.88rem;transition:.2s}
-    .nav-links a:hover{color:var(--cyan)}
+    .nav-links a:hover{color:var(--toxic)}
     .nav-actions{display:flex;align-items:center;gap:8px}
     .lang-toggle{display:flex;padding:3px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.03)}
     .lang-btn{border:0;background:none;color:var(--muted);padding:6px 9px;border-radius:8px;cursor:pointer;font-weight:700}
-    .lang-btn.active{background:rgba(0,240,255,.14);color:var(--cyan)}
+    .lang-btn.active{background:rgba(16,243,141,.14);color:var(--toxic)}
     .menu-btn{display:none;border:1px solid var(--line);background:var(--panel);color:white;padding:8px 10px;border-radius:10px}
 
     /* SECTIONS */
@@ -69,21 +70,21 @@
     /* HERO */
     #scene3d{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:.95}
     .hero{position:relative;min-height:100vh;display:grid;align-items:center;padding:130px 0 80px;isolation:isolate;overflow:hidden}
-    .hero::after{content:"";position:absolute;inset:auto 8% 8%;height:18%;background:radial-gradient(ellipse,rgba(0,240,255,.14),rgba(99,102,241,.12),transparent 68%);filter:blur(24px);z-index:-1}
+    .hero::after{content:"";position:absolute;inset:auto 8% 8%;height:18%;background:radial-gradient(ellipse,rgba(16,243,141,.18),rgba(16,185,129,.12),transparent 68%);filter:blur(24px);z-index:-1}
     .hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.65fr);align-items:center;gap:60px}
     .hero h1{font-size:clamp(3.5rem,8vw,7.5rem);line-height:.9;letter-spacing:-.07em;margin:15px 0 24px}
     .hero-lead{font-size:clamp(1.05rem,2.2vw,1.35rem);color:#cbd5e1;max-width:800px}
-    .hero-kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid rgba(0,240,255,.32);background:linear-gradient(135deg,rgba(0,240,255,.08),rgba(99,102,241,.08));border-radius:99px;color:var(--cyan);font:600 .75rem 'JetBrains Mono',monospace;box-shadow:0 0 24px rgba(0,240,255,.12)}
-    .pulse{width:8px;height:8px;border-radius:50%;background:var(--emerald);box-shadow:0 0 16px var(--emerald)}
+    .hero-kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid rgba(16,243,141,.32);background:linear-gradient(135deg,rgba(16,243,141,.08),rgba(16,185,129,.08));border-radius:99px;color:var(--toxic);font:600 .75rem 'JetBrains Mono',monospace;box-shadow:0 0 24px rgba(16,243,141,.15)}
+    .pulse{width:8px;height:8px;border-radius:50%;background:var(--toxic);box-shadow:0 0 16px var(--toxic)}
     .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
     .btn{display:inline-flex;align-items:center;gap:9px;padding:12px 17px;border-radius:14px;text-decoration:none;font-weight:700;font-size:.9rem;border:1px solid var(--line);background:rgba(255,255,255,.04);transition:transform .2s,border-color .2s,box-shadow .2s}
-    .btn.primary{background:linear-gradient(120deg,#00f0ff,#6366f1 55%,#10b981);color:#07090e;border:0;font-weight:800;box-shadow:0 10px 30px rgba(0,240,255,.24)}
-    .btn:hover{transform:translateY(-3px);border-color:rgba(0,240,255,.55);box-shadow:0 14px 35px rgba(0,240,255,.16)}
+    .btn.primary{background:linear-gradient(120deg,#10f38d,#10b981 55%,#00f0ff);color:#050a07;border:0;font-weight:800;box-shadow:0 10px 30px rgba(16,243,141,.3)}
+    .btn:hover{transform:translateY(-3px);border-color:rgba(16,243,141,.55);box-shadow:0 14px 35px rgba(16,243,141,.2)}
 
     /* PROFILE ORBIT & 3D DIGITAL TWIN AVATAR */
     .profile-orbit{position:relative;min-height:430px;display:grid;place-items:center;perspective:1000px}
-    .portrait-shell{position:relative;width:min(340px,80vw);aspect-ratio:1;border-radius:38% 62% 55% 45%/48% 45% 55% 52%;padding:8px;background:var(--gradient);box-shadow:0 30px 100px rgba(99,102,241,.32);animation:float 6s ease-in-out infinite;overflow:hidden}
-    .portrait-shell img{width:100%;height:100%;object-fit:cover;border-radius:inherit;background:#0d131f;transition:opacity .4s ease}
+    .portrait-shell{position:relative;width:min(340px,80vw);aspect-ratio:1;border-radius:38% 62% 55% 45%/48% 45% 55% 52%;padding:8px;background:var(--gradient);box-shadow:0 30px 100px rgba(16,185,129,.35);animation:float 6s ease-in-out infinite;overflow:hidden}
+    .portrait-shell img{width:100%;height:100%;object-fit:cover;border-radius:inherit;background:#09140e;transition:opacity .4s ease}
     .avatar-mode-switch{
       position:absolute;
       bottom:-14px;
@@ -91,11 +92,11 @@
       align-items:center;
       gap:6px;
       padding:6px 14px;
-      background:rgba(12,18,30,.92);
-      border:1px solid rgba(0,240,255,.35);
+      background:rgba(9,20,14,.92);
+      border:1px solid rgba(16,243,141,.35);
       border-radius:99px;
       font:600 .7rem 'JetBrains Mono',monospace;
-      color:var(--cyan);
+      color:var(--toxic);
       box-shadow:0 10px 30px rgba(0,0,0,.6);
       backdrop-filter:blur(10px);
       z-index:10;
@@ -104,28 +105,28 @@
     }
     .avatar-mode-switch:hover{
       transform:translateY(-2px);
-      border-color:var(--cyan);
-      box-shadow:0 10px 30px rgba(0,240,255,.3);
+      border-color:var(--toxic);
+      box-shadow:0 10px 30px rgba(16,243,141,.35);
     }
     .avatar-mode-switch span{pointer-events:none}
-    .orbit{position:absolute;border:1px solid rgba(56,189,248,.24);border-radius:50%;animation:spin 16s linear infinite}
+    .orbit{position:absolute;border:1px solid rgba(52,211,153,.24);border-radius:50%;animation:spin 16s linear infinite}
     .orbit.one{inset:9% -6%}.orbit.two{inset:-2% 5%;animation-direction:reverse;animation-duration:22s}
-    .orbit-dot{position:absolute;width:13px;height:13px;border-radius:50%;background:var(--cyan);box-shadow:0 0 22px var(--cyan);top:22%;right:1%}
+    .orbit-dot{position:absolute;width:13px;height:13px;border-radius:50%;background:var(--toxic);box-shadow:0 0 22px var(--toxic);top:22%;right:1%}
     .orbit.two .orbit-dot{background:var(--emerald);box-shadow:0 0 22px var(--emerald);top:auto;right:auto;bottom:6%;left:22%}
     @keyframes spin{to{transform:rotate(360deg)}}
     @keyframes float{50%{transform:translateY(-12px) rotate(1deg)}}
 
     /* METRICS */
     .metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:42px}
-    .metric{padding:21px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,rgba(17,26,45,.82),rgba(8,12,20,.65));box-shadow:var(--shadow);backdrop-filter:blur(14px);transition:transform .25s,box-shadow .25s}
-    .metric:hover{transform:translateY(-4px);box-shadow:0 30px 80px rgba(0,240,255,.14);border-color:rgba(0,240,255,.3)}
-    .metric strong{display:block;font-size:clamp(1.6rem,3vw,2.35rem);line-height:1;color:var(--cyan);margin-bottom:8px}
+    .metric{padding:21px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,rgba(14,28,20,.85),rgba(6,12,8,.7));box-shadow:var(--shadow);backdrop-filter:blur(14px);transition:transform .25s,box-shadow .25s}
+    .metric:hover{transform:translateY(-4px);box-shadow:0 30px 80px rgba(16,243,141,.18);border-color:rgba(16,243,141,.35)}
+    .metric strong{display:block;font-size:clamp(1.6rem,3vw,2.35rem);line-height:1;color:var(--toxic);margin-bottom:8px}
     .metric span{font-size:.82rem;color:var(--muted)}
 
     /* GLASS + TILT */
-    .glass{border:1px solid var(--line);background:linear-gradient(145deg,rgba(15,23,41,.85),rgba(8,12,20,.72));box-shadow:var(--shadow);backdrop-filter:blur(18px)}
+    .glass{border:1px solid var(--line);background:linear-gradient(145deg,rgba(12,24,17,.88),rgba(6,12,8,.75));box-shadow:var(--shadow);backdrop-filter:blur(18px)}
     .tilt{transform-style:preserve-3d;transition:transform .2s ease,border-color .25s ease,box-shadow .25s ease}
-    .tilt:hover{border-color:rgba(0,240,255,.38);box-shadow:0 30px 90px rgba(99,102,241,.22)}
+    .tilt:hover{border-color:rgba(16,243,141,.38);box-shadow:0 30px 90px rgba(16,185,129,.25)}
     .tilt>*{transform:translateZ(18px)}
 
     /* GRADIENT BORDER CARDS */
@@ -704,7 +705,7 @@
           <div class="profile-orbit" aria-label="Maythas portrait">
             <div class="orbit one"><span class="orbit-dot"></span></div><div class="orbit two"><span class="orbit-dot"></span></div>
             <div class="portrait-shell">
-              <img id="avatarImg" src="assets/3d/maythas-character-preview.png" alt="Maythas Bodkennari 3D Character Model" loading="eager" data-real="Maythas Bodkennari My Picture.png" data-model="assets/3d/maythas-character-preview.png">
+              <img id="avatarImg" src="assets/3d/blackdevil-indie-preview.png" alt="Maythas Bodkennari 3D Indie Character Model" loading="eager" data-real="Maythas Bodkennari My Picture.png" data-model="assets/3d/blackdevil-indie-preview.png">
             </div>
             <button class="avatar-mode-switch" id="avatarSwitch" type="button" aria-label="Toggle 3D Model / Real Photo">
               <i class="fa-solid fa-cube"></i>
@@ -747,18 +748,18 @@
 
         <div class="featured-grid" id="featuredGrid">
           <!-- 1. Mustherd -->
-          <article class="project large glass tilt gradient-border reveal" data-category="influencer-ai" style="--glow:rgba(83,245,173,.16)">
+          <article class="project large glass tilt gradient-border reveal" data-category="influencer-ai" style="--glow:rgba(16,243,141,.2)">
             <div class="project-top">
               <div class="project-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
-              <span class="badge"><i class="fa-solid fa-circle-check"></i> GROFOX / PRODUCTION</span>
+              <span class="badge"><i class="fa-solid fa-circle-check"></i> MUSTHERD / PRODUCTION</span>
             </div>
             <h3>Mustherd — Influencer Intelligence Platform</h3>
-            <p class="en">Next.js 15 enterprise platform with 87 API routes, 60+ production views, and 55 Prisma data models. Multi-engine discovery crawling (Brave Search, Bright Data, Apify, TikTok Explore, Lemon8) managing <strong>57,578 active verified creator profiles</strong> across 6 platforms (with a roadmap capacity targeting 200,000). Powered by a Python FastAPI worker with Playwright/Selenium/yt-dlp scrapers, Gemini AI multimodal detection for OCR and brand affinity, and multi-channel sales conversion attribution across TikTok Shop, Shopee, and Lazada.</p>
-            <p class="th">แพลตฟอร์ม Next.js 15 ระดับองค์กรพร้อม 87 API routes, 60+ หน้า production และ 55 Prisma data models ค้นหา Influencer จากหลายเครื่องยนต์ (Brave Search, Bright Data, Apify, TikTok Explore, Lemon8) ปัจจุบันจัดการข้อมูล <strong>57,578 โปรไฟล์ที่ผ่านการตรวจสอบแล้ว</strong> บน 6 แพลตฟอร์ม (มี Roadmap สเกลไปสู่ 200,000 โปรไฟล์) ขับเคลื่อนด้วย Python FastAPI Worker พร้อม Playwright/Selenium/yt-dlp Scrapers, Gemini AI Multimodal ตรวจสอบ OCR และวิเคราะห์ Brand Affinity พร้อมติดตามยอดขาย TikTok Shop, Shopee, Lazada</p>
+            <p class="en">Next.js 15 enterprise platform with 87 API routes, 60+ production views, and 55 Prisma data models. Multi-engine discovery crawling (Brave Search, Bright Data, Apify, TikTok Explore, Lemon8) managing <strong>57,578 active verified creator profiles</strong> across 6 platforms with an active roadmap scaling toward <strong>200,000 creators</strong>. Powered by Python FastAPI worker with Playwright/Selenium/yt-dlp scrapers, Gemini AI multimodal detection for OCR and brand affinity, and multi-channel sales attribution across TikTok Shop, Shopee, and Lazada.</p>
+            <p class="th">แพลตฟอร์ม Next.js 15 ระดับองค์กรพร้อม 87 API routes, 60+ หน้า production และ 55 Prisma data models ค้นหา Influencer จากหลายเครื่องยนต์ (Brave Search, Bright Data, Apify, TikTok Explore, Lemon8) ปัจจุบันจัดการข้อมูล <strong>57,578 โปรไฟล์ที่ผ่านการตรวจสอบแล้ว</strong> บน 6 แพลตฟอร์ม โดยมีเป้าหมาย Roadmap ขยายสู่ <strong>200,000 โปรไฟล์</strong> ขับเคลื่อนด้วย Python FastAPI Worker พร้อม Playwright/Selenium/yt-dlp Scrapers, Gemini AI Multimodal ตรวจสอบ OCR และวิเคราะห์ Brand Affinity พร้อมติดตามยอดขาย TikTok Shop, Shopee, Lazada</p>
             
             <div class="goal">
-              <div class="goal-row"><span>Active Verified Profiles: 57,578 &nbsp;·&nbsp; Roadmap Target: 200,000</span><span>Current: 57.5K</span></div>
-              <div class="bar" aria-label="57,578 active profiles toward 200,000 target"><span></span></div>
+              <div class="goal-row"><span>Active Verified Profiles: 57,578 / Target: 200,000 (Roadmap)</span><span>28.8% Scaling</span></div>
+              <div class="bar" aria-label="57,578 active verified profiles scaling toward 200,000 roadmap target"><span></span></div>
             </div>
 
             <!-- Project Live Preview -->
@@ -944,29 +945,29 @@
             </div>
           </article>
 
-          <!-- 5. Sales CRM -->
-          <article class="project glass tilt gradient-border reveal" data-category="hr-internal" style="--glow:rgba(255,157,77,.16)">
+          <!-- 5. Sales CRM & Automated Lead Distribution -->
+          <article class="project glass tilt gradient-border reveal" data-category="hr-internal" style="--glow:rgba(245,158,11,.2)">
             <div class="project-top">
               <div class="project-icon"><i class="fa-solid fa-handshake"></i></div>
-              <span class="badge"><i class="fa-solid fa-shield-halved"></i> DENCRM.GROWFOX.CO</span>
+              <span class="badge" style="color:var(--orange);border-color:rgba(245,158,11,.35);background:rgba(245,158,11,.08)"><i class="fa-solid fa-envelope-circle-check"></i> DENCRM · GMAIL CEO LEAD APPROVAL</span>
             </div>
-            <h3 class="en">Sales CRM — Lead Pipeline Engine</h3>
-            <h3 class="th">Sales CRM — ระบบจัดการ Lead Pipeline</h3>
-            <p class="en">Next.js 16 CRM with 5-stage lead pipeline, inbound webhook ingestion from website forms, deduplication algorithms (Phone/Email/LINE), audit timeline trail, follow-up reminders, in-app notifications, and Google Workspace avatar sync.</p>
-            <p class="th">CRM ด้วย Next.js 16 พร้อม Lead Pipeline 5 ขั้นตอน รับ Lead จาก Webhook อัตโนมัติ ป้องกันข้อมูลซ้ำด้วย Phone/Email/LINE มี Audit Trail ติดตามการแก้ไข และ Sync รูปโปรไฟล์ทีมจาก Google Workspace</p>
+            <h3 class="en">DenCRM — Automated Lead Pipeline &amp; CEO Approval Engine</h3>
+            <h3 class="th">DenCRM — ระบบ Lead Pipeline &amp; อนุมัติแจก Lead ผ่าน Gmail อัตโนมัติ</h3>
+            <p class="en">Next.js 16 CRM with HMAC-signed Gmail lead distribution architecture. Inbound leads from website webhooks are deduplicated and automatically routed via Nodemailer to leadership's inbox, where the CEO can approve and instantly assign leads to sales reps (Loukpad, Prikthai, Mook) directly via 1-click signed email buttons without logging in. Includes audit trails, duplicate filters, and follow-up alerts.</p>
+            <p class="th">CRM พัฒนาด้วย Next.js 16 พร้อมสถาปัตยกรรมแจก Lead ผ่าน Gmail ด้วย HMAC Token Signed URL เวลามี Lead เข้ามาจาก Webhook หน้าเว็บ ระบบจะตรวจข้อมูลซ้ำและส่งแจ้งเตือนเข้า Gmail ของผู้บริหารทันที เพื่อให้ CEO สามารถกด Approve แจก Lead ให้ทีมเซลส์ (ลูกปัด, พริกไทย, มุก) ได้ทันทีผ่านปุ่มในอีเมลโดยไม่ต้องล็อกอินเข้าระบบ พร้อม Audit Trail ติดตามสถานะ</p>
             
             <div class="pipeline-flow">
-              <span class="pipeline-step">NEW</span>
+              <span class="pipeline-step">WEBHOOK INTAKE</span>
               <span class="pipeline-arrow"><i class="fa-solid fa-chevron-right"></i></span>
-              <span class="pipeline-step">CONTACTED</span>
+              <span class="pipeline-step">DEDUPLICATION</span>
               <span class="pipeline-arrow"><i class="fa-solid fa-chevron-right"></i></span>
-              <span class="pipeline-step">QUOTED</span>
+              <span class="pipeline-step" style="background:rgba(245,158,11,.12);color:var(--orange);border-color:rgba(245,158,11,.3)"><i class="fa-solid fa-envelope"></i> GMAIL CEO APPROVE</span>
               <span class="pipeline-arrow"><i class="fa-solid fa-chevron-right"></i></span>
-              <span class="pipeline-step final">WON</span>
+              <span class="pipeline-step final"><i class="fa-solid fa-user-check"></i> ASSIGN SALES</span>
             </div>
 
             <div class="tags" style="margin-top:20px">
-              <span class="tag">Next.js 16</span><span class="tag">React 19</span><span class="tag">Prisma 7</span><span class="tag">Auth.js v5</span><span class="tag">Zod</span><span class="tag">Webhooks</span><span class="tag">Cloudinary</span><span class="tag">Railway</span>
+              <span class="tag">Next.js 16</span><span class="tag">React 19</span><span class="tag">Prisma 7</span><span class="tag">Nodemailer</span><span class="tag">HMAC Signed Tokens</span><span class="tag">Gmail API</span><span class="tag">Webhooks</span><span class="tag">Zod</span><span class="tag">Railway</span>
             </div>
           </article>
 
@@ -1534,18 +1535,18 @@
         // Torus knot fallback & companion
         const knot=new THREE.Mesh(new THREE.TorusKnotGeometry(.74,.18,100,16),new THREE.MeshStandardMaterial({color:0x6366f1,metalness:.82,roughness:.25,transparent:true,opacity:.8}));knot.position.set(-3,-1,-.5);group.add(knot);
 
-        // Custom 3D Character Model (GLTF)
+        // Custom Indie 3D Character Model (GLTF)
         let customModel = null;
         const loader = new GLTFLoader();
-        loader.load('assets/3d/maythas-character.glb', gltf => {
+        loader.load('assets/3d/blackdevil-indie.glb', gltf => {
           customModel = gltf.scene;
-          customModel.scale.set(1.85, 1.85, 1.85);
+          customModel.scale.set(1.9, 1.9, 1.9);
           customModel.position.set(2.8, -1.8, -0.2);
           
           customModel.traverse(child => {
             if (child.isMesh && child.material) {
-              child.material.metalness = 0.1;
-              child.material.roughness = 0.6;
+              child.material.metalness = 0.2;
+              child.material.roughness = 0.55;
             }
           });
           group.add(customModel);
@@ -1554,10 +1555,10 @@
         });
 
         const positions=new Float32Array(380*3);for(let i=0;i<380;i++){positions[i*3]=(Math.random()-.5)*18;positions[i*3+1]=(Math.random()-.5)*11;positions[i*3+2]=(Math.random()-.5)*8}
-        const pGeo=new THREE.BufferGeometry();pGeo.setAttribute('position',new THREE.BufferAttribute(positions,3));const points=new THREE.Points(pGeo,new THREE.PointsMaterial({color:0x38bdf8,size:.028,transparent:true,opacity:.7}));scene.add(points);
-        scene.add(new THREE.AmbientLight(0x0e172a,2.2));
-        const light1=new THREE.PointLight(0x00f0ff,28,18);light1.position.set(3,3,4);scene.add(light1);
-        const light2=new THREE.PointLight(0x6366f1,24,16);light2.position.set(-3,-2,3);scene.add(light2);
+        const pGeo=new THREE.BufferGeometry();pGeo.setAttribute('position',new THREE.BufferAttribute(positions,3));const points=new THREE.Points(pGeo,new THREE.PointsMaterial({color:0x10f38d,size:.028,transparent:true,opacity:.75}));scene.add(points);
+        scene.add(new THREE.AmbientLight(0x06140b,2.5));
+        const light1=new THREE.PointLight(0x10f38d,30,18);light1.position.set(3,3,4);scene.add(light1);
+        const light2=new THREE.PointLight(0x059669,25,16);light2.position.set(-3,-2,3);scene.add(light2);
         let mx=0,my=0;addEventListener('pointermove',e=>{mx=(e.clientX/innerWidth-.5)*.32;my=(e.clientY/innerHeight-.5)*.22},{passive:true});
         function resize(){const w=canvas.clientWidth,h=canvas.clientHeight;if(canvas.width!==w||canvas.height!==h){renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}}
         function loop(t){
