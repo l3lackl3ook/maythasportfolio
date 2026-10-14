@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Maythas Bodkennari — Marketing Data Specialist &amp; Indie Systems Developer. Owning 6+ production systems: Mustherd (57,578 creators toward 200K), DenCRM with 1-click Gmail CEO approval, and −73% Cloud FinOps optimization.">
-  <meta name="theme-color" content="#080b09">
+  <meta name="description" content="Maythas Bodkennari — Marketing Data Specialist &amp; Indie Systems Developer. Owning 6+ production systems: Mustherd (57,578 creators toward 200K), DenCRM with 1-click Gmail CEO approval, Marketing.Growfox, Leave.Growfox, and −73% Cloud FinOps optimization.">
+  <meta name="theme-color" content="#0b1510">
   <meta property="og:title" content="Maythas Bodkennari — Marketing Data &amp; Indie Systems Developer">
-  <meta property="og:description" content="Executive overview of production systems, backend data pipelines, engineering decisions, and 3D WebGL work.">
+  <meta property="og:description" content="Production systems, multi-engine social scraping, automated CRM workflows, engineering trade-offs, and interactive 3D WebGL.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="Maythas-site-logo.png">
   <title>Maythas Bodkennari — Marketing Data &amp; Indie Systems Developer</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=4">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png?v=4">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=4">
-  <link rel="manifest" href="assets/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=5">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png?v=5">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=5">
+  <link rel="manifest" href="assets/site.webmanifest?v=5">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Noto+Sans+Thai:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Noto+Sans+Thai:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script type="importmap">
     {
@@ -27,57 +28,95 @@
   </script>
   <style>
     :root {
-      /* Executive Indie Dev Palette — Calm Wednesday Emerald & Matte Obsidian */
-      --bg: #080b09;
-      --bg-elevated: #0d120f;
-      --bg-card: #111814;
-      --bg-subtle: #151e19;
-      --border: rgba(255, 255, 255, 0.08);
-      --border-emerald: rgba(52, 211, 153, 0.28);
-      --text: #f1f5f3;
-      --text-secondary: #c2d1c8;
-      --muted: #82968b;
+      /* Luminous Wednesday Emerald & Airy Indie Dev Palette — Vibrant, Clear, Easy on Eyes */
+      --bg: #0b130f;
+      --bg-2: #101c16;
+      --bg-card: rgba(19, 33, 26, 0.78);
+      --bg-card-solid: #14221b;
+      --bg-subtle: rgba(26, 45, 35, 0.65);
+      --border: rgba(110, 231, 183, 0.15);
+      --border-strong: rgba(52, 211, 153, 0.38);
+      --text: #f4fbf7;
+      --text-secondary: #d2e5da;
+      --muted: #95b2a2;
       --emerald: #10b981;
-      --emerald-light: #34d399;
-      --emerald-soft: rgba(16, 185, 129, 0.12);
-      --amber: #f59e0b;
-      --amber-soft: rgba(245, 158, 11, 0.12);
-      --radius: 16px;
-      --radius-sm: 10px;
+      --mint: #34d399;
+      --neon: #10f38d;
+      --emerald-soft: rgba(52, 211, 153, 0.14);
+      --cyan: #38bdf8;
+      --cyan-soft: rgba(56, 189, 248, 0.14);
+      --amber: #fbbf24;
+      --amber-soft: rgba(251, 191, 36, 0.14);
+      --gradient: linear-gradient(135deg, #34d399 0%, #10b981 50%, #38bdf8 100%);
+      --gradient-text: linear-gradient(135deg, #6ee7b7 0%, #34d399 45%, #38bdf8 100%);
+      --shadow-card: 0 20px 50px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      --radius: 20px;
+      --radius-sm: 12px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
     body {
       font-family: 'Inter', 'Noto Sans Thai', -apple-system, sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.68;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
 
-    /* Subtle ambient top light — easy on the eyes */
+    /* Luminous Aurora Backdrop + Subtle Dot Matrix */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      z-index: -1;
+      z-index: -2;
       background:
-        radial-gradient(ellipse 80% 45% at 50% -10%, rgba(16, 185, 129, 0.10), transparent 70%),
-        radial-gradient(circle at 85% 20%, rgba(52, 211, 153, 0.04), transparent 40%);
+        radial-gradient(ellipse 75% 50% at 20% 8%, rgba(52, 211, 153, 0.16), transparent 65%),
+        radial-gradient(ellipse 65% 45% at 85% 18%, rgba(56, 189, 248, 0.12), transparent 65%),
+        radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.10), transparent 55%),
+        linear-gradient(180deg, #0b130f 0%, #0f1b15 50%, #0b130f 100%);
+      pointer-events: none;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      opacity: 0.25;
+      background-image: radial-gradient(rgba(110, 231, 183, 0.22) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: linear-gradient(to bottom, black 20%, transparent 90%);
       pointer-events: none;
     }
 
-    h1, h2, h3, h4, .display {
+    /* Top Scroll Progress Bar */
+    #scrollProgress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      width: 0%;
+      background: var(--gradient);
+      z-index: 200;
+      box-shadow: 0 0 12px var(--mint);
+      transition: width 0.08s linear;
+    }
+
+    h1, h2, h3, h4 {
       font-family: 'Space Grotesk', 'Noto Sans Thai', sans-serif;
       letter-spacing: -0.025em;
     }
     .mono { font-family: 'JetBrains Mono', monospace; }
+    .accent {
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
     a { color: inherit; text-decoration: none; }
 
     .container {
-      width: min(1140px, calc(100% - 48px));
+      width: min(1160px, calc(100% - 44px));
       margin: 0 auto;
     }
 
@@ -85,17 +124,55 @@
     body.lang-th .en { display: none !important; }
     body.lang-th .th { display: revert !important; }
 
-    /* HEADER / NAV */
+    /* SCROLL REVEAL ANIMATIONS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* INTERACTIVE SPOTLIGHT CARD EFFECT */
+    .glow-card {
+      position: relative;
+      border-radius: var(--radius);
+      background: var(--bg-card);
+      backdrop-filter: blur(18px);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+      transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.28s ease, box-shadow 0.28s ease;
+      overflow: hidden;
+    }
+    .glow-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(520px circle at var(--mx, 50%) var(--my, 0%), rgba(52, 211, 153, 0.11), transparent 45%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    .glow-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-strong);
+      box-shadow: 0 26px 64px rgba(0, 0, 0, 0.45), 0 0 28px rgba(52, 211, 153, 0.10), inset 0 1px 0 rgba(110, 231, 183, 0.24);
+    }
+    .glow-card:hover::before { opacity: 1; }
+
+    /* HEADER / NAVBAR */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(8, 11, 9, 0.85);
-      backdrop-filter: blur(16px);
+      background: rgba(11, 19, 15, 0.82);
+      backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
     }
     .nav-bar {
-      height: 64px;
+      height: 68px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -104,49 +181,46 @@
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 11px;
       font-weight: 700;
     }
-    .brand-mark {
-      width: 32px; height: 32px;
-      border-radius: 8px;
-      background: var(--emerald-soft);
-      border: 1px solid var(--border-emerald);
-      display: grid;
-      place-items: center;
-      color: var(--emerald-light);
-      font: 700 0.85rem 'JetBrains Mono', monospace;
+    .brand-icon {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      box-shadow: 0 0 18px rgba(52, 211, 153, 0.28);
+      transition: transform 0.25s ease;
     }
+    .brand:hover .brand-icon { transform: scale(1.06) rotate(-2deg); }
     .brand-text {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.98rem;
+      font-size: 1.04rem;
       color: var(--text);
       letter-spacing: -0.02em;
     }
-    .brand-text span { color: var(--emerald-light); }
+    .brand-text span { color: var(--mint); }
     .brand-badge {
-      font: 500 0.68rem 'JetBrains Mono', monospace;
-      color: var(--muted);
-      padding: 2px 8px;
+      font: 600 0.66rem 'JetBrains Mono', monospace;
+      color: var(--mint);
+      padding: 3px 9px;
       border-radius: 99px;
-      border: 1px solid var(--border);
-      background: var(--bg-elevated);
+      border: 1px solid var(--border-strong);
+      background: var(--emerald-soft);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 22px;
       list-style: none;
     }
     .nav-links a {
-      font-size: 0.85rem;
+      font-size: 0.86rem;
       font-weight: 500;
-      color: var(--muted);
+      color: var(--text-secondary);
       transition: color 0.18s;
       white-space: nowrap;
     }
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover { color: var(--mint); }
 
     .nav-actions {
       display: flex;
@@ -155,54 +229,55 @@
     }
     .lang-switch {
       display: inline-flex;
-      padding: 2px;
-      border-radius: 8px;
-      background: var(--bg-elevated);
+      padding: 3px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--border);
     }
     .lang-btn {
       border: 0;
       background: transparent;
       color: var(--muted);
-      padding: 4px 8px;
-      border-radius: 6px;
-      font: 600 0.72rem 'JetBrains Mono', monospace;
+      padding: 4px 9px;
+      border-radius: 7px;
+      font: 700 0.72rem 'JetBrains Mono', monospace;
       cursor: pointer;
+      transition: all 0.18s;
     }
     .lang-btn.active {
       background: var(--emerald-soft);
-      color: var(--emerald-light);
+      color: var(--mint);
     }
     .btn-sm {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 6px 12px;
-      border-radius: 8px;
+      padding: 7px 13px;
+      border-radius: 10px;
       font-size: 0.8rem;
       font-weight: 600;
       border: 1px solid var(--border);
-      background: var(--bg-elevated);
+      background: rgba(255, 255, 255, 0.04);
       color: var(--text);
-      transition: border-color 0.18s, background 0.18s;
+      transition: all 0.18s;
     }
-    .btn-sm:hover { border-color: var(--border-emerald); background: var(--bg-card); }
+    .btn-sm:hover { border-color: var(--mint); color: var(--mint); }
     .menu-toggle {
       display: none;
-      background: var(--bg-elevated);
+      background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--border);
       color: var(--text);
-      padding: 6px 10px;
-      border-radius: 8px;
+      padding: 7px 11px;
+      border-radius: 10px;
     }
 
     /* SECTIONS */
     section {
-      padding: 84px 0;
-      border-bottom: 1px solid var(--border);
+      padding: 88px 0;
+      border-bottom: 1px solid rgba(110, 231, 183, 0.08);
     }
     .section-header {
-      margin-bottom: 40px;
+      margin-bottom: 38px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
@@ -210,99 +285,97 @@
       flex-wrap: wrap;
     }
     .section-label {
-      font: 600 0.72rem 'JetBrains Mono', monospace;
+      font: 600 0.74rem 'JetBrains Mono', monospace;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--emerald-light);
+      letter-spacing: 0.12em;
+      color: var(--mint);
       margin-bottom: 8px;
-      display: block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
     .section-title {
-      font-size: clamp(1.75rem, 3vw, 2.35rem);
-      line-height: 1.15;
+      font-size: clamp(1.85rem, 3.2vw, 2.55rem);
+      line-height: 1.12;
       color: var(--text);
     }
     .section-desc {
-      max-width: 500px;
-      color: var(--muted);
-      font-size: 0.92rem;
+      max-width: 510px;
+      color: var(--text-secondary);
+      font-size: 0.94rem;
     }
 
     /* HERO */
     .hero {
-      padding: 120px 0 72px;
+      padding: 124px 0 72px;
     }
     .hero-layout {
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 48px;
+      grid-template-columns: 1.22fr 0.78fr;
+      gap: 44px;
       align-items: center;
     }
     .status-pill {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 5px 12px;
+      padding: 6px 14px;
       border-radius: 99px;
       background: var(--emerald-soft);
-      border: 1px solid var(--border-emerald);
-      color: var(--emerald-light);
-      font: 500 0.72rem 'JetBrains Mono', monospace;
-      margin-bottom: 20px;
+      border: 1px solid var(--border-strong);
+      color: var(--mint);
+      font: 600 0.72rem 'JetBrains Mono', monospace;
+      margin-bottom: 18px;
+      box-shadow: 0 0 24px rgba(52, 211, 153, 0.14);
     }
     .status-dot {
-      width: 7px; height: 7px;
+      width: 8px; height: 8px;
       border-radius: 50%;
-      background: var(--emerald-light);
-      box-shadow: 0 0 8px var(--emerald-light);
+      background: var(--neon);
+      box-shadow: 0 0 10px var(--neon);
+      animation: pulseGlow 2s infinite;
+    }
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.25); opacity: 0.75; }
     }
     .hero h1 {
-      font-size: clamp(2.6rem, 5vw, 4rem);
-      line-height: 1.05;
+      font-size: clamp(2.65rem, 5vw, 4.1rem);
+      line-height: 1.04;
       margin-bottom: 16px;
       color: var(--text);
     }
-    .hero h1 .sub-tone {
-      color: var(--emerald-light);
-      font-weight: 600;
-    }
     .hero-summary {
-      font-size: 1.05rem;
+      font-size: 1.04rem;
       color: var(--text-secondary);
-      max-width: 620px;
-      margin-bottom: 24px;
-      line-height: 1.7;
+      max-width: 630px;
+      margin-bottom: 22px;
+      line-height: 1.72;
     }
-    .hero-summary strong {
-      color: var(--text);
-      font-weight: 600;
-    }
+    .hero-summary strong { color: var(--text); font-weight: 600; }
 
-    /* EXECUTIVE SUMMARY LIST */
     .exec-points {
       display: grid;
       gap: 10px;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
       padding: 18px 20px;
-      border-radius: var(--radius);
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
     }
     .exec-point {
       display: flex;
       align-items: baseline;
       gap: 12px;
-      font-size: 0.88rem;
+      font-size: 0.89rem;
       color: var(--text-secondary);
     }
     .exec-point-tag {
-      font: 600 0.68rem 'JetBrains Mono', monospace;
-      color: var(--emerald-light);
+      font: 700 0.68rem 'JetBrains Mono', monospace;
+      color: var(--mint);
       background: var(--emerald-soft);
-      padding: 2px 8px;
+      border: 1px solid rgba(52, 211, 153, 0.28);
+      padding: 3px 9px;
       border-radius: 6px;
       flex-shrink: 0;
-      min-width: 88px;
+      min-width: 92px;
       text-align: center;
     }
 
@@ -314,59 +387,58 @@
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      padding: 9px 15px;
-      border-radius: 10px;
-      font-size: 0.83rem;
+      gap: 6px;
+      padding: 9px 13px;
+      border-radius: 11px;
+      font-size: 0.81rem;
       font-weight: 600;
       border: 1px solid var(--border);
-      background: var(--bg-card);
+      background: rgba(255, 255, 255, 0.04);
       color: var(--text);
-      transition: all 0.18s;
+      transition: all 0.2s;
       cursor: pointer;
       white-space: nowrap;
     }
     .btn:hover {
-      border-color: var(--border-emerald);
-      background: var(--bg-subtle);
-      transform: translateY(-1px);
+      border-color: var(--mint);
+      background: rgba(52, 211, 153, 0.10);
+      transform: translateY(-2px);
     }
     .btn.primary {
-      background: var(--emerald);
-      color: #04120b;
-      border-color: var(--emerald-light);
+      background: var(--gradient);
+      color: #04140c;
+      border: 0;
       font-weight: 700;
+      box-shadow: 0 10px 26px rgba(16, 185, 129, 0.28);
     }
     .btn.primary:hover {
-      background: var(--emerald-light);
+      filter: brightness(1.08);
+      box-shadow: 0 14px 32px rgba(52, 211, 153, 0.38);
     }
 
-    /* CLEAN 3D MODEL STAGE (NO CLUTTER, NO RUN) */
+    /* 3D CHARACTER CARD (CLEAN A-POSE MODEL & REAL PHOTO ONLY — NO WALK/RUN) */
     .model-card {
-      border-radius: var(--radius);
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      overflow: hidden;
       display: flex;
       flex-direction: column;
+      border-color: var(--border-strong);
     }
     .model-bar {
-      padding: 10px 14px;
+      padding: 11px 16px;
       border-bottom: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font: 500 0.7rem 'JetBrains Mono', monospace;
-      color: var(--muted);
+      font: 500 0.71rem 'JetBrains Mono', monospace;
+      color: var(--text-secondary);
+      background: rgba(255, 255, 255, 0.02);
     }
-    .model-bar strong {
-      color: var(--emerald-light);
-      font-weight: 600;
-    }
+    .model-bar strong { color: var(--mint); font-weight: 600; }
     .model-stage {
       position: relative;
-      height: 360px;
-      background: radial-gradient(circle at 50% 65%, rgba(16, 185, 129, 0.11), transparent 65%), #0a0f0c;
+      height: 365px;
+      background:
+        radial-gradient(circle at 50% 60%, rgba(52, 211, 153, 0.18), transparent 64%),
+        linear-gradient(180deg, #0e1a14 0%, #09110d 100%);
       display: grid;
       place-items: center;
     }
@@ -387,36 +459,34 @@
       display: none;
     }
     .model-footer {
-      padding: 10px 12px;
+      padding: 10px 14px;
       border-top: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 8px;
-      background: var(--bg-card);
+      background: rgba(0, 0, 0, 0.22);
     }
-    .model-tabs {
-      display: flex;
-      gap: 6px;
-    }
+    .model-tabs { display: flex; gap: 6px; }
     .model-tab {
-      padding: 5px 10px;
-      border-radius: 7px;
+      padding: 6px 12px;
+      border-radius: 8px;
       border: 1px solid var(--border);
-      background: transparent;
-      color: var(--muted);
-      font: 600 0.68rem 'JetBrains Mono', monospace;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-secondary);
+      font: 600 0.7rem 'JetBrains Mono', monospace;
       cursor: pointer;
-      transition: all 0.15s;
+      transition: all 0.18s;
     }
-    .model-tab:hover { color: var(--text); }
+    .model-tab:hover { color: var(--text); border-color: var(--mint); }
     .model-tab.active {
       background: var(--emerald-soft);
-      border-color: var(--border-emerald);
-      color: var(--emerald-light);
+      border-color: var(--mint);
+      color: var(--mint);
+      box-shadow: 0 0 14px rgba(52, 211, 153, 0.2);
     }
     .model-note {
-      font: 500 0.65rem 'JetBrains Mono', monospace;
+      font: 500 0.66rem 'JetBrains Mono', monospace;
       color: var(--muted);
     }
 
@@ -425,14 +495,9 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
-      margin-top: 44px;
+      margin-top: 40px;
     }
-    .kpi-card {
-      padding: 20px;
-      border-radius: var(--radius);
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-    }
+    .kpi-card { padding: 20px 22px; }
     .kpi-head {
       display: flex;
       justify-content: space-between;
@@ -441,43 +506,33 @@
     }
     .kpi-value {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.85rem;
+      font-size: 1.95rem;
       font-weight: 700;
-      color: var(--text);
+      color: var(--mint);
       line-height: 1;
     }
     .kpi-pill {
       font: 600 0.64rem 'JetBrains Mono', monospace;
-      padding: 3px 7px;
+      padding: 3px 8px;
       border-radius: 6px;
       background: var(--emerald-soft);
-      color: var(--emerald-light);
+      color: var(--mint);
+      border: 1px solid rgba(52, 211, 153, 0.25);
     }
     .kpi-pill.amber {
       background: var(--amber-soft);
       color: var(--amber);
+      border-color: rgba(251, 191, 36, 0.3);
     }
     .kpi-label {
-      font-size: 0.82rem;
-      color: var(--muted);
+      font-size: 0.83rem;
+      color: var(--text-secondary);
       line-height: 1.45;
     }
 
-    /* EXECUTIVE PRODUCTION SYSTEMS LEDGER (CLEAN, NO SCREENSHOT CLUTTER) */
-    .sys-ledger {
-      display: grid;
-      gap: 16px;
-    }
-    .sys-card {
-      border-radius: var(--radius);
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      padding: 26px 28px;
-      transition: border-color 0.2s;
-    }
-    .sys-card:hover {
-      border-color: var(--border-emerald);
-    }
+    /* EXECUTIVE PRODUCTION SYSTEMS LEDGER */
+    .sys-ledger { display: grid; gap: 18px; }
+    .sys-card { padding: 26px 28px; }
     .sys-header {
       display: flex;
       justify-content: space-between;
@@ -493,82 +548,71 @@
       flex-wrap: wrap;
     }
     .sys-num {
-      font: 700 0.75rem 'JetBrains Mono', monospace;
-      color: var(--emerald-light);
-      background: var(--emerald-soft);
-      border: 1px solid var(--border-emerald);
-      padding: 4px 8px;
+      font: 700 0.74rem 'JetBrains Mono', monospace;
+      color: #04140c;
+      background: var(--mint);
+      padding: 4px 9px;
       border-radius: 6px;
     }
-    .sys-title {
-      font-size: 1.25rem;
-      color: var(--text);
-    }
-    .sys-badges {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
+    .sys-title { font-size: 1.28rem; color: var(--text); }
+    .sys-badges { display: flex; gap: 8px; flex-wrap: wrap; }
     .sys-badge {
-      font: 500 0.68rem 'JetBrains Mono', monospace;
+      font: 600 0.68rem 'JetBrains Mono', monospace;
       padding: 4px 10px;
       border-radius: 99px;
       border: 1px solid var(--border);
-      background: var(--bg-card);
+      background: rgba(255, 255, 255, 0.04);
       color: var(--text-secondary);
     }
     .sys-badge.highlight {
-      border-color: var(--border-emerald);
-      color: var(--emerald-light);
+      border-color: var(--border-strong);
+      color: var(--mint);
       background: var(--emerald-soft);
     }
     .sys-badge.amber {
-      border-color: rgba(245, 158, 11, 0.35);
+      border-color: rgba(251, 191, 36, 0.38);
       color: var(--amber);
       background: var(--amber-soft);
     }
     .sys-summary {
       color: var(--text-secondary);
-      font-size: 0.92rem;
-      margin-bottom: 18px;
-      max-width: 920px;
+      font-size: 0.93rem;
+      margin-bottom: 16px;
+      max-width: 940px;
     }
 
-    /* FLOW STRIP */
     .flow-strip {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
       gap: 8px;
-      padding: 10px 14px;
+      padding: 11px 14px;
       border-radius: var(--radius-sm);
-      background: var(--bg-card);
+      background: rgba(9, 17, 13, 0.68);
       border: 1px solid var(--border);
       margin-bottom: 18px;
     }
     .flow-node {
       font: 500 0.7rem 'JetBrains Mono', monospace;
       color: var(--text-secondary);
-      padding: 3px 8px;
-      border-radius: 5px;
-      background: rgba(255, 255, 255, 0.03);
+      padding: 4px 9px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.04);
     }
     .flow-node.active {
-      color: var(--emerald-light);
+      color: var(--mint);
       background: var(--emerald-soft);
+      border: 1px solid rgba(52, 211, 153, 0.25);
       font-weight: 600;
     }
     .flow-node.amber {
       color: var(--amber);
       background: var(--amber-soft);
+      border: 1px solid rgba(251, 191, 36, 0.28);
       font-weight: 600;
     }
-    .flow-sep {
-      color: var(--muted);
-      font-size: 0.65rem;
-    }
+    .flow-sep { color: var(--mint); font-size: 0.65rem; opacity: 0.7; }
 
-    /* 3-COLUMN ARCHITECTURE GRID INSIDE SYSTEM CARD */
     .sys-cols {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -576,24 +620,25 @@
       margin-bottom: 16px;
     }
     .sys-col {
-      padding: 14px 16px;
+      padding: 15px 17px;
       border-radius: var(--radius-sm);
-      background: var(--bg-card);
-      border: 1px solid rgba(255, 255, 255, 0.04);
+      background: rgba(11, 20, 15, 0.65);
+      border: 1px solid rgba(110, 231, 183, 0.10);
     }
     .sys-col-title {
-      font: 600 0.68rem 'JetBrains Mono', monospace;
+      font: 700 0.7rem 'JetBrains Mono', monospace;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: var(--emerald-light);
+      color: var(--mint);
       margin-bottom: 6px;
       display: block;
     }
     .sys-col p {
-      font-size: 0.83rem;
+      font-size: 0.84rem;
       color: var(--text-secondary);
-      line-height: 1.55;
+      line-height: 1.58;
     }
+    .sys-col p strong { color: var(--text); }
 
     .sys-footer {
       display: flex;
@@ -602,266 +647,331 @@
       gap: 12px;
       flex-wrap: wrap;
       padding-top: 12px;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-top: 1px solid rgba(110, 231, 183, 0.10);
     }
-    .stack-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
+    .stack-row { display: flex; flex-wrap: wrap; gap: 6px; }
     .stack-pill {
-      font: 500 0.66rem 'JetBrains Mono', monospace;
-      padding: 3px 8px;
+      font: 500 0.67rem 'JetBrains Mono', monospace;
+      padding: 4px 9px;
       border-radius: 6px;
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--border);
-      color: var(--muted);
+      color: var(--text-secondary);
     }
 
-    /* COMPACT SECONDARY SYSTEMS GRID */
     .sub-systems-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 16px;
+      gap: 16px;
+      margin-top: 18px;
     }
     .sub-card {
-      padding: 20px;
-      border-radius: var(--radius);
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
+      padding: 22px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 12px;
+      gap: 14px;
     }
-    .sub-card:hover { border-color: var(--border-emerald); }
     .sub-card h4 {
-      font-size: 0.98rem;
+      font-size: 1rem;
       color: var(--text);
       margin-bottom: 6px;
       display: flex;
       align-items: center;
       gap: 8px;
     }
-    .sub-card h4 i { color: var(--emerald-light); font-size: 0.9rem; }
-    .sub-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
+    .sub-card h4 i { color: var(--mint); font-size: 0.92rem; }
+    .sub-card p { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.58; }
 
-    /* ENGINEERING DECISIONS TABLE-CARDS */
+    /* ENGINEERING DECISIONS */
     .case-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+      gap: 18px;
     }
-    .case-card {
-      padding: 24px;
-      border-radius: var(--radius);
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-    }
-    .case-card:hover { border-color: var(--border-emerald); }
+    .case-card { padding: 24px; }
     .case-tag {
       font: 600 0.68rem 'JetBrains Mono', monospace;
-      color: var(--emerald-light);
+      color: var(--mint);
       margin-bottom: 6px;
       display: block;
     }
-    .case-card h3 {
-      font-size: 1.12rem;
-      margin-bottom: 14px;
-      color: var(--text);
-    }
-    .case-rows {
-      display: grid;
-      gap: 8px;
-    }
+    .case-card h3 { font-size: 1.14rem; margin-bottom: 14px; color: var(--text); }
+    .case-rows { display: grid; gap: 8px; }
     .case-row {
       display: grid;
       grid-template-columns: 92px 1fr;
       gap: 10px;
-      padding: 9px 12px;
-      border-radius: 8px;
-      background: var(--bg-card);
-      font-size: 0.82rem;
+      padding: 10px 13px;
+      border-radius: 9px;
+      background: rgba(9, 17, 13, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      font-size: 0.83rem;
       align-items: baseline;
     }
     .case-key {
-      font: 600 0.66rem 'JetBrains Mono', monospace;
+      font: 700 0.66rem 'JetBrains Mono', monospace;
       text-transform: uppercase;
-      color: var(--muted);
     }
-    .case-key.prob { color: #f87171; }
-    .case-key.sol { color: var(--emerald-light); }
+    .case-key.prob { color: #fb7185; }
+    .case-key.sol { color: var(--mint); }
     .case-key.trade { color: var(--amber); }
-    .case-key.res { color: #38bdf8; }
-    .case-val { color: var(--text-secondary); line-height: 1.5; }
+    .case-key.res { color: var(--cyan); }
+    .case-val { color: var(--text-secondary); line-height: 1.52; }
 
-    /* INDIE BUILDS & PERSONAL PROJECTS */
+    /* INDIE BUILDS */
     .indie-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      gap: 18px;
     }
     .indie-card {
-      padding: 22px;
-      border-radius: var(--radius);
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
+      padding: 24px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       gap: 16px;
     }
-    .indie-card:hover { border-color: var(--border-emerald); }
-    .indie-card h3 { font-size: 1.08rem; margin: 8px 0; color: var(--text); }
-    .indie-card p { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.6; }
+    .indie-card h3 { font-size: 1.1rem; margin: 10px 0 8px; color: var(--text); }
+    .indie-card p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.62; }
 
-    /* CLEAN STACK TABLE */
-    .stack-table {
+    /* COMPREHENSIVE 8-CATEGORY STACK */
+    .stack-grid {
       display: grid;
-      gap: 10px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
     }
-    .stack-line {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 20px;
-      padding: 16px 20px;
-      border-radius: var(--radius-sm);
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
+    .stack-box { padding: 22px; }
+    .stack-box-head {
+      display: flex;
       align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
     }
     .stack-domain {
-      font-weight: 600;
-      font-size: 0.9rem;
+      font-weight: 700;
+      font-size: 0.96rem;
       color: var(--text);
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 9px;
     }
-    .stack-domain i { color: var(--emerald-light); width: 18px; text-align: center; }
-    .stack-items {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
+    .stack-domain i { color: var(--mint); }
+    .stack-count {
+      font: 600 0.66rem 'JetBrains Mono', monospace;
+      color: var(--mint);
+      background: var(--emerald-soft);
+      padding: 2px 8px;
+      border-radius: 99px;
     }
+    .stack-items { display: flex; flex-wrap: wrap; gap: 6px; }
     .stack-chip {
-      font: 500 0.72rem 'JetBrains Mono', monospace;
-      padding: 4px 10px;
-      border-radius: 6px;
-      background: var(--bg-card);
+      font: 500 0.7rem 'JetBrains Mono', monospace;
+      padding: 4px 9px;
+      border-radius: 7px;
+      background: rgba(9, 17, 13, 0.65);
       border: 1px solid var(--border);
       color: var(--text-secondary);
     }
     .stack-chip.core {
-      border-color: var(--border-emerald);
-      color: var(--emerald-light);
+      border-color: var(--border-strong);
+      color: var(--mint);
       background: var(--emerald-soft);
+      font-weight: 600;
     }
 
-    /* TIMELINE & CERTS */
-    .journey-layout {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 32px;
-      align-items: start;
-    }
-    .timeline-list {
-      display: grid;
-      gap: 16px;
-    }
-    .time-card {
-      padding: 20px 22px;
-      border-radius: var(--radius);
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-    }
-    .time-card time {
-      font: 600 0.7rem 'JetBrains Mono', monospace;
-      color: var(--emerald-light);
-      display: block;
-      margin-bottom: 4px;
-    }
-    .time-card h3 { font-size: 1.05rem; margin-bottom: 6px; color: var(--text); }
-    .time-card p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
-
-    .cert-box {
-      padding: 22px;
-      border-radius: var(--radius);
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-    }
-    .cert-box h3 { font-size: 1rem; margin-bottom: 14px; color: var(--text); }
-    .cert-list {
+    /* STEP-BY-STEP JOURNEY & CLICKABLE CERTIFICATES */
+    .journey-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
+      gap: 16px;
+      margin-bottom: 44px;
     }
-    .cert-item {
-      font-size: 0.78rem;
-      color: var(--text-secondary);
-      padding: 8px 10px;
-      border-radius: 8px;
-      background: var(--bg-card);
-      border: 1px solid rgba(255, 255, 255, 0.04);
+    .step-card {
+      padding: 24px;
+      position: relative;
+    }
+    .step-top {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 7px;
+      gap: 10px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
     }
-    .cert-item i { color: var(--emerald-light); font-size: 0.72rem; }
+    .step-badge {
+      font: 700 0.68rem 'JetBrains Mono', monospace;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--emerald-soft);
+      color: var(--mint);
+      border: 1px solid var(--border-strong);
+    }
+    .step-badge.edu {
+      background: var(--cyan-soft);
+      color: var(--cyan);
+      border-color: rgba(56, 189, 248, 0.35);
+    }
+    .step-badge.Now {
+      background: var(--gradient);
+      color: #04140c;
+      border: 0;
+    }
+    .step-time {
+      font: 600 0.72rem 'JetBrains Mono', monospace;
+      color: var(--amber);
+    }
+    .step-card h3 { font-size: 1.12rem; margin-bottom: 8px; color: var(--text); }
+    .step-card p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.62; }
 
-    /* CONTACT FOOTER */
+    /* CLICKABLE CERTIFICATE GALLERY */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .cert-card {
+      padding: 12px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: left;
+    }
+    .cert-thumb {
+      width: 100%;
+      aspect-ratio: 16 / 11;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #08100c;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+    .cert-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      display: block;
+    }
+    .cert-card:hover .cert-thumb img { transform: scale(1.05); }
+    .cert-zoom {
+      position: absolute;
+      bottom: 6px; right: 6px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(11, 19, 15, 0.86);
+      border: 1px solid var(--border-strong);
+      color: var(--mint);
+      font: 600 0.62rem 'JetBrains Mono', monospace;
+      backdrop-filter: blur(6px);
+    }
+    .cert-meta strong {
+      display: block;
+      font-size: 0.84rem;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .cert-meta span {
+      font: 500 0.68rem 'JetBrains Mono', monospace;
+      color: var(--muted);
+    }
+
+    /* CERTIFICATE LIGHTBOX MODAL */
+    .cert-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(6, 11, 9, 0.90);
+      backdrop-filter: blur(18px);
+      display: none;
+      place-items: center;
+      padding: 20px;
+    }
+    .cert-modal.active { display: grid; }
+    .cert-modal-box {
+      position: relative;
+      max-width: 920px;
+      width: 100%;
+      background: #101c16;
+      border: 1px solid var(--border-strong);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 32px 90px rgba(0, 0, 0, 0.8);
+    }
+    .cert-modal-close {
+      position: absolute;
+      top: 14px; right: 14px;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+      z-index: 2;
+    }
+    .cert-modal-close:hover { border-color: var(--mint); color: var(--mint); }
+    .cert-modal-img {
+      width: 100%;
+      max-height: 74vh;
+      object-fit: contain;
+      border-radius: 12px;
+      background: #08100c;
+      display: block;
+    }
+    .cert-modal-caption {
+      margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .cert-modal-caption h4 { font-size: 1.05rem; color: var(--text); }
+    .cert-modal-caption span { font: 600 0.72rem 'JetBrains Mono', monospace; color: var(--mint); }
+
+    /* CONTACT BAR & FOOTER */
     .contact-bar {
       padding: 32px;
-      border-radius: var(--radius);
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-emerald);
+      border-color: var(--border-strong);
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 24px;
       flex-wrap: wrap;
     }
-    .contact-bar h2 { font-size: 1.6rem; margin-bottom: 4px; }
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    footer {
-      padding: 28px 0;
-      color: var(--muted);
-      font-size: 0.78rem;
-    }
+    .contact-bar h2 { font-size: 1.65rem; margin-bottom: 4px; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 10px; }
+    footer { padding: 28px 0; color: var(--muted); font-size: 0.78rem; }
 
     @media (max-width: 960px) {
-      .hero-layout, .sys-cols, .case-grid, .indie-grid, .journey-layout {
+      .hero-layout, .sys-cols, .case-grid, .indie-grid, .stack-grid, .journey-grid {
         grid-template-columns: 1fr;
       }
-      .kpi-grid, .sub-systems-grid {
+      .kpi-grid, .sub-systems-grid, .cert-grid {
         grid-template-columns: repeat(2, 1fr);
-      }
-      .stack-line {
-        grid-template-columns: 1fr;
-        gap: 10px;
       }
       .nav-links {
         display: none;
         position: absolute;
-        top: 64px; left: 20px; right: 20px;
+        top: 68px; left: 20px; right: 20px;
         padding: 16px;
         flex-direction: column;
         align-items: flex-start;
-        background: var(--bg-elevated);
-        border: 1px solid var(--border);
-        border-radius: 12px;
+        background: #101c16;
+        border: 1px solid var(--border-strong);
+        border-radius: 14px;
       }
       .nav-links.open { display: flex; }
       .menu-toggle { display: inline-flex; }
     }
     @media (max-width: 600px) {
-      .container { width: calc(100% - 32px); }
-      .kpi-grid, .sub-systems-grid, .cert-list { grid-template-columns: 1fr; }
+      .container { width: calc(100% - 28px); }
+      .kpi-grid, .sub-systems-grid, .cert-grid { grid-template-columns: 1fr; }
       .case-row { grid-template-columns: 1fr; gap: 4px; }
       .brand-badge { display: none; }
     }
@@ -869,10 +979,11 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Maythas Bodkennari","jobTitle":"Marketing Data Specialist & Indie Systems Developer","url":"https://maythas.tech","sameAs":["https://www.linkedin.com/in/maythas-bodkennari/","https://github.com/l3lackl3ook","https://blogeverydayth.com"]}</script>
 </head>
 <body>
+  <div id="scrollProgress"></div>
   <header>
     <div class="container nav-bar">
       <a class="brand" href="#top">
-        <div class="brand-mark">M</div>
+        <img class="brand-icon" src="assets/icon-192.png?v=5" alt="Maythas.tech icon">
         <div class="brand-text">maythas<span>.tech</span></div>
         <span class="brand-badge">indie systems dev</span>
       </a>
@@ -880,8 +991,8 @@
         <li><a href="#systems"><span class="en">01. Systems</span><span class="th">01. ระบบโปรดักชัน</span></a></li>
         <li><a href="#engineering"><span class="en">02. Engineering</span><span class="th">02. การแก้ปัญหา</span></a></li>
         <li><a href="#indie"><span class="en">03. Indie Builds</span><span class="th">03. โปรเจกต์ส่วนตัว</span></a></li>
-        <li><a href="#stack"><span class="en">04. Stack</span><span class="th">04. ทักษะ</span></a></li>
-        <li><a href="#journey"><span class="en">05. Journey</span><span class="th">05. เส้นทาง</span></a></li>
+        <li><a href="#stack"><span class="en">04. Full Stack (8)</span><span class="th">04. ทักษะครบวงจร</span></a></li>
+        <li><a href="#journey"><span class="en">05. Journey &amp; Certs</span><span class="th">05. เส้นทาง &amp; ใบรับรอง</span></a></li>
       </ul>
       <div class="nav-actions">
         <div class="lang-switch" aria-label="Language">
@@ -899,7 +1010,7 @@
     <section class="hero">
       <div class="container">
         <div class="hero-layout">
-          <div>
+          <div class="reveal visible">
             <div class="status-pill">
               <span class="status-dot"></span>
               <span class="en">MARKETING DATA SPECIALIST &amp; INDIE SYSTEMS DEVELOPER</span>
@@ -907,17 +1018,17 @@
             </div>
             <h1>
               Maythas Bodkennari<br>
-              <span class="sub-tone en">Building systems that run real operations.</span>
-              <span class="sub-tone th">สร้างซอฟต์แวร์และระบบข้อมูลที่ทำงานจริง</span>
+              <span class="accent en">Building systems that run real operations.</span>
+              <span class="accent th">สร้างซอฟต์แวร์และระบบข้อมูลที่ทำงานจริง</span>
             </h1>
             <p class="hero-summary en">
-              I bridge marketing data, backend engineering, and automation—taking ambiguous operational problems from zero to live production software. Over the past 1.5 years at Growfox, I have built and maintained <strong>6+ organizational web systems</strong> alongside my own indie tools.
+              I bridge marketing analytics, backend engineering, and workflow automation—turning manual business bottlenecks into live production software. Over 1.5 years at Growfox, I have built and maintained <strong>6+ organizational web platforms</strong> alongside my own indie builds.
             </p>
             <p class="hero-summary th">
-              ผมเชื่อมโยงข้อมูลการตลาด วิศวกรรมหลังบ้าน และระบบอัตโนมัติเข้าด้วยกัน เปลี่ยนโจทย์การทำงานจริงตั้งแต่ศูนย์ให้กลายเป็นซอฟต์แวร์ที่รันอยู่ในองค์กร ตลอด 1 ปี 6 เดือนที่ Growfox ผมสร้างและดูแล <strong>ระบบเว็บโปรดักชันกว่า 6 ระบบหลัก</strong> ควบคู่กับการทำโปรเจกต์ Indie ของตัวเอง
+              ผมเชื่อมโยงการวิเคราะห์ข้อมูลการตลาด วิศวกรรมระบบหลังบ้าน และ Automation เข้าด้วยกัน เปลี่ยนงานแมนนวลให้กลายเป็นซอฟต์แวร์ที่รันอยู่จริง ตลอด 1 ปี 6 เดือนที่ Growfox ผมพัฒนาและดูแล <strong>ระบบเว็บโปรดักชันขององค์กรกว่า 6 ระบบหลัก</strong> ควบคู่กับงาน Indie ของตัวเอง
             </p>
 
-            <div class="exec-points">
+            <div class="exec-points glow-card">
               <div class="exec-point">
                 <span class="exec-point-tag">MUSTHERD</span>
                 <span class="en"><strong>57,578 verified creators</strong> in production (scaling toward <strong>200,000 target</strong> across 6 platforms).</span>
@@ -925,7 +1036,7 @@
               </div>
               <div class="exec-point">
                 <span class="exec-point-tag">DENCRM</span>
-                <span class="en"><strong>Automated Gmail CEO Lead Approval</strong> — inbound webhook leads routed to CEO's Gmail for 1-click sales assignment.</span>
+                <span class="en"><strong>Automated Gmail CEO Lead Approval</strong> — webhook leads routed to CEO's Gmail for 1-click sales assignment.</span>
                 <span class="th"><strong>แจก Lead อัตโนมัติผ่าน Gmail</strong> — ส่งเมลให้ CEO กด Approve แจกงานให้ทีมเซลส์ได้ในคลิกเดียวโดยไม่ต้องล็อกอิน</span>
               </div>
               <div class="exec-point">
@@ -936,19 +1047,19 @@
             </div>
 
             <div class="hero-cta">
-              <a class="btn primary" href="#systems"><i class="fa-solid fa-layer-group"></i><span class="en">Executive System Overview</span><span class="th">ดูสรุประบบทั้งหมด</span></a>
-              <a class="btn" href="#engineering"><i class="fa-solid fa-code-branch"></i><span class="en">Engineering Decisions</span><span class="th">การแก้ปัญหาเชิงวิศวกรรม</span></a>
+              <a class="btn primary" href="#systems"><i class="fa-solid fa-layer-group"></i><span class="en">Explore 6+ Systems</span><span class="th">ดูสรุประบบทั้งหมด</span></a>
+              <a class="btn" href="#engineering"><i class="fa-solid fa-code-branch"></i><span class="en">Engineering Decisions</span><span class="th">การแก้ปัญหาเชิงระบบ</span></a>
+              <a class="btn" href="#journey"><i class="fa-solid fa-award"></i><span class="en">Journey &amp; 12 Certs</span><span class="th">เส้นทาง &amp; ใบรับรอง</span></a>
               <a class="btn" href="https://github.com/l3lackl3ook" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>GitHub</a>
-              <a class="btn" href="mailto:maythaser2014@hotmail.com"><i class="fa-regular fa-envelope"></i><span class="en">Email</span><span class="th">อีเมล</span></a>
             </div>
           </div>
 
-          <!-- Clean 3D Character Viewport (Real Model Only — Walk / A-Pose / Photo) -->
-          <div class="model-card">
+          <!-- Clean 3D Model Card (Only 3D Model & Real Photo — No Walk/Run) -->
+          <div class="model-card glow-card reveal visible">
             <div class="model-bar">
-              <span><strong>3D Rigged Character</strong> · Meshy.ai + Three.js</span>
-              <span class="en"><i class="fa-solid fa-arrows-Left-right"></i> Drag 360°</span>
-              <span class="th"><i class="fa-solid fa-arrows-left-right"></i> ลากหมุนดูได้</span>
+              <span><strong>Custom 3D Model</strong> · Meshy.ai + Three.js</span>
+              <span class="en"><i class="fa-solid fa-arrows-left-right"></i> Drag 360°</span>
+              <span class="th"><i class="fa-solid fa-arrows-left-right"></i> ลากหมุนได้ 360°</span>
             </div>
             <div class="model-stage">
               <canvas id="charCanvas"></canvas>
@@ -956,26 +1067,25 @@
             </div>
             <div class="model-footer">
               <div class="model-tabs" id="charControls">
-                <button class="model-tab active" data-mode="walk" type="button"><span class="en">3D Walk</span><span class="th">โมเดลเดิน</span></button>
-                <button class="model-tab" data-mode="apose" type="button"><span class="en">3D A-Pose</span><span class="th">โมเดลยืน</span></button>
-                <button class="model-tab" data-mode="real" type="button"><span class="en">Real Photo</span><span class="th">รูปจริง</span></button>
+                <button class="model-tab active" data-mode="model" type="button"><i class="fa-solid fa-cube"></i> <span class="en">3D Model</span><span class="th">โมเดล 3D</span></button>
+                <button class="model-tab" data-mode="real" type="button"><i class="fa-solid fa-camera"></i> <span class="en">Real Photo</span><span class="th">รูปถ่ายจริง</span></button>
               </div>
-              <span class="model-note" id="charStatusNote">GLB Skeletal Rig</span>
+              <span class="model-note" id="charStatusNote">Interactive 3D GLB</span>
             </div>
           </div>
         </div>
 
         <!-- 4 Executive KPI Cards -->
         <div class="kpi-grid">
-          <div class="kpi-card">
+          <div class="kpi-card glow-card reveal">
             <div class="kpi-head">
               <span class="kpi-value">57,578</span>
-              <span class="kpi-pill amber">TARGET: 200,000</span>
+              <span class="kpi-pill amber">GOAL: 200,000</span>
             </div>
             <p class="kpi-label en">Active verified influencer profiles across TikTok, IG, FB, YouTube, Lemon8 &amp; X</p>
             <p class="kpi-label th">โปรไฟล์ครีเอเตอร์ที่ตรวจสอบแล้วใน Mustherd (เป้าหมายขยายสู่ 200,000 รายชื่อ)</p>
           </div>
-          <div class="kpi-card">
+          <div class="kpi-card glow-card reveal">
             <div class="kpi-head">
               <span class="kpi-value">1-Click</span>
               <span class="kpi-pill">HMAC GMAIL</span>
@@ -983,7 +1093,7 @@
             <p class="kpi-label en">Automated DenCRM lead notifications to CEO's Gmail for instant sales assignment</p>
             <p class="kpi-label th">ส่ง Lead เข้า Gmail ให้ CEO กดปุ่ม Approve แจกงานให้เซลส์ได้ทันทีโดยไม่ต้องล็อกอิน</p>
           </div>
-          <div class="kpi-card">
+          <div class="kpi-card glow-card reveal">
             <div class="kpi-head">
               <span class="kpi-value">−73%</span>
               <span class="kpi-pill">GCP BILLING</span>
@@ -991,7 +1101,7 @@
             <p class="kpi-label en">Gemini API cost reduction (฿3,937.72 → ฿1,068.57) via schema &amp; cron optimization</p>
             <p class="kpi-label th">ลดค่าใช้จ่าย Gemini API ลง 73% จากการบีบอัด Schema จาก 8,192 เหลือ 2,048 Tokens</p>
           </div>
-          <div class="kpi-card">
+          <div class="kpi-card glow-card reveal">
             <div class="kpi-head">
               <span class="kpi-value">6+ Live</span>
               <span class="kpi-pill">87 APIs · 55 MODELS</span>
@@ -1002,30 +1112,30 @@
         </div>
       </div>
     </section>
-    <!-- 01 / PRODUCTION SYSTEMS LEDGER (EXECUTIVE VIEW, NO SCREENSHOT CLUTTER) -->
+    <!-- 01 / PRODUCTION SYSTEMS LEDGER -->
     <section id="systems">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div>
-            <span class="section-label">01 / Organizational Production Systems</span>
+            <span class="section-label"><i class="fa-solid fa-layer-group"></i> 01 / Organizational Production Systems</span>
             <h2 class="section-title en">6 Core Production Platforms &amp; Specialized Engines</h2>
             <h2 class="section-title th">6 ระบบโปรดักชันหลักและระบบเฉพาะทางขององค์กร</h2>
           </div>
           <p class="section-desc en">
-            Structured for fast executive review: what each system does, how data flows through the architecture, and the measurable operational impact.
+            Structured for executive clarity: what each platform does, how data flows through the pipeline, and the complete modules running in production.
           </p>
           <p class="section-desc th">
-            จัดเรียงแบบสรุปผู้บริหาร อ่านเข้าใจง่าย: ระบบทำหน้าที่อะไร โครงสร้างการไหลของข้อมูลเป็นอย่างไร และสร้างผลลัพธ์จริงอย่างไรบ้าง
+            จัดเรียงแบบสรุปผู้บริหาร อ่านเข้าใจง่าย: ระบบทำหน้าที่อะไร โครงสร้างการไหลของข้อมูลเป็นอย่างไร และครอบคลุมโมดูลอะไรบ้างในระบบจริง
           </p>
         </div>
 
         <div class="sys-ledger">
           <!-- System 01: Mustherd -->
-          <article class="sys-card">
+          <article class="sys-card glow-card reveal">
             <div class="sys-header">
               <div class="sys-title-wrap">
                 <span class="sys-num">SYS 01</span>
-                <h3 class="sys-title">Mustherd — Multi-Platform Influencer Intelligence</h3>
+                <h3 class="sys-title">Mustherd — Multi-Platform Influencer Intelligence Platform</h3>
               </div>
               <div class="sys-badges">
                 <span class="sys-badge highlight">57,578 Active Profiles</span>
@@ -1042,9 +1152,9 @@
             <div class="flow-strip">
               <span class="flow-node">Multi-Engine Crawlers + Google Forms</span>
               <span class="flow-sep"><i class="fa-solid fa-arrow-right"></i></span>
-              <span class="flow-node">Identity Deduplication</span>
+              <span class="flow-node">Cross-Platform Identity Dedupe</span>
               <span class="flow-sep"><i class="fa-solid fa-arrow-right"></i></span>
-              <span class="flow-node active">57,578 Verified Profiles (Prisma/PG)</span>
+              <span class="flow-node active">57,578 Verified Profiles (Prisma 6 / PG)</span>
               <span class="flow-sep"><i class="fa-solid fa-arrow-right"></i></span>
               <span class="flow-node">100K+ Fresh Sync &amp; Gemini OCR</span>
               <span class="flow-sep"><i class="fa-solid fa-arrow-right"></i></span>
@@ -1078,7 +1188,7 @@
           </article>
 
           <!-- System 02: DenCRM -->
-          <article class="sys-card">
+          <article class="sys-card glow-card reveal">
             <div class="sys-header">
               <div class="sys-title-wrap">
                 <span class="sys-num">SYS 02</span>
@@ -1135,62 +1245,62 @@
           </article>
 
           <!-- System 03: Marketing.Growfox & FinOps -->
-          <article class="sys-card">
+          <article class="sys-card glow-card reveal">
             <div class="sys-header">
               <div class="sys-title-wrap">
                 <span class="sys-num">SYS 03</span>
-                <h3 class="sys-title">Marketing.Growfox — Ads Operations Hub &amp; Cloud FinOps (−73%)</h3>
+                <h3 class="sys-title">Marketing.Growfox — Multi-Platform Social, Ads, AI Studio &amp; FinOps (−73%)</h3>
               </div>
               <div class="sys-badges">
                 <span class="sys-badge highlight">−73% Gemini API Cost</span>
-                <span class="sys-badge">30+ Scheduled Jobs</span>
+                <span class="sys-badge">6-Platform Scrapers</span>
                 <span class="sys-badge">marketing.growfox.co</span>
               </div>
             </div>
             <p class="sys-summary en">
-              Central Django 5.2 operations platform consolidating multi-channel ad campaigns (Meta, TikTok, Google Ads), automated midnight ClickUp digests, and strict LLM token governance that slashed Gemini API spend by 73%.
+              Comprehensive internal Django 5.2 marketing intelligence platform housing 6-platform social page/post scrapers (<code>PageInfo</code>), multi-channel paid ads dashboards, an AI Creative Studio (<code>aichat</code> with MobileSAM Lasso &amp; Magnific upscaling), hashtag/group sentiment analysis, and Cloud FinOps cost controls.
             </p>
             <p class="sys-summary th">
-              ศูนย์กลางระบบข้อมูลการตลาด (Django 5.2) ที่รวมแคมเปญโฆษณา 3 ช่องทาง (Meta, TikTok, Google Ads) ระบบส่งสรุปผลเข้า ClickUp ทุกเที่ยงคืน และการปรับจูนโครงสร้าง AI ที่ลดค่าใช้จ่าย Gemini API ลงได้ถึง 73%
+              เว็บแอปพลิเคชันศูนย์กลางของบริษัท (Django 5.2) ที่รวมระบบดึงข้อมูลเพจและโพสต์โซเชียล 6 แพลตฟอร์ม (<code>PageInfo</code>), แดชบอร์ดโฆษณา 3 ช่องทาง, AI Creative Studio (<code>aichat</code> วาดเลือกพื้นที่ภาพด้วย MobileSAM และขยายภาพคมชัด), ระบบวิเคราะห์คอมเมนต์/กลุ่ม Facebook และการควบคุมต้นทุนคลาวด์ที่ลดค่า Gemini API ลง 73%
             </p>
             <div class="flow-strip">
-              <span class="flow-node">Meta / TikTok / Google Ads APIs</span>
+              <span class="flow-node">6-Platform Social &amp; Ads APIs</span>
               <span class="flow-sep"><i class="fa-solid fa-arrow-right"></i></span>
-              <span class="flow-node">30+ Celery Beat Jobs</span>
+              <span class="flow-node">30+ Celery Beat Queues</span>
               <span class="flow-sep"><i class="fa-solid fa-arrow-right"></i></span>
-              <span class="flow-node">PostgreSQL &amp; Looker Studio</span>
+              <span class="flow-node">AI Sentiment, WordCloud &amp; SAM Studio</span>
               <span class="flow-sep"><i class="fa-solid fa-arrow-right"></i></span>
-              <span class="flow-node active">00:00 Midnight Digest to ClickUp</span>
+              <span class="flow-node active">00:00 Scorecard Digest to ClickUp</span>
             </div>
             <div class="sys-cols">
               <div class="sys-col">
-                <span class="sys-col-title en">Multi-Channel Ads &amp; Alerts</span>
-                <span class="sys-col-title th">แดชบอร์ดโฆษณาและแจ้งเตือน</span>
-                <p class="en">Syncs spend, ROAS, CTR, and CPC across Meta, TikTok, and Google Ads. Dispatches automated 00:00 daily performance digests with delta badges to brand ClickUp channels.</p>
-                <p class="th">ดึงงบโฆษณา ROAS, CTR, CPC จากทุกแพลตฟอร์มและคำนวณส่วนต่างรายวัน ส่งแจ้งเตือนเข้าห้องงานของแต่ละแบรนด์ใน ClickUp อัตโนมัติตอนเที่ยงคืน</p>
+                <span class="sys-col-title en">6-Platform PageInfo &amp; Paid Ads</span>
+                <span class="sys-col-title th">ดึงข้อมูลโซเชียล 6 แพลตฟอร์ม &amp; Ads</span>
+                <p class="en">Scrapes &amp; syncs Facebook (Pages, Reels, Live, Comments, Shares), IG (<code>instaloader</code>/Hybrid), TikTok (SadCaptcha/<code>yt-dlp</code>), YouTube, Lemon8, and X—plus Meta, TikTok, and Google Ads APIs with 00:00 ClickUp scorecard digests.</p>
+                <p class="th">ดึงข้อมูลเพจ โพสต์ คอมเมนต์ และยอดแชร์จาก FB, IG, TikTok, YouTube, Lemon8, X พร้อมเชื่อม Meta/TikTok/Google Ads API และส่ง Scorecard สรุปผลเข้า ClickUp ทุกเที่ยงคืน</p>
+              </div>
+              <div class="sys-col">
+                <span class="sys-col-title en">AI Studio, Sentiment &amp; Hashtags</span>
+                <span class="sys-col-title th">AI แต่งภาพ Lasso &amp; วิเคราะห์คอมเมนต์</span>
+                <p class="en">Features interactive Canvas Select-Area/Lasso segmentation (<code>sam_segment.py</code> via MobileSAM), Magnific image upscaling, automated comment sentiment labeling, seeding detection, WordClouds, and competitor reports.</p>
+                <p class="th">มีระบบ AI Chat พร้อมเครื่องมือวาดเลือกวัตถุในภาพ (MobileSAM Lasso), อัปสเกลภาพคมชัด (Magnific), วิเคราะห์ Sentiment คอมเมนต์แยก Seeding/Organic, สร้าง WordCloud และรายงานคู่แข่งอัตโนมัติ</p>
               </div>
               <div class="sys-col">
                 <span class="sys-col-title en">Cloud FinOps (฿3,937 → ฿1,068)</span>
-                <span class="sys-col-title th">ลดต้นทุน Gemini API 73%</span>
-                <p class="en">Compressed Gemini JSON output schemas from 8,192 to 2,048 tokens, aligned snapshot cadences, and added SHA-256 content diffing—verified −73% drop in GCP billing.</p>
-                <p class="th">ลดขนาด Output Schema จาก 8,192 เหลือ 2,048 Tokens จัดตารางรันงานใหม่ และเช็ก Hash เพื่อไม่รันซ้ำ ลดค่าบิลจริงจาก ฿3,937.72 เหลือ ฿1,068.57</p>
-              </div>
-              <div class="sys-col">
-                <span class="sys-col-title en">Content &amp; Creative Tooling</span>
-                <span class="sys-col-title th">เครื่องมือวิเคราะห์โพสต์และแต่งภาพ</span>
-                <p class="en">Includes page/post campaign templates, TikTok/FB comment sentiment analysis, competitor benchmarking, and a browser Canvas Select-Area/Lasso image editor.</p>
-                <p class="th">มีเทมเพลตวิเคราะห์โพสต์และคอมเมนต์ TikTok/Facebook รายงานวิเคราะห์คู่แข่งอัตโนมัติ และเครื่องมือวาดเลือกพื้นที่ภาพ (Lasso) บนเบราว์เซอร์</p>
+                <span class="sys-col-title th">วิศวกรรมลดต้นทุน AI 73%</span>
+                <p class="en">Engineered <code>ai_cost_control.py</code> &amp; budget guards: trimmed Gemini JSON schemas from 8,192 to 2,048 tokens, aligned Celery cadences, and added SHA-256 content diffing—verified −73% drop in GCP billing.</p>
+                <p class="th">สร้างโมดูลควบคุมงบประมาณ AI บีบอัด Output Schema จาก 8,192 เหลือ 2,048 Tokens จัดรอบ Celery Beat และเช็ก Hash เพื่อข้ามข้อมูลซ้ำ ลดบิล GCP จริงจาก ฿3,937.72 เหลือ ฿1,068.57</p>
               </div>
             </div>
             <div class="sys-footer">
               <div class="stack-row">
-                <span class="stack-pill">Django 5.2</span><span class="stack-pill">PostgreSQL</span><span class="stack-pill">Celery Beat</span><span class="stack-pill">Meta / TikTok / Google Ads API</span><span class="stack-pill">Looker Studio</span><span class="stack-pill">ClickUp API</span><span class="stack-pill">GCP FinOps</span>
+                <span class="stack-pill">Django 5.2</span><span class="stack-pill">Celery Beat</span><span class="stack-pill">PostgreSQL</span><span class="stack-pill">Meta / TikTok / Google Ads API</span><span class="stack-pill">MobileSAM</span><span class="stack-pill">AI Sentiment</span><span class="stack-pill">Looker Studio</span><span class="stack-pill">ClickUp API</span>
               </div>
             </div>
           </article>
 
           <!-- System 04: Leave.Growfox -->
-          <article class="sys-card">
+          <article class="sys-card glow-card reveal">
             <div class="sys-header">
               <div class="sys-title-wrap">
                 <span class="sys-num">SYS 04</span>
@@ -1198,48 +1308,58 @@
               </div>
               <div class="sys-badges">
                 <span class="sys-badge highlight">Standalone Microservice</span>
+                <span class="sys-badge amber">Bi-Directional ClickUp &amp; Google Sync</span>
                 <span class="sys-badge">leave.growfox.co</span>
               </div>
             </div>
             <p class="sys-summary en">
-              Extracted the HR attendance module out of <code>marketing.growfox</code> into a standalone Django 5.2 service—integrating office fingerprint scanner logs, mobile WFH GPS check-ins, and real-time ClickUp calendar synchronization.
+              Extracted and decoupled the HR attendance module (<code>leaveapp</code>) from <code>marketing.growfox.co</code> into a standalone Django 5.2 production service—combining office fingerprint scanner scraping, mobile WFH geolocation check-ins, Google Contacts OAuth sync, and real-time ClickUp task matching.
             </p>
             <p class="sys-summary th">
-              แยกระบบลางานและลงเวลาออกจากระบบการตลาด มาเป็นเว็บแอปพลิเคชันเฉพาะทาง (Django 5.2) เชื่อมต่อเครื่องสแกนนิ้วในออฟฟิศ ระบบเช็กอิน WFH ด้วยพิกัด GPS และซิงค์ตารางงานเข้า ClickUp แบบเรียลไทม์
+              แยกระบบบริหารเวลาเข้างานและวันลา (<code>leaveapp</code>) ออกจาก <code>marketing.growfox.co</code> มาเป็นระบบ独立 (Django 5.2) เชื่อมต่อเครื่องสแกนนิ้วในออฟฟิศ เช็กอิน WFH ด้วยพิกัด GPS ซิงค์รายชื่อ Google Contacts OAuth และสร้าง/ลบ Task ใน ClickUp แบบเรียลไทม์
             </p>
+            <div class="flow-strip">
+              <span class="flow-node">Fingerprint Scraper + Mobile WFH GPS</span>
+              <span class="flow-sep"><i class="fa-solid fa-arrow-right"></i></span>
+              <span class="flow-node">Employee Matcher &amp; 8 Leave Ledgers</span>
+              <span class="flow-sep"><i class="fa-solid fa-arrow-right"></i></span>
+              <span class="flow-node active">Realtime ClickUp Task Create / Delete</span>
+              <span class="flow-sep"><i class="fa-solid fa-arrow-right"></i></span>
+              <span class="flow-node amber">Monthly Clock-In Gmail Digest</span>
+            </div>
             <div class="sys-cols">
               <div class="sys-col">
-                <span class="sys-col-title en">Hardware &amp; GPS Verification</span>
+                <span class="sys-col-title en">Fingerprint &amp; WFH Geolocation</span>
                 <span class="sys-col-title th">ซิงค์สแกนนิ้วและพิกัด WFH</span>
-                <p class="en">Ingests office fingerprint hardware scans, verifies mobile WFH clock-ins via HTML5 Geolocation radius checks, and emails monthly attendance summaries via Gmail.</p>
-                <p class="th">ดึงข้อมูลเวลาเข้า-ออกจากเครื่องสแกนนิ้ว ตรวจสอบรัศมีพิกัด GPS เมื่อพนักงานกดเข้างาน WFH บนมือถือ และส่งรายงานสรุปรายเดือนทางอีเมล</p>
+                <p class="en">Built <code>fingerprint_scraper.py</code> and <code>employee_matcher.py</code> to ingest office hardware scans, validate mobile WFH check-ins via GPS radius, and dispatch monthly attendance summaries via Gmail.</p>
+                <p class="th">พัฒนาสคริปต์ดึงเวลาสแกนนิ้วและจับคู่พนักงานอัตโนมัติ ตรวจสอบรัศมีพิกัด GPS เมื่อกดเข้างาน WFH บนมือถือ และส่งสรุปเวลาเข้างานรายเดือนทาง Gmail</p>
               </div>
               <div class="sys-col">
-                <span class="sys-col-title en">8 Leave Types &amp; Ledger</span>
-                <span class="sys-col-title th">คำนวณสิทธิ์วันลา 8 ประเภท</span>
-                <p class="en">Computes pro-rated leave entitlements by tenure, handles multi-step approval workflows, and maintains an auditable deduction ledger.</p>
-                <p class="th">คำนวณวันลาคงเหลือตามสัดส่วนอายุงาน รองรับการลา 8 ประเภท พร้อมระบบอนุมัติและประวัติการหักวันลาที่ตรวจสอบได้ชัดเจน</p>
+                <span class="sys-col-title en">8 Leave Types &amp; Google OAuth</span>
+                <span class="sys-col-title th">วันลา 8 ประเภท &amp; Google Sync</span>
+                <p class="en">Calculates pro-rated leave balances by tenure, handles approval chains, and syncs employee profiles/avatars via <code>google_contacts_oauth.py</code> &amp; Google Workspace.</p>
+                <p class="th">คำนวณสิทธิ์วันลาตามสัดส่วนอายุงาน รองรับ 8 ประเภทการลา พร้อมซิงค์ข้อมูลและรูปโปรไฟล์พนักงานผ่าน Google Contacts OAuth</p>
               </div>
               <div class="sys-col">
-                <span class="sys-col-title en">Realtime ClickUp Sync</span>
-                <span class="sys-col-title th">ซิงค์ปฏิทิน ClickUp ทันที</span>
-                <p class="en">Automatically creates and removes leave tasks on ClickUp team boards via signed webhooks whenever a leave request is approved or cancelled.</p>
-                <p class="th">สร้างและลบ Task วันลาบนบอร์ด ClickUp ของทีมโดยอัตโนมัติทันทีที่มีการกดอนุมัติหรือยกเลิกใบลา โดยที่ข้อมูลทำงานเทียบเท่าก่อนแยกระบบ 100%</p>
+                <span class="sys-col-title en">Realtime ClickUp &amp; Make Webhooks</span>
+                <span class="sys-col-title th">ซิงค์ปฏิทิน ClickUp &amp; Make.com</span>
+                <p class="en">Engineered <code>clickup_integration.py</code> and <code>make_webhook.py</code> to create, match, and delete leave tasks on ClickUp calendars in real time with 100% parity after system decoupling.</p>
+                <p class="th">เชื่อมต่อ ClickUp API และ Make.com Webhook เพื่อสร้าง จับคู่ และลบ Task วันลาบนปฏิทินทีมทันทีที่มีการอนุมัติหรือยกเลิกใบลา</p>
               </div>
             </div>
             <div class="sys-footer">
               <div class="stack-row">
-                <span class="stack-pill">Django 5.2</span><span class="stack-pill">PostgreSQL</span><span class="stack-pill">Fingerprint Hardware Sync</span><span class="stack-pill">Geolocation API</span><span class="stack-pill">ClickUp Webhooks</span><span class="stack-pill">Gmail SMTP</span>
+                <span class="stack-pill">Django 5.2</span><span class="stack-pill">PostgreSQL</span><span class="stack-pill">Fingerprint Scraper</span><span class="stack-pill">HTML5 Geolocation</span><span class="stack-pill">ClickUp API</span><span class="stack-pill">Google Contacts OAuth</span><span class="stack-pill">Make.com Webhooks</span>
               </div>
             </div>
           </article>
 
-          <!-- System 05: Technical AI SEO Engine & Growfox.co / 13-Site Network -->
-          <article class="sys-card">
+          <!-- System 05: Technical AI SEO Engine & 13-Site WP Network -->
+          <article class="sys-card glow-card reveal">
             <div class="sys-header">
               <div class="sys-title-wrap">
                 <span class="sys-num">SYS 05</span>
-                <h3 class="sys-title">Technical AI SEO Engine, Growfox.co &amp; 13-Site WordPress Network</h3>
+                <h3 class="sys-title">Technical AI SEO Engine (<code>aiseo</code> / <code>seo_analyzer</code>), Growfox.co &amp; 13-Site WP Network</h3>
               </div>
               <div class="sys-badges">
                 <span class="sys-badge highlight">Technical Engine Builder</span>
@@ -1247,66 +1367,66 @@
               </div>
             </div>
             <p class="sys-summary en">
-              Built the technical SEO/AIO diagnostic and code-patch generator used by the agency to deliver search visibility services to enterprise clients (including <strong>UOB</strong>, pitched and contracted by company leadership), while maintaining <code>growfox.co</code> and a 13-site WordPress network.
+              Built the technical SEO &amp; AI Overviews (AIO) diagnostic engine (<code>ai_seo_orchestrator.py</code>, <code>google_aio.py</code>) that our company used to deliver search visibility services to enterprise clients (including <strong>UOB</strong>, pitched and closed by agency leadership), while maintaining <code>growfox.co</code> and a 13-site WordPress SEO network.
             </p>
             <p class="sys-summary th">
-              พัฒนาเอนจินวิเคราะห์ SEO/AIO และระบบสร้างโค้ดแก้ไขโครงสร้างเว็บในส่วนเทคนิค เพื่อให้บริษัทนำไปใช้ให้บริการลูกค้าองค์กร (รวมถึง <strong>UOB</strong> ที่ฝ่ายบริหารเป็นผู้เสนอขาย) ควบคู่กับการดูแลเว็บหลัก <code>growfox.co</code> และเครือข่าย WordPress 13 เว็บไซต์
+              พัฒนาเอนจินวิเคราะห์ SEO และ AI Overviews เชิงเทคนิค (<code>ai_seo_orchestrator.py</code>, <code>google_aio.py</code>) เพื่อให้บริษัทนำไปใช้ให้บริการลูกค้าองค์กร (รวมถึง <strong>UOB</strong> ซึ่งทีมบริหารเป็นผู้เสนอขาย) ควบคู่กับการดูแลเว็บหลัก <code>growfox.co</code> และเครือข่าย WordPress 13 เว็บไซต์
             </p>
             <div class="sys-cols">
               <div class="sys-col">
-                <span class="sys-col-title en">Search Console &amp; Audits</span>
-                <span class="sys-col-title th">ตรวจโครงสร้างและคีย์เวิร์ด</span>
-                <p class="en">Connects to Google Search Console API and Lighthouse to track keyword rankings, CTR swings, Core Web Vitals, and AI Overview visibility.</p>
-                <p class="th">เชื่อม Google Search Console API และ Lighthouse เพื่อติดตามอันดับคีย์เวิร์ด ยอดคลิก CTR และคะแนนประสิทธิภาพของหน้าเว็บ</p>
+                <span class="sys-col-title en">AIO &amp; Search Console Tracking</span>
+                <span class="sys-col-title th">ตรวจอันดับ Search Console &amp; AIO</span>
+                <p class="en">Tracks keyword discovery, Ahrefs/GSC search volumes (<code>search_volume.py</code>), CTR movements, and 4-platform AI Overview brand mentions.</p>
+                <p class="th">ติดตามคีย์เวิร์ด ปริมาณการค้นหาจาก GSC/Ahrefs อัตราคลิก CTR และการถูกพูดถึงบน AI Search 4 แพลตฟอร์ม</p>
               </div>
               <div class="sys-col">
-                <span class="sys-col-title en">Automated Code Patches</span>
-                <span class="sys-col-title th">สร้างโค้ด JSON-LD สำเร็จรูป</span>
-                <p class="en">Audits DOM semantics with BeautifulSoup and outputs ready-to-deploy JSON-LD schemas (Organization, FAQ, Product, Article) for client dev teams.</p>
-                <p class="th">ตรวจสอบโครงสร้าง HTML และสร้างโค้ด JSON-LD Schema ที่ถูกต้องตามมาตรฐานให้ทีมโปรแกรมเมอร์ของลูกค้านำไปติดตั้งได้ทันที</p>
+                <span class="sys-col-title en">Schema Validator &amp; Code Patches</span>
+                <span class="sys-col-title th">สร้างโค้ดแก้ไข JSON-LD อัตโนมัติ</span>
+                <p class="en">Crawls HTML DOM &amp; Core Web Vitals, detects broken structured data, and generates copy-paste JSON-LD schema patches for client developers.</p>
+                <p class="th">สแกนโครงสร้าง HTML และสร้างโค้ด JSON-LD Schema ที่ถูกต้องตามมาตรฐานให้โปรแกรมเมอร์ฝั่งลูกค้านำไปติดตั้งได้ทันที</p>
               </div>
               <div class="sys-col">
-                <span class="sys-col-title en">13-Site WP Network &amp; Main Site</span>
-                <span class="sys-col-title th">เครือข่ายเว็บองค์กร 13 เว็บไซต์</span>
-                <p class="en">Maintains <code>growfox.co</code> lead flows and 13 niche WordPress sites with custom PHP child themes, financial calculator widgets, and Make.com automation.</p>
-                <p class="th">ดูแลระบบรับ Lead บน <code>growfox.co</code> และเครือข่าย WordPress 13 เว็บไซต์ เขียน Child Theme วิดเจ็ตคำนวณการเงิน และระบบโพสต์อัตโนมัติ Make.com</p>
+                <span class="sys-col-title en">Growfox.co &amp; 13-Site WP Network</span>
+                <span class="sys-col-title th">เว็บหลักและเครือข่าย WordPress 13 เว็บ</span>
+                <p class="en">Maintains <code>growfox.co</code> lead webhooks and 13 niche WordPress sites with custom PHP child themes, financial calculator widgets, and Make.com product publishing.</p>
+                <p class="th">ดูแล Flow รับ Lead บน <code>growfox.co</code> และเครือข่าย WordPress 13 เว็บ พัฒนา Child Theme วิดเจ็ตคำนวณสินเชื่อ/การเงิน และโพสต์อัตโนมัติด้วย Make.com</p>
               </div>
             </div>
             <div class="sys-footer">
               <div class="stack-row">
-                <span class="stack-pill">Python</span><span class="stack-pill">Google Search Console API</span><span class="stack-pill">Lighthouse</span><span class="stack-pill">JSON-LD Schema</span><span class="stack-pill">BeautifulSoup4</span><span class="stack-pill">WordPress / PHP</span><span class="stack-pill">Make.com</span>
+                <span class="stack-pill">Python</span><span class="stack-pill">Search Console API</span><span class="stack-pill">Google AIO Tracker</span><span class="stack-pill">Ahrefs Metrics</span><span class="stack-pill">JSON-LD Schema</span><span class="stack-pill">WordPress / PHP</span><span class="stack-pill">Make.com</span>
               </div>
             </div>
           </article>
         </div>
 
-        <!-- Secondary Production Microservices (Compact 3-Col Grid) -->
+        <!-- Secondary Production Microservices -->
         <div class="sub-systems-grid">
-          <div class="sub-card">
+          <div class="sub-card glow-card reveal">
             <div>
-              <h4><i class="fa-solid fa-bullhorn"></i> Thai Watsadu Share Campaign</h4>
-              <p class="en">Employee advocacy platform (Django + Next.js on Railway) with Facebook OAuth login, Apify share verification, and branch leaderboards.</p>
-              <p class="th">เว็บแคมเปญแชร์โพสต์พนักงานไทวัสดุ ล็อกอินด้วย Facebook OAuth ตรวจสอบการแชร์ด้วย Apify พร้อมจัดอันดับ Leaderboard รายสาขา</p>
+              <h4><i class="fa-solid fa-bullhorn"></i> SYS 06 · Thai Watsadu Share Campaign</h4>
+              <p class="en">Full-stack employee advocacy platform (Django + Next.js on Railway) with Facebook OAuth login, Apify post-share verification, and real-time branch leaderboards.</p>
+              <p class="th">ระบบแคมเปญแชร์โพสต์พนักงานไทวัสดุ (Django + Next.js บน Railway) ล็อกอินด้วย Facebook OAuth ตรวจสอบยอดแชร์จริงผ่าน Apify พร้อมจัดอันดับรายสาขา</p>
             </div>
             <div class="stack-row"><span class="stack-pill">Django</span><span class="stack-pill">Next.js</span><span class="stack-pill">FB OAuth</span><span class="stack-pill">Apify</span></div>
           </div>
 
-          <div class="sub-card">
+          <div class="sub-card glow-card reveal">
             <div>
               <h4><i class="fa-solid fa-dice"></i> Battle Arena (GA4 Gamification)</h4>
-              <p class="en">Internal productivity system converting daily GA4 organic traffic milestones (e.g. 12K+ session tiers) into Gacha card rewards and Socket.io boss raids.</p>
-              <p class="th">ระบบแปลงยอดวิวบทความรายวันจาก GA4 API เป็นแต้มโบนัสสุ่มการ์ด Gacha และร่วมตีบอสแบบเรียลไทม์สำหรับทีมคอนเทนต์</p>
+              <p class="en">Gamified internal productivity system (<code>api_ga4_sync.py</code>, <code>shop_views.py</code>) turning daily GA4 traffic targets (12K+ sessions) into Gacha card packs and Socket.io boss raids.</p>
+              <p class="th">ระบบเปลี่ยนยอดผู้เข้าชมเว็บรายวันจาก GA4 API ให้เป็นแต้มโบนัสสุ่มการ์ด Gacha และร่วมตีบอสรายสัปดาห์แบบเรียลไทม์สำหรับทีมคอนเทนต์</p>
             </div>
             <div class="stack-row"><span class="stack-pill">GA4 Data API</span><span class="stack-pill">Socket.io</span><span class="stack-pill">Django</span></div>
           </div>
 
-          <div class="sub-card">
+          <div class="sub-card glow-card reveal">
             <div>
-              <h4><i class="fa-solid fa-server"></i> Workspace MCP &amp; Media Tools</h4>
-              <p class="en">Node.js MCP server wrapping Google Workspace Admin SDK for directory lookups, plus an internal <code>yt-dlp</code> + FFmpeg high-res video downloader.</p>
-              <p class="th">MCP Server เชื่อมต่อ Google Admin SDK สำหรับค้นหาข้อมูลองค์กร และระบบดาวน์โหลดวิดีโอความละเอียดสูงด้วย <code>yt-dlp</code> + FFmpeg</p>
+              <h4><i class="fa-solid fa-server"></i> Workspace MCP, Apps Script &amp; yt-dlp</h4>
+              <p class="en">Node.js MCP server wrapping Google Workspace Admin SDK, Google Apps Script sheet automations (<code>main.gs</code>), and an internal <code>yt-dlp</code> + FFmpeg video downloader.</p>
+              <p class="th">พัฒนา Node.js MCP Server เชื่อม Google Admin SDK, สคริปต์ Google Apps Script อัตโนมัติ และเว็บดาวน์โหลดวิดีโอความละเอียดสูงด้วย <code>yt-dlp</code> + FFmpeg</p>
             </div>
-            <div class="stack-row"><span class="stack-pill">Node.js MCP</span><span class="stack-pill">Admin SDK</span><span class="stack-pill">yt-dlp / FFmpeg</span></div>
+            <div class="stack-row"><span class="stack-pill">Node.js MCP</span><span class="stack-pill">Apps Script</span><span class="stack-pill">yt-dlp / FFmpeg</span></div>
           </div>
         </div>
       </div>
@@ -1315,23 +1435,22 @@
     <!-- 02 / ENGINEERING CHALLENGES & DECISIONS -->
     <section id="engineering">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div>
-            <span class="section-label">02 / Engineering Decisions &amp; Case Studies</span>
-            <h2 class="section-title en">Solving Real Production Constraints</h2>
-            <h2 class="section-title th">การตัดสินใจและแก้ปัญหาจริงในระบบ Production</h2>
+            <span class="section-label"><i class="fa-solid fa-code-branch"></i> 02 / Engineering Decisions &amp; Case Studies</span>
+            <h2 class="section-title en">How I Solve Real Production Constraints</h2>
+            <h2 class="section-title th">วิธีคิดและการแก้ปัญหาจริงในระบบ Production</h2>
           </div>
           <p class="section-desc en">
-            How I handle API pagination walls, entity disambiguation, stateless security, and metric accuracy.
+            Four real architectural decisions navigating API limits, entity ambiguity, stateless security, and cloud cost governance.
           </p>
           <p class="section-desc th">
-            แนวคิดการแก้ปัญหาเมื่อต้องรับมือกับข้อจำกัดของ API, ความเพี้ยนของข้อมูลจาก AI และการออกแบบระบบให้ใช้งานได้จริง
+            4 กรณีศึกษาจริงในการรับมือกับขีดจำกัดของ API, ความเพี้ยนของข้อมูลจาก AI, ความปลอดภัยของลิงก์อนุมัติ และการคุมงบประมาณคลาวด์
           </p>
         </div>
 
         <div class="case-grid">
-          <!-- Case 1 -->
-          <div class="case-card">
+          <div class="case-card glow-card reveal">
             <span class="case-tag">CASE 01 · MUSTHERD DATA INGESTION</span>
             <h3 class="en">Meta Graph API 100-Post Limit &amp; Multi-Lane Fallback</h3>
             <h3 class="th">แก้ข้อจำกัด Meta Graph API 100 โพสต์ &amp; ระบบสลับช่องทางสำรอง</h3>
@@ -1359,8 +1478,7 @@
             </div>
           </div>
 
-          <!-- Case 2 -->
-          <div class="case-card">
+          <div class="case-card glow-card reveal">
             <span class="case-tag">CASE 02 · DATA QUALITY &amp; AI GUARDRAILS</span>
             <h3 class="en">Brand Affinity Disambiguation (Urban Revivo vs. Vivo)</h3>
             <h3 class="th">แก้ปัญหา AI จำแนกชื่อแบรนด์สับสน (Urban Revivo vs. Vivo)</h3>
@@ -1388,8 +1506,7 @@
             </div>
           </div>
 
-          <!-- Case 3 -->
-          <div class="case-card">
+          <div class="case-card glow-card reveal">
             <span class="case-tag">CASE 03 · DENCRM WORKFLOW ARCHITECTURE</span>
             <h3 class="en">Stateless 1-Click CEO Lead Approval via HMAC Gmail</h3>
             <h3 class="th">ออกแบบปุ่มกด Approve แจก Lead ใน Gmail แบบไม่ต้องล็อกอิน</h3>
@@ -1417,8 +1534,7 @@
             </div>
           </div>
 
-          <!-- Case 4 -->
-          <div class="case-card">
+          <div class="case-card glow-card reveal">
             <span class="case-tag">CASE 04 · METRIC RELIABILITY &amp; FINOPS</span>
             <h3 class="en">ER Normalization &amp; −73% Gemini Token Optimization</h3>
             <h3 class="th">มาตรฐานสูตรคำนวณ ER &amp; การบีบอัด Schema ลดต้นทุน AI 73%</h3>
@@ -1448,13 +1564,12 @@
         </div>
       </div>
     </section>
-
     <!-- 03 / INDIE BUILDS & PERSONAL PROJECTS -->
     <section id="indie">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div>
-            <span class="section-label">03 / Indie Builds &amp; Personal Engineering</span>
+            <span class="section-label"><i class="fa-solid fa-terminal"></i> 03 / Indie Builds &amp; Personal Engineering</span>
             <h2 class="section-title en">Self-Directed Projects &amp; Hackathons</h2>
             <h2 class="section-title th">โปรเจกต์ส่วนตัวและงานแข่งขันที่พัฒนาด้วยตัวเอง</h2>
           </div>
@@ -1467,7 +1582,7 @@
         </div>
 
         <div class="indie-grid">
-          <div class="indie-card">
+          <div class="indie-card glow-card reveal">
             <div>
               <span class="sys-badge highlight">Ruby · API-Football · Discourse</span>
               <h3>PocketEleven — Football Automation Bots</h3>
@@ -1483,7 +1598,7 @@
             </div>
           </div>
 
-          <div class="indie-card">
+          <div class="indie-card glow-card reveal">
             <div>
               <span class="sys-badge amber">Cursor Build Salaga Hackathon</span>
               <h3>OOTDwithU — AI Virtual Try-On Studio</h3>
@@ -1499,7 +1614,7 @@
             </div>
           </div>
 
-          <div class="indie-card">
+          <div class="indie-card glow-card reveal">
             <div>
               <span class="sys-badge">Vertex AI · SQLite · RAG</span>
               <h3>NexusNote — Private RAG Workspace</h3>
@@ -1518,139 +1633,349 @@
       </div>
     </section>
 
-    <!-- 04 / VERIFIED TECHNICAL STACK -->
+    <!-- 04 / COMPREHENSIVE 8-CATEGORY VERIFIED TECHNICAL STACK -->
     <section id="stack">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div>
-            <span class="section-label">04 / Technical Stack</span>
-            <h2 class="section-title en">Production-Verified Technologies</h2>
-            <h2 class="section-title th">เทคโนโลยีและเครื่องมือที่ใช้งานจริงในระบบ</h2>
+            <span class="section-label"><i class="fa-solid fa-microchip"></i> 04 / Complete Technical Stack (8 Domains)</span>
+            <h2 class="section-title en">Every Tool Verified in Production Code</h2>
+            <h2 class="section-title th">ทักษะและเครื่องมือทั้งหมดที่ใช้งานจริงในโค้ดโปรดักชัน</h2>
           </div>
           <p class="section-desc en">
-            Highlighted chips denote core technologies I use daily to build and operate production systems.
+            Extracted directly from the repositories of <code>marketing.growfox.co</code>, <code>leave.growfox.co</code>, <code>mustherd.com</code>, and <code>dencrm.growfox.co</code>. Highlighted chips denote core daily drivers.
           </p>
           <p class="section-desc th">
-            ป้ายขอบสีเขียวคือเทคโนโลยีหลักที่ใช้ทำงานจริงเป็นประจำทุกวันในการสร้างและดูแลระบบ
+            รวบรวมจากโค้ดจริงของทุกระบบที่ผมพัฒนาและดูแล ป้ายสีเขียวสว่างคือเทคโนโลยีหลักที่ใช้งานเป็นประจำทุกวัน
           </p>
         </div>
 
-        <div class="stack-table">
-          <div class="stack-line">
-            <div class="stack-domain"><i class="fa-solid fa-server"></i> Backend &amp; Web</div>
+        <div class="stack-grid">
+          <!-- 1 -->
+          <div class="stack-box glow-card reveal">
+            <div class="stack-box-head">
+              <div class="stack-domain"><i class="fa-solid fa-code"></i> 1. Backend, Web Frameworks &amp; Languages</div>
+              <span class="stack-count">12 Tools</span>
+            </div>
             <div class="stack-items">
-              <span class="stack-chip core">Python</span><span class="stack-chip core">Django 5.2</span><span class="stack-chip core">FastAPI</span><span class="stack-chip core">Next.js 15/16</span><span class="stack-chip core">TypeScript 5</span><span class="stack-chip core">React 19</span><span class="stack-chip">Node.js</span><span class="stack-chip">REST APIs</span><span class="stack-chip">HMAC Webhooks</span><span class="stack-chip">Ruby</span><span class="stack-chip">PHP / WordPress</span>
+              <span class="stack-chip core">Python 3.12</span><span class="stack-chip core">Django 5.2</span><span class="stack-chip core">FastAPI</span><span class="stack-chip core">Next.js 15 / 16</span><span class="stack-chip core">React 19</span><span class="stack-chip core">TypeScript 5</span><span class="stack-chip">Node.js</span><span class="stack-chip">Django REST Framework</span><span class="stack-chip">Server Actions</span><span class="stack-chip">PHP / WordPress</span><span class="stack-chip">Ruby</span><span class="stack-chip">Google Apps Script (.gs)</span>
             </div>
           </div>
 
-          <div class="stack-line">
-            <div class="stack-domain"><i class="fa-solid fa-database"></i> Data &amp; Storage</div>
+          <!-- 2 -->
+          <div class="stack-box glow-card reveal">
+            <div class="stack-box-head">
+              <div class="stack-domain"><i class="fa-solid fa-database"></i> 2. Databases, Data Engineering &amp; Analytics</div>
+              <span class="stack-count">13 Tools</span>
+            </div>
             <div class="stack-items">
-              <span class="stack-chip core">PostgreSQL</span><span class="stack-chip core">Prisma ORM 5–7</span><span class="stack-chip core">SQL</span><span class="stack-chip core">Zod Schemas</span><span class="stack-chip">Redis</span><span class="stack-chip">SQLite</span><span class="stack-chip">Pandas / NumPy</span><span class="stack-chip">R Programming</span><span class="stack-chip">Data Governance</span>
+              <span class="stack-chip core">PostgreSQL</span><span class="stack-chip core">Prisma ORM 5–7</span><span class="stack-chip core">Redis (Cursor &amp; Queue)</span><span class="stack-chip core">SQL</span><span class="stack-chip core">Zod Schemas</span><span class="stack-chip">SQLite</span><span class="stack-chip">Pandas</span><span class="stack-chip">NumPy</span><span class="stack-chip">R Programming</span><span class="stack-chip">Statistical Modeling</span><span class="stack-chip">ExcelJS</span><span class="stack-chip">SHA-256 Deduplication</span><span class="stack-chip">Data Governance</span>
             </div>
           </div>
 
-          <div class="stack-line">
-            <div class="stack-domain"><i class="fa-solid fa-spider"></i> Scraping &amp; Automation</div>
+          <!-- 3 -->
+          <div class="stack-box glow-card reveal">
+            <div class="stack-box-head">
+              <div class="stack-domain"><i class="fa-solid fa-spider"></i> 3. Multi-Platform Scraping &amp; Task Queues</div>
+              <span class="stack-count">15 Tools</span>
+            </div>
             <div class="stack-items">
-              <span class="stack-chip core">Playwright</span><span class="stack-chip core">Bright Data</span><span class="stack-chip core">Celery &amp; Celery Beat</span><span class="stack-chip">Selenium</span><span class="stack-chip">BeautifulSoup4</span><span class="stack-chip">Apify</span><span class="stack-chip">yt-dlp + FFmpeg</span><span class="stack-chip">n8n / Make.com</span><span class="stack-chip">Cron Pipelines</span>
+              <span class="stack-chip core">Playwright / Patchright</span><span class="stack-chip core">Bright Data Datasets &amp; Proxies</span><span class="stack-chip core">Celery &amp; Celery Beat</span><span class="stack-chip core">Apify Actors</span><span class="stack-chip">Selenium</span><span class="stack-chip">BeautifulSoup4 &amp; lxml</span><span class="stack-chip">yt-dlp + FFmpeg</span><span class="stack-chip">instaloader &amp; instagrapi</span><span class="stack-chip">ScrapeCreators API</span><span class="stack-chip">SadCaptcha Solver</span><span class="stack-chip">curl-cffi</span><span class="stack-chip">APScheduler</span><span class="stack-chip">Fingerprint Hardware Scraper</span>
             </div>
           </div>
 
-          <div class="stack-line">
-            <div class="stack-domain"><i class="fa-solid fa-brain"></i> Applied AI &amp; FinOps</div>
+          <!-- 4 -->
+          <div class="stack-box glow-card reveal">
+            <div class="stack-box-head">
+              <div class="stack-domain"><i class="fa-solid fa-brain"></i> 4. Applied AI, Computer Vision &amp; FinOps</div>
+              <span class="stack-count">12 Tools</span>
+            </div>
             <div class="stack-items">
-              <span class="stack-chip core">Gemini Multimodal API</span><span class="stack-chip core">Token Cost Governance (−73%)</span><span class="stack-chip core">Vision OCR</span><span class="stack-chip">OpenAI / Claude API</span><span class="stack-chip">Vertex AI</span><span class="stack-chip">MCP Server Dev</span><span class="stack-chip">RAG Pipelines</span>
+              <span class="stack-chip core">Gemini Pro / Flash Multimodal</span><span class="stack-chip core">Token Cost Governance (−73%)</span><span class="stack-chip core">Vision OCR &amp; Entity Guards</span><span class="stack-chip core">MobileSAM / ONNX Lasso</span><span class="stack-chip">AI Sentiment &amp; Seeding Classifier</span><span class="stack-chip">Magnific Upscaling API</span><span class="stack-chip">OpenAI API</span><span class="stack-chip">Anthropic Claude API</span><span class="stack-chip">Google Vertex AI</span><span class="stack-chip">RAG &amp; Citation Pipelines</span><span class="stack-chip">Node.js MCP Server Dev</span><span class="stack-chip">WordCloud NLP</span>
             </div>
           </div>
 
-          <div class="stack-line">
-            <div class="stack-domain"><i class="fa-solid fa-chart-line"></i> Marketing &amp; Enterprise APIs</div>
+          <!-- 5 -->
+          <div class="stack-box glow-card reveal">
+            <div class="stack-box-head">
+              <div class="stack-domain"><i class="fa-solid fa-chart-line"></i> 5. Paid Media, SEO &amp; Search Intelligence</div>
+              <span class="stack-count">12 Tools</span>
+            </div>
             <div class="stack-items">
-              <span class="stack-chip core">Meta Graph &amp; Marketing API</span><span class="stack-chip core">Search Console API</span><span class="stack-chip core">GA4 &amp; GTM</span><span class="stack-chip core">Nodemailer (Gmail)</span><span class="stack-chip">TikTok / Google Ads API</span><span class="stack-chip">ClickUp API</span><span class="stack-chip">Looker Studio</span><span class="stack-chip">JSON-LD Schema SEO</span>
+              <span class="stack-chip core">Meta Graph &amp; Marketing API</span><span class="stack-chip core">TikTok Business API</span><span class="stack-chip core">Google Ads API</span><span class="stack-chip core">Google Search Console API</span><span class="stack-chip core">GA4 Data API &amp; GTM</span><span class="stack-chip">Google AI Overviews (AIO/GEO)</span><span class="stack-chip">Ahrefs Search Volume</span><span class="stack-chip">JSON-LD Schema Generator</span><span class="stack-chip">Lighthouse Core Web Vitals</span><span class="stack-chip">Looker Studio</span><span class="stack-chip">Power BI</span><span class="stack-chip">Competitor Share-of-Voice</span>
             </div>
           </div>
 
-          <div class="stack-line">
-            <div class="stack-domain"><i class="fa-solid fa-cloud"></i> Cloud, DevOps &amp; 3D</div>
+          <!-- 6 -->
+          <div class="stack-box glow-card reveal">
+            <div class="stack-box-head">
+              <div class="stack-domain"><i class="fa-solid fa-envelope-circle-check"></i> 6. CRM, HR &amp; Workflow Integrations</div>
+              <span class="stack-count">11 Tools</span>
+            </div>
             <div class="stack-items">
-              <span class="stack-chip core">Railway Deployment</span><span class="stack-chip core">Docker</span><span class="stack-chip core">Three.js WebGL</span><span class="stack-chip core">Meshy 3D &amp; Rigging</span><span class="stack-chip">Blender 3D</span><span class="stack-chip">Caddy Server</span><span class="stack-chip">Auth.js v5 / OAuth</span><span class="stack-chip">Cloudflare DNS &amp; R2</span><span class="stack-chip">Git &amp; GitHub</span>
+              <span class="stack-chip core">Nodemailer (Gmail SMTP)</span><span class="stack-chip core">HMAC-SHA256 Signed URLs</span><span class="stack-chip core">ClickUp API &amp; Webhooks</span><span class="stack-chip core">Google Workspace Admin SDK</span><span class="stack-chip">Google Contacts OAuth Sync</span><span class="stack-chip">Google Sheets / Drive API</span><span class="stack-chip">HTML5 Geolocation WFH Check-in</span><span class="stack-chip">Make.com Webhooks</span><span class="stack-chip">n8n Workflows</span><span class="stack-chip">Discourse API</span><span class="stack-chip">API-Football</span>
+            </div>
+          </div>
+
+          <!-- 7 -->
+          <div class="stack-box glow-card reveal">
+            <div class="stack-box-head">
+              <div class="stack-domain"><i class="fa-solid fa-cube"></i> 7. 3D WebGL, Interactive UI &amp; Frontend</div>
+              <span class="stack-count">11 Tools</span>
+            </div>
+            <div class="stack-items">
+              <span class="stack-chip core">Three.js WebGL</span><span class="stack-chip core">GLTFLoader &amp; 3D Rigging</span><span class="stack-chip core">Meshy.ai Multi-Image 3D</span><span class="stack-chip core">Tailwind CSS 3 / 4</span><span class="stack-chip">Blender 3D</span><span class="stack-chip">shadcn/ui</span><span class="stack-chip">Framer Motion</span><span class="stack-chip">Recharts &amp; Chart.js</span><span class="stack-chip">Canvas 2D Select-Area Tool</span><span class="stack-chip">Socket.io Realtime</span><span class="stack-chip">Figma</span>
+            </div>
+          </div>
+
+          <!-- 8 -->
+          <div class="stack-box glow-card reveal">
+            <div class="stack-box-head">
+              <div class="stack-domain"><i class="fa-solid fa-cloud-arrow-up"></i> 8. Cloud Infrastructure, Security &amp; Delivery</div>
+              <span class="stack-count">12 Tools</span>
+            </div>
+            <div class="stack-items">
+              <span class="stack-chip core">Railway PaaS</span><span class="stack-chip core">Docker &amp; Nixpacks</span><span class="stack-chip core">Auth.js / NextAuth v5</span><span class="stack-chip core">Google &amp; Facebook OAuth</span><span class="stack-chip">Caddy Web Server</span><span class="stack-chip">Gunicorn / Uvicorn / WhiteNoise</span><span class="stack-chip">Cloudflare DNS &amp; R2</span><span class="stack-chip">Cloudinary &amp; AWS S3 (boto3)</span><span class="stack-chip">RBAC &amp; Rate-Limit Guards</span><span class="stack-chip">Git &amp; GitHub</span><span class="stack-chip">Agile / Scrum</span><span class="stack-chip">Software Testing (QA)</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 05 / CAREER JOURNEY & EDUCATION -->
+    <!-- 05 / CAREER JOURNEY & CLICKABLE CERTIFICATIONS -->
     <section id="journey" style="border-bottom: 0;">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div>
-            <span class="section-label">05 / Career Journey &amp; Credentials</span>
-            <h2 class="section-title en">1.5 Years of End-to-End Ownership</h2>
-            <h2 class="section-title th">เส้นทางการทำงานและการเรียนรู้จากการลงมือทำจริง</h2>
+            <span class="section-label"><i class="fa-solid fa-route"></i> 05 / Career Progression &amp; Verified Credentials</span>
+            <h2 class="section-title en">Chronological Journey &amp; Clickable Certificates</h2>
+            <h2 class="section-title th">ลำดับเส้นทางการเติบโต &amp; ใบรับรองมาตรฐาน (คลิกดูรูปใบเซอร์จริงได้ทุกใบ)</h2>
+          </div>
+          <p class="section-desc en">
+            Ordered step-by-step from university foundation to internship, full-time promotion owning 6+ production platforms, and continuous Data Science upskilling.
+          </p>
+          <p class="section-desc th">
+            เรียงลำดับตามเส้นทางจริง ตั้งแต่มหาวิทยาลัย → ฝึกงานสายการตลาด → เลื่อนเป็นพนักงานประจำที่สร้างและดูแลระบบโปรดักชัน 6+ ระบบ → อัปสกิล Data Science
+          </p>
+        </div>
+
+        <!-- Step-by-Step Progression (Steps 01 -> 04) -->
+        <div class="journey-grid">
+          <!-- Step 01 -->
+          <div class="step-card glow-card reveal">
+            <div class="step-top">
+              <span class="step-badge edu">STEP 01 · UNIVERSITY FOUNDATION</span>
+              <span class="step-time">2021 — 2025 (GPA 3.67)</span>
+            </div>
+            <h3 class="en">B.Sc. Digital Innovation &amp; Content Management · SSRU</h3>
+            <h3 class="th">วท.บ. การจัดการนวัตกรรมดิจิทัลและคอนเทนต์ · มรภ.สวนสุนันทา (เกรด 3.67)</h3>
+            <p class="en">
+              Faculty of Science and Technology. Built foundation in software development, UX/UI design, data governance, and digital content systems. Exhibited senior research project on <strong>AI Chatbot Application Development</strong> at Thailand Research Expo 2024.
+            </p>
+            <p class="th">
+              คณะวิทยาศาสตร์และเทคโนโลยี ปูพื้นฐานการพัฒนาซอฟต์แวร์ การออกแบบ UX/UI การจัดการข้อมูล และนวัตกรรมดิจิทัล พัฒนาโปรเจกต์จบเรื่อง <strong>การพัฒนาแอปพลิเคชันแชทบอท AI</strong> และเข้าร่วมนำเสนอในงานวิจัย Thailand Research Expo 2024
+            </p>
+          </div>
+
+          <!-- Step 02 -->
+          <div class="step-card glow-card reveal">
+            <div class="step-top">
+              <span class="step-badge">STEP 02 · INTERNSHIP ENTRY AT GROWFOX</span>
+              <span class="step-time">DEC 2024 — MAR 2025</span>
+            </div>
+            <h3 class="en">Performance Marketing Intern · Growfox Co., Ltd.</h3>
+            <h3 class="th">Performance Marketing Intern (นักศึกษาฝึกงาน) · บริษัท โกรว์ฟ็อกซ์ จำกัด</h3>
+            <p class="en">
+              Started in paid media campaign operations, GA4/GTM tracking setup, WordPress site improvements, and SEO backlink analysis. Took initiative to write the first Python scraping scripts to automate manual reporting—proving the value of internal engineering.
+            </p>
+            <p class="th">
+              เริ่มต้นจากการฝึกงานดูแลแคมเปญโฆษณา วิเคราะห์ข้อมูลการตลาด ติดตั้ง GA4/GTM พัฒนาเว็บไซต์ WordPress และทำ SEO/Backlink พร้อมริเริ่มเขียนสคริปต์ Python ดึงข้อมูลอัตโนมัติเพื่อลดงานแมนนวล จนได้บรรจุเป็นพนักงานประจำ
+            </p>
+          </div>
+
+          <!-- Step 03 -->
+          <div class="step-card glow-card reveal">
+            <div class="step-top">
+              <span class="step-badge Now">STEP 03 · PROMOTED TO FULL-TIME (CURRENT ROLE)</span>
+              <span class="step-time">APR 2025 — PRESENT (OCT 2026)</span>
+            </div>
+            <h3 class="en">Marketing Data Specialist (Full-Stack &amp; Systems) · Growfox Co., Ltd.</h3>
+            <h3 class="th">Marketing Data Specialist (ดูแลระบบเว็บและข้อมูลองค์กร) · Growfox Co., Ltd.</h3>
+            <p class="en">
+              Promoted to full-time (1 yr 6 mos total tenure). Single-handedly built, deployed, and maintain 6+ production systems: <strong>Mustherd</strong> (57,578 creators toward 200K), <strong>DenCRM</strong> (1-click Gmail CEO lead approval), <strong>Marketing.Growfox</strong>, <strong>Leave.Growfox</strong>, <strong>13-site WP network</strong>, and the technical <strong>AI SEO engine</strong> used for enterprise clients (incl. UOB), while cutting Gemini API spend by 73%.
+            </p>
+            <p class="th">
+              บรรจุเป็นพนักงานประจำและรับผิดชอบการสร้าง-ดูแลระบบโปรดักชันกว่า 6 ระบบหลักด้วยตัวเอง: <strong>Mustherd</strong> (57,578 โปรไฟล์ มุ่งสู่เป้า 200K), <strong>DenCRM</strong> (ส่งเมลเข้า Gmail ให้ CEO กด Approve แจกเซลส์ในคลิกเดียว), <strong>Marketing.Growfox</strong>, <strong>Leave.Growfox</strong>, <strong>WordPress 13 เว็บ</strong> และพัฒนาระบบ <strong>AI SEO เชิงเทคนิค</strong> ให้บริษัทใช้ดูแลลูกค้าองค์กร พร้อมลดค่าใช้จ่าย Gemini API ลง 73%
+            </p>
+          </div>
+
+          <!-- Step 04 -->
+          <div class="step-card glow-card reveal">
+            <div class="step-top">
+              <span class="step-badge edu">STEP 04 · CONTINUOUS DATA SCIENCE UPSKILLING</span>
+              <span class="step-time">FEB 2026</span>
+            </div>
+            <h3 class="en">Data Science Bootcamp #12 · DataRockie</h3>
+            <h3 class="th">สำเร็จการอบรม Data Science Bootcamp รุ่นที่ 12 · DataRockie</h3>
+            <p class="en">
+              Completed intensive cohort training alongside full-time work—mastering advanced SQL, R Programming, Python Data Transformation, Statistical Modeling, Machine Learning pipelines, and Executive Data Visualization.
+            </p>
+            <p class="th">
+              ศึกษาต่อยอดควบคู่กับการทำงานประจำ เชี่ยวชาญการเขียน SQL ขั้นสูง, R Programming, Python สำหรับงานวิเคราะห์ข้อมูล, สถิติประยุกต์, Machine Learning และการทำ Data Visualization
+            </p>
           </div>
         </div>
 
-        <div class="journey-layout">
-          <div class="timeline-list">
-            <div class="time-card">
-              <time>APR 2025 — PRESENT (OCT 2026) · 1 YR 6 MOS TOTAL TENURE</time>
-              <h3>Marketing Data Specialist · Growfox Co., Ltd.</h3>
-              <p class="en">
-                Evolved the role from marketing analytics into full-stack systems ownership—building and operating 6+ production platforms solo: <strong>Mustherd</strong> (57,578 creators toward 200K), <strong>DenCRM</strong> (1-click Gmail CEO lead approval), <strong>Marketing.Growfox</strong> ads hub, <strong>Leave.Growfox</strong> HR microservice, <strong>13-site WordPress network</strong>, and the technical <strong>AI SEO audit engine</strong> deployed for enterprise clients (including UOB). Cut recurring Gemini API spend by 73%.
-              </p>
-              <p class="th">
-                ขยายขอบเขตงานจากการวิเคราะห์ข้อมูลการตลาดสู่การสร้างและดูแลระบบโปรดักชันครบวงจรกว่า 6 ระบบหลักด้วยตัวเอง: <strong>Mustherd</strong> (57,578 โปรไฟล์ มุ่งสู่เป้า 200K), <strong>DenCRM</strong> (ส่งเมลเข้า Gmail ให้ CEO กด Approve แจกเซลส์ในคลิกเดียว), <strong>Marketing.Growfox</strong>, <strong>Leave.Growfox</strong>, <strong>เครือข่าย WordPress 13 เว็บ</strong> และพัฒนาระบบ <strong>AI SEO เชิงเทคนิค</strong> ให้บริษัทใช้ดูแลลูกค้าองค์กร พร้อมลดค่าใช้จ่าย Gemini API ลง 73%
-              </p>
-            </div>
-
-            <div class="time-card">
-              <time>DEC 2024 — MAR 2025</time>
-              <h3>Performance Marketing Intern · Growfox Co., Ltd.</h3>
-              <p class="en">
-                Campaign reporting, GA4/GTM instrumentation, WordPress development, SEO backlinks, and the initial Python scraping pipelines that grew into the company's production systems.
-              </p>
-              <p class="th">
-                ดูแลรายงานแคมเปญโฆษณา ติดตั้ง GA4/GTM พัฒนาเว็บไซต์ WordPress ทำ SEO/Backlink และเขียนสคริปต์ดึงข้อมูลชุดแรกที่ต่อยอดมาเป็นระบบหลักขององค์กร
-              </p>
-            </div>
-
-            <div class="time-card">
-              <time>GRADUATED 2025 · GPA 3.67 &amp; DATA SCIENCE BOOTCAMP #12 (FEB 2026)</time>
-              <h3 class="en">B.Sc. Digital Innovation &amp; Content Management · SSRU</h3>
-              <h3 class="th">วท.บ. การจัดการนวัตกรรมดิจิทัลและคอนเทนต์ · มรภ.สวนสุนันทา (เกรด 3.67)</h3>
-              <p>Faculty of Science &amp; Technology · Completed DataRockie Data Science Bootcamp #12 (SQL, R, Python, Statistics, ML).</p>
-            </div>
+        <!-- Clickable 12 Certificates Gallery -->
+        <div class="section-header reveal" style="margin-bottom: 20px;">
+          <div>
+            <span class="section-label"><i class="fa-solid fa-award"></i> Verified Certificates Gallery (Click any card to view full image)</span>
+            <h3 class="en" style="font-size: 1.45rem;">12 Completed Certifications</h3>
+            <h3 class="th" style="font-size: 1.45rem;">12 ใบรับรองการอบรมมาตรฐาน (คลิกที่การ์ดเพื่อดูรูปใบรับรองขนาดเต็ม)</h3>
           </div>
+        </div>
 
-          <div class="cert-box">
-            <h3 class="en"><i class="fa-solid fa-award" style="color:var(--emerald-light);margin-right:6px"></i> 12 Verified Certifications</h3>
-            <h3 class="th"><i class="fa-solid fa-award" style="color:var(--emerald-light);margin-right:6px"></i> 12 ใบรับรองการอบรมมาตรฐาน</h3>
-            <div class="cert-list">
-              <div class="cert-item"><i class="fa-solid fa-check"></i>Data Science Bootcamp</div>
-              <div class="cert-item"><i class="fa-solid fa-check"></i>Prof. Data Analyst</div>
-              <div class="cert-item"><i class="fa-solid fa-check"></i>TDGA Data Governance</div>
-              <div class="cert-item"><i class="fa-solid fa-check"></i>NSTDA AI Ethics</div>
-              <div class="cert-item"><i class="fa-solid fa-check"></i>Power BI Analytics</div>
-              <div class="cert-item"><i class="fa-solid fa-check"></i>UX/UI Design</div>
-              <div class="cert-item"><i class="fa-solid fa-check"></i>Agile &amp; Scrum</div>
-              <div class="cert-item"><i class="fa-solid fa-check"></i>Software Testing (QA)</div>
-              <div class="cert-item"><i class="fa-solid fa-check"></i>Design Thinking</div>
-              <div class="cert-item"><i class="fa-solid fa-check"></i>Advanced Excel</div>
-              <div class="cert-item"><i class="fa-solid fa-check"></i>Digital Literacy</div>
-              <div class="cert-item"><i class="fa-solid fa-check"></i>TikTok Professional</div>
+        <div class="cert-grid">
+          <button class="cert-card glow-card reveal" type="button" data-cert="assets/certs/datarockie-bootcamp.webp" data-title="Data Science Bootcamp #12" data-issuer="DataRockie · Feb 2026">
+            <div class="cert-thumb">
+              <img src="assets/certs/datarockie-bootcamp.webp" alt="Data Science Bootcamp Certificate" loading="lazy">
+              <span class="cert-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> <span class="en">View</span><span class="th">ดูใบเซอร์</span></span>
             </div>
-          </div>
+            <div class="cert-meta">
+              <strong>Data Science Bootcamp #12</strong>
+              <span>DataRockie · SQL, R, Python, ML</span>
+            </div>
+          </button>
+
+          <button class="cert-card glow-card reveal" type="button" data-cert="assets/certs/data-analyst.webp" data-title="Professional Data Analyst" data-issuer="Certified Data Analytics Program">
+            <div class="cert-thumb">
+              <img src="assets/certs/data-analyst.webp" alt="Professional Data Analyst Certificate" loading="lazy">
+              <span class="cert-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> <span class="en">View</span><span class="th">ดูใบเซอร์</span></span>
+            </div>
+            <div class="cert-meta">
+              <strong>Professional Data Analyst</strong>
+              <span>Data Analysis &amp; Business Metrics</span>
+            </div>
+          </button>
+
+          <button class="cert-card glow-card reveal" type="button" data-cert="assets/certs/data-governance.webp" data-title="Introduction to Data Governance" data-issuer="TDGA (Thailand Digital Government Academy)">
+            <div class="cert-thumb">
+              <img src="assets/certs/data-governance.webp" alt="TDGA Data Governance Certificate" loading="lazy">
+              <span class="cert-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> <span class="en">View</span><span class="th">ดูใบเซอร์</span></span>
+            </div>
+            <div class="cert-meta">
+              <strong>Data Governance</strong>
+              <span>TDGA · Data Quality &amp; Security</span>
+            </div>
+          </button>
+
+          <button class="cert-card glow-card reveal" type="button" data-cert="assets/certs/ai-ethics.webp" data-title="Artificial Intelligence Ethics" data-issuer="NSTDA (National Science and Technology Development Agency)">
+            <div class="cert-thumb">
+              <img src="assets/certs/ai-ethics.webp" alt="NSTDA AI Ethics Certificate" loading="lazy">
+              <span class="cert-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> <span class="en">View</span><span class="th">ดูใบเซอร์</span></span>
+            </div>
+            <div class="cert-meta">
+              <strong>AI Ethics &amp; Governance</strong>
+              <span>NSTDA · Responsible AI</span>
+            </div>
+          </button>
+
+          <button class="cert-card glow-card reveal" type="button" data-cert="assets/certs/powerbi.webp" data-title="Business Intelligence with Power BI" data-issuer="Data Visualization & Dashboard Design">
+            <div class="cert-thumb">
+              <img src="assets/certs/powerbi.webp" alt="Power BI Certificate" loading="lazy">
+              <span class="cert-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> <span class="en">View</span><span class="th">ดูใบเซอร์</span></span>
+            </div>
+            <div class="cert-meta">
+              <strong>Power BI Analytics</strong>
+              <span>Interactive BI Dashboards</span>
+            </div>
+          </button>
+
+          <button class="cert-card glow-card reveal" type="button" data-cert="assets/certs/uxui-design.webp" data-title="UX/UI Design Principles" data-issuer="User Experience & Interface Architecture">
+            <div class="cert-thumb">
+              <img src="assets/certs/uxui-design.webp" alt="UX/UI Design Certificate" loading="lazy">
+              <span class="cert-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> <span class="en">View</span><span class="th">ดูใบเซอร์</span></span>
+            </div>
+            <div class="cert-meta">
+              <strong>UX/UI Design</strong>
+              <span>Product Interface &amp; Wireframing</span>
+            </div>
+          </button>
+
+          <button class="cert-card glow-card reveal" type="button" data-cert="assets/certs/agile-scrum.webp" data-title="Agile Project Management & Scrum" data-issuer="Iterative Software Delivery">
+            <div class="cert-thumb">
+              <img src="assets/certs/agile-scrum.webp" alt="Agile Project Management Certificate" loading="lazy">
+              <span class="cert-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> <span class="en">View</span><span class="th">ดูใบเซอร์</span></span>
+            </div>
+            <div class="cert-meta">
+              <strong>Agile &amp; Scrum Management</strong>
+              <span>Sprint Planning &amp; Delivery</span>
+            </div>
+          </button>
+
+          <button class="cert-card glow-card reveal" type="button" data-cert="assets/certs/software-testing.webp" data-title="Software Testing & Quality Assurance" data-issuer="Test Case Design & Verification">
+            <div class="cert-thumb">
+              <img src="assets/certs/software-testing.webp" alt="Software Testing Certificate" loading="lazy">
+              <span class="cert-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> <span class="en">View</span><span class="th">ดูใบเซอร์</span></span>
+            </div>
+            <div class="cert-meta">
+              <strong>Software Testing (QA)</strong>
+              <span>Test Cases &amp; Bug Verification</span>
+            </div>
+          </button>
+
+          <button class="cert-card glow-card reveal" type="button" data-cert="assets/certs/design-thinking.webp" data-title="Digital Transformation & Design Thinking" data-issuer="Human-Centered Problem Solving">
+            <div class="cert-thumb">
+              <img src="assets/certs/design-thinking.webp" alt="Design Thinking Certificate" loading="lazy">
+              <span class="cert-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> <span class="en">View</span><span class="th">ดูใบเซอร์</span></span>
+            </div>
+            <div class="cert-meta">
+              <strong>Design Thinking</strong>
+              <span>Digital Transformation</span>
+            </div>
+          </button>
+
+          <button class="cert-card glow-card reveal" type="button" data-cert="assets/certs/microsoft-excel.webp" data-title="Advanced Microsoft Excel for Data Analysis" data-issuer="Spreadsheet Modeling & Formulas">
+            <div class="cert-thumb">
+              <img src="assets/certs/microsoft-excel.webp" alt="Microsoft Excel Certificate" loading="lazy">
+              <span class="cert-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> <span class="en">View</span><span class="th">ดูใบเซอร์</span></span>
+            </div>
+            <div class="cert-meta">
+              <strong>Advanced Microsoft Excel</strong>
+              <span>Data Reporting &amp; Pivot Models</span>
+            </div>
+          </button>
+
+          <button class="cert-card glow-card reveal" type="button" data-cert="assets/certs/digital-literacy.webp" data-title="TDGA Digital Literacy" data-issuer="Thailand Digital Government Academy">
+            <div class="cert-thumb">
+              <img src="assets/certs/digital-literacy.webp" alt="Digital Literacy Certificate" loading="lazy">
+              <span class="cert-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> <span class="en">View</span><span class="th">ดูใบเซอร์</span></span>
+            </div>
+            <div class="cert-meta">
+              <strong>TDGA Digital Literacy</strong>
+              <span>Digital Workplace Standards</span>
+            </div>
+          </button>
+
+          <button class="cert-card glow-card reveal" type="button" data-cert="assets/certs/tiktok-pro.webp" data-title="TikTok Professional Marketing & Content" data-issuer="Short-Form Video & Algorithm Strategy">
+            <div class="cert-thumb">
+              <img src="assets/certs/tiktok-pro.webp" alt="TikTok Professional Certificate" loading="lazy">
+              <span class="cert-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> <span class="en">View</span><span class="th">ดูใบเซอร์</span></span>
+            </div>
+            <div class="cert-meta">
+              <strong>TikTok Professional</strong>
+              <span>Content &amp; Campaign Strategy</span>
+            </div>
+          </button>
         </div>
 
         <!-- Contact Callout -->
-        <div class="contact-bar" style="margin-top: 56px;">
+        <div class="contact-bar glow-card reveal" style="margin-top: 56px;">
           <div>
             <h2 class="en">Ready to build reliable systems together.</h2>
             <h2 class="th">พร้อมร่วมสร้างระบบที่ใช้งานได้จริงและวัดผลได้</h2>
-            <p class="en" style="color:var(--muted);font-size:0.9rem;">Bangkok, Thailand · Full-Stack, Backend/Data Systems &amp; Marketing Technology</p>
-            <p class="th" style="color:var(--muted);font-size:0.9rem;">กรุงเทพมหานคร · ระบบข้อมูล, Full-Stack / Backend Engineering และ Marketing Technology</p>
+            <p class="en" style="color:var(--text-secondary);font-size:0.92rem;">Bangkok, Thailand · Full-Stack, Backend/Data Systems &amp; Marketing Technology</p>
+            <p class="th" style="color:var(--text-secondary);font-size:0.92rem;">กรุงเทพมหานคร · ระบบข้อมูล, Full-Stack / Backend Engineering และ Marketing Technology</p>
           </div>
           <div class="contact-links">
             <a class="btn primary" href="mailto:maythaser2014@hotmail.com"><i class="fa-regular fa-envelope"></i>maythaser2014@hotmail.com</a>
@@ -1666,9 +1991,21 @@
   <footer>
     <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
       <span>© 2026 Maythas Bodkennari · Deployed on Railway (maythas.tech)</span>
-      <span class="mono">CLEAN EXECUTIVE INDIE EDITION · THREE.JS + MESHY 3D</span>
+      <span class="mono">LUMINOUS INDIE DEV EDITION · THREE.JS + MESHY 3D</span>
     </div>
   </footer>
+
+  <!-- CERTIFICATE LIGHTBOX MODAL -->
+  <div class="cert-modal" id="certModal" role="dialog" aria-modal="true" aria-label="Certificate Viewer">
+    <div class="cert-modal-box">
+      <button class="cert-modal-close" id="certModalClose" type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <img class="cert-modal-img" id="certModalImg" src="" alt="Certificate Full View">
+      <div class="cert-modal-caption">
+        <h4 id="certModalTitle"></h4>
+        <span id="certModalIssuer"></span>
+      </div>
+    </div>
+  </div>
 
   <script>
     /* Language Toggle */
@@ -1688,9 +2025,64 @@
     const navLinks = document.getElementById('navLinks');
     menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    /* Scroll Progress Bar */
+    const progressBar = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+      progressBar.style.width = `${pct}%`;
+    }, { passive: true });
+
+    /* Scroll-Reveal Observer */
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => revealObserver.observe(el));
+
+    /* Interactive Cursor Spotlight on .glow-card */
+    if (window.matchMedia('(pointer: fine)').matches) {
+      document.querySelectorAll('.glow-card').forEach(card => {
+        card.addEventListener('pointermove', e => {
+          const rect = card.getBoundingClientRect();
+          card.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+          card.style.setProperty('--my', `${e.clientY - rect.top}px`);
+        });
+      });
+    }
+
+    /* Certificate Lightbox Modal */
+    const certModal = document.getElementById('certModal');
+    const certModalImg = document.getElementById('certModalImg');
+    const certModalTitle = document.getElementById('certModalTitle');
+    const certModalIssuer = document.getElementById('certModalIssuer');
+    const certModalClose = document.getElementById('certModalClose');
+
+    document.querySelectorAll('.cert-card').forEach(card => {
+      card.addEventListener('click', () => {
+        certModalImg.src = card.dataset.cert || '';
+        certModalTitle.textContent = card.dataset.title || '';
+        certModalIssuer.textContent = card.dataset.issuer || '';
+        certModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeCertModal() {
+      certModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    certModalClose.addEventListener('click', closeCertModal);
+    certModal.addEventListener('click', e => { if (e.target === certModal) closeCertModal(); });
+    window.addEventListener('keydown', e => { if (e.key === 'Escape' && certModal.classList.contains('active')) closeCertModal(); });
   </script>
 
-  <!-- Clean 3D Model Viewer (Real Meshy.ai Rigged Model: Walk & A-Pose Only) -->
+  <!-- Clean 3D Model Viewer (Real Meshy.ai Rigged Model Only — No Walk/Run) -->
   <script type="module">
     const canvas = document.getElementById('charCanvas');
     const fallbackImg = document.getElementById('charFallbackImg');
@@ -1698,8 +2090,7 @@
     const modeBtns = document.querySelectorAll('#charControls .model-tab');
 
     const MODELS = {
-      walk:  { url: 'assets/3d/maythas-walk.glb',   label: '3D Walking Rig' },
-      apose: { url: 'assets/3d/maythas-rigged.glb', label: '3D A-Pose Rig' },
+      model: { url: 'assets/3d/maythas-rigged.glb', label: 'Interactive 3D GLB' },
       real:  { img: 'Maythas Bodkennari My Picture.png', label: 'Real Portrait' }
     };
 
@@ -1718,16 +2109,16 @@
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       renderer.outputColorSpace = THREE.SRGBColorSpace;
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
-      renderer.toneMappingExposure = 1.22;
+      renderer.toneMappingExposure = 1.28;
 
       const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
-      camera.position.set(0, 0.12, 3.25);
+      const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 100);
+      camera.position.set(0, 0.12, 3.2);
 
-      scene.add(new THREE.AmbientLight(0xffffff, 1.85));
-      const hemi = new THREE.HemisphereLight(0xf0fdf4, 0x09120d, 1.3);
+      scene.add(new THREE.AmbientLight(0xffffff, 1.9));
+      const hemi = new THREE.HemisphereLight(0xecfdf5, 0x0b1510, 1.4);
       scene.add(hemi);
-      const dirLight = new THREE.DirectionalLight(0xffffff, 2.1);
+      const dirLight = new THREE.DirectionalLight(0xffffff, 2.2);
       dirLight.position.set(2.5, 4, 3.5);
       scene.add(dirLight);
 
@@ -1735,10 +2126,9 @@
       scene.add(stageGroup);
 
       const loader = new GLTFLoader();
-      const cache = {};
+      let cachedGLTF = null;
       let currentRoot = null;
-      let currentMixer = null;
-      let activeMode = 'walk';
+      let activeMode = 'model';
       let isDragging = false;
       let prevX = 0;
       let rotY = 0;
@@ -1758,15 +2148,11 @@
 
       function mountGLTF(gltf) {
         if (currentRoot) stageGroup.remove(currentRoot);
-        if (currentMixer) {
-          currentMixer.stopAllAction();
-          currentMixer = null;
-        }
         const root = gltf.scene;
         const box = new THREE.Box3().setFromObject(root);
         const size = box.getSize(new THREE.Vector3());
         const maxDim = Math.max(size.x, size.y, size.z) || 1;
-        root.scale.setScalar(1.85 / maxDim);
+        root.scale.setScalar(1.88 / maxDim);
 
         const sBox = new THREE.Box3().setFromObject(root);
         const sCenter = sBox.getCenter(new THREE.Vector3());
@@ -1774,11 +2160,6 @@
 
         stageGroup.add(root);
         currentRoot = root;
-
-        if (gltf.animations && gltf.animations.length > 0) {
-          currentMixer = new THREE.AnimationMixer(root);
-          currentMixer.clipAction(gltf.animations[0]).play();
-        }
       }
 
       function setMode(mode) {
@@ -1793,15 +2174,15 @@
         canvas.style.display = 'block';
         statusNote.textContent = 'Loading 3D...';
 
-        if (cache[mode]) {
-          mountGLTF(cache[mode]);
+        if (cachedGLTF) {
+          mountGLTF(cachedGLTF);
           statusNote.textContent = cfg.label;
           return;
         }
         loader.load(
           cfg.url,
           gltf => {
-            cache[mode] = gltf;
+            cachedGLTF = gltf;
             if (activeMode === mode) {
               mountGLTF(gltf);
               statusNote.textContent = cfg.label;
@@ -1837,13 +2218,14 @@
         if (canvas.style.display === 'none') return;
         resize();
         const dt = clock.getDelta();
-        if (currentMixer) currentMixer.update(dt);
-        if (autoRotate) rotY += dt * 0.32;
+        const elapsed = clock.getElapsedTime();
+        if (autoRotate) rotY += dt * 0.35;
         stageGroup.rotation.y = rotY;
+        stageGroup.position.y = Math.sin(elapsed * 1.8) * 0.03;
         renderer.render(scene, camera);
       }
 
-      setMode('walk');
+      setMode('model');
       loop();
     }).catch(() => {
       showImage('assets/3d/maythas-3d-preview.png', '3D Model Render');
