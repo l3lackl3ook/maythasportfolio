@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Deep Forest-Obsidian Studio Background -->
+    <radialGradient id="bgGrad" cx="50%" cy="46%" r="65%" fx="50%" fy="42%">
+      <stop offset="0%" stop-color="#11261d"/>
+      <stop offset="52%" stop-color="#0a1611"/>
+      <stop offset="100%" stop-color="#050b08"/>
+    </radialGradient>
+
+    <!-- Soft Ambient Emerald-Cyan Halo Behind the 3D Ribbon -->
+    <radialGradient id="haloGrad" cx="50%" cy="50%" r="46%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.24"/>
+      <stop offset="55%" stop-color="#38bdf8" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#050b08" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Subtle Squircle Rim Border Gradient -->
+    <linearGradient id="rimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6ee7b7" stop-opacity="0.38"/>
+      <stop offset="50%" stop-color="#10b981" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.32"/>
+    </linearGradient>
+
+    <!-- 1. Left Outer Up-Stroke: Luminous Mint Front Face -->
+    <linearGradient id="leftOuterFront" x1="15%" y1="5%" x2="55%" y2="98%">
+      <stop offset="0%" stop-color="#d1fae5"/>
+      <stop offset="28%" stop-color="#6ee7b7"/>
+      <stop offset="72%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+
+    <!-- 1b. Left Outer Up-Stroke: 3D Extruded Right Bevel Face -->
+    <linearGradient id="leftOuterBevel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10f38d"/>
+      <stop offset="45%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+
+    <!-- 2. Left Inner Down-Stroke (Folded Behind Top-Left Arch to Center Valley): Front/Left Face -->
+    <linearGradient id="leftInnerFront" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#047857"/>
+      <stop offset="22%" stop-color="#059669"/>
+      <stop offset="65%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+
+    <!-- 2b. Left Inner Down-Stroke: Shaded Inner Bevel -->
+    <linearGradient id="leftInnerBevel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="45%" stop-color="#047857"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+
+    <!-- 3. Right Inner Up-Stroke (Center Valley to Top-Right Arch): Mint-to-Cyan Front Face -->
+    <linearGradient id="rightInnerFront" x1="10%" y1="95%" x2="85%" y2="5%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="32%" stop-color="#2dd4bf"/>
+      <stop offset="68%" stop-color="#67e8f9"/>
+      <stop offset="100%" stop-color="#bae6fd"/>
+    </linearGradient>
+
+    <!-- 3b. Right Inner Up-Stroke: 3D Extruded Right Bevel Face (Electric Cyan) -->
+    <linearGradient id="rightInnerBevel" x1="0%" y1="95%" x2="90%" y2="5%">
+      <stop offset="0%" stop-color="#0d9488"/>
+      <stop offset="40%" stop-color="#06b6d4"/>
+      <stop offset="80%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+
+    <!-- 4. Right Outer Down-Stroke (Folded Behind Top-Right Arch to Bottom-Right): Cyan Front-Right Face -->
+    <linearGradient id="rightOuterFront" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="30%" stop-color="#0ea5e9"/>
+      <stop offset="70%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#7dd3fc"/>
+    </linearGradient>
+
+    <!-- 4b. Right Outer Down-Stroke: Inner Emerald-Teal Bevel Face -->
+    <linearGradient id="rightOuterBevel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#065f46"/>
+      <stop offset="35%" stop-color="#059669"/>
+      <stop offset="75%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+
+    <!-- Specular Ridge Highlight Gradient -->
+    <linearGradient id="ridgeHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.72"/>
+      <stop offset="50%" stop-color="#a7f3d0" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.45"/>
+    </linearGradient>
+
+    <!-- Deep 3D Drop Shadow Filter -->
+    <filter id="dropShadow3D" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="28" stdDeviation="26" flood-color="#000000" flood-opacity="0.72"/>
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#042f2e" flood-opacity="0.45"/>
+    </filter>
+
+    <!-- Inner Fold Ambient Occlusion Shadow -->
+    <filter id="foldShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="-10" dy="14" stdDeviation="12" flood-color="#02100b" flood-opacity="0.68"/>
+    </filter>
+  </defs>
+
+  <!-- Rounded Squircle App Icon Base -->
+  <rect x="24" y="24" width="976" height="976" rx="216" fill="url(#bgGrad)"/>
+  <rect x="24" y="24" width="976" height="976" rx="216" fill="url(#haloGrad)"/>
+  <rect x="28" y="28" width="968" height="968" rx="212" fill="none" stroke="url(#rimGrad)" stroke-width="6"/>
+
+  <!-- Main 3D Sculpted Ribbon "M" Group with Studio Shadow -->
+  <g filter="url(#dropShadow3D)">
+
+    <!-- ==========================================
+         SEGMENT 4 (BACK-RIGHT): Right Outer Leg
+         (Descends from behind Top-Right Arch to Bottom-Right)
+         ========================================== -->
+    <!-- Inner Emerald-Teal Bevel of Right Outer Leg -->
+    <path d="M 608 265
+             L 682 265
+             L 764 756
+             C 740 756, 706 742, 690 714
+             L 608 265 Z"
+          fill="url(#rightOuterBevel)"/>
+
+    <!-- Front/Right Electric Sky-Cyan Face of Right Outer Leg -->
+    <path d="M 664 226
+             C 700 226, 728 248, 736 288
+             L 832 756
+             L 764 756
+             L 672 265
+             C 668 244, 658 232, 646 226 Z"
+          fill="url(#rightOuterFront)"/>
+
+    <!-- ==========================================
+         SEGMENT 2 (BACK-LEFT): Left Inner Leg
+         (Descends from behind Top-Left Arch to Center Valley)
+         ========================================== -->
+    <!-- Left Inner Shaded Bevel -->
+    <path d="M 326 268
+             L 392 268
+             L 504 646
+             L 444 646
+             C 426 632, 412 608, 404 580
+             L 326 268 Z"
+          fill="url(#leftInnerBevel)"/>
+
+    <!-- Left Inner Emerald Face -->
+    <path d="M 380 232
+             C 412 232, 434 252, 444 286
+             L 548 624
+             C 528 652, 492 664, 464 652
+             L 372 280
+             C 366 254, 360 238, 348 232 Z"
+          fill="url(#leftInnerFront)"/>
+
+    <!-- ==========================================
+         SEGMENT 3 (FRONT-CENTER-RIGHT): Right Inner Up-Stroke
+         (Rises from Center V-Valley up to Top-Right Arch)
+         ========================================== -->
+    <g filter="url(#foldShadow)">
+      <!-- 3D Right Extruded Bevel of Center-Right Leg -->
+      <path d="M 488 664
+               C 524 664, 550 644, 562 608
+               L 684 268
+               C 694 242, 710 226, 728 238
+               C 716 218, 694 210, 668 210
+               L 614 210
+               L 476 620
+               C 466 644, 470 660, 488 664 Z"
+            fill="url(#rightInnerBevel)"/>
+
+      <!-- Luminous Mint-to-Cyan Front Face of Center-Right Leg -->
+      <path d="M 432 618
+               C 444 650, 466 664, 494 664
+               C 514 664, 530 648, 540 620
+               L 668 254
+               C 678 226, 698 210, 720 218
+               C 706 204, 686 198, 660 198
+               L 596 198
+               C 564 198, 540 216, 528 250
+               L 432 544
+               C 424 570, 424 596, 432 618 Z"
+            fill="url(#rightInnerFront)"/>
+    </g>
+
+    <!-- ==========================================
+         SEGMENT 1 (FRONT-LEFT): Left Outer Up-Stroke
+         (Rises from Bottom-Left Chisel to Top-Left Arch)
+         ========================================== -->
+    <g filter="url(#foldShadow)">
+      <!-- 3D Right Extruded Bevel of Left Outer Leg -->
+      <path d="M 192 756
+               C 238 756, 274 736, 284 692
+               L 374 266
+               C 380 236, 398 218, 420 228
+               C 406 206, 384 198, 354 198
+               L 296 198
+               L 192 756 Z"
+            fill="url(#leftOuterBevel)"/>
+
+      <!-- Bright Mint Front Face of Left Outer Leg -->
+      <path d="M 192 756
+               L 276 254
+               C 284 216, 310 198, 348 198
+               L 394 198
+               C 368 198, 348 216, 340 256
+               L 248 706
+               C 240 738, 218 752, 192 756 Z"
+            fill="url(#leftOuterFront)"/>
+    </g>
+
+    <!-- Crisp Specular Bevel Ridge Lines for Extra 3D Pop -->
+    <path d="M 194 752 L 288 252 C 296 214, 320 200, 358 200"
+          fill="none" stroke="url(#ridgeHighlight)" stroke-width="4.5" stroke-linecap="round" opacity="0.85"/>
+    <path d="M 480 658 C 502 658, 518 642, 528 614 L 656 248 C 666 218, 686 202, 710 206"
+          fill="none" stroke="url(#ridgeHighlight)" stroke-width="4.5" stroke-linecap="round" opacity="0.85"/>
+    <path d="M 672 226 C 702 228, 724 250, 732 288 L 828 752"
+          fill="none" stroke="url(#ridgeHighlight)" stroke-width="3.5" stroke-linecap="round" opacity="0.65"/>
+  </g>
+</svg>
