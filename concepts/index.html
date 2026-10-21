@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maythas.tech — เลือกทิศทางดีไซน์</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #14161a;
+      --paper: #f3f1ec;
+      --mute: #5c616a;
+      --line: #d8d4cb;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'IBM Plex Sans Thai', system-ui, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      min-height: 100vh;
+      padding: 48px 24px 80px;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; }
+    h1 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+    .lead {
+      color: var(--mute);
+      font-size: 1.05rem;
+      max-width: 42ch;
+      line-height: 1.55;
+      margin-bottom: 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+    a.card {
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid var(--line);
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 420px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    a.card:hover { transform: translateY(-4px); border-color: var(--ink); }
+    .swatch {
+      height: 180px;
+      position: relative;
+      overflow: hidden;
+    }
+    .swatch span {
+      position: absolute;
+      inset: auto 16px 14px;
+      font: 600 0.72rem/1 'IBM Plex Sans Thai', sans-serif;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.9);
+    }
+    .body { padding: 22px 20px 24px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+    .body h2 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+    }
+    .body p { color: var(--mute); font-size: 0.92rem; line-height: 1.55; flex: 1; }
+    .body em {
+      font-style: normal;
+      font-size: 0.78rem;
+      color: var(--ink);
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+      margin-top: 8px;
+    }
+    .a .swatch { background: linear-gradient(145deg, #e6e9ee 0%, #c5ced8 40%, #1e4d8c 100%); }
+    .b .swatch { background: linear-gradient(160deg, #0c0e12 0%, #1a1d24 55%, #b87333 100%); }
+    .c .swatch { background: linear-gradient(155deg, #f7f3eb 0%, #e8dfd0 45%, #6b2c3e 100%); }
+    .note { margin-top: 28px; color: var(--mute); font-size: 0.85rem; }
+    .note a { color: var(--ink); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>เลือกทิศทางใหม่</h1>
+    <p class="lead">สามแนวที่ต่างกันทั้งโทน สี และบุคลิก — ไม่ใช่เขียวมิ้นต์บนพื้นดำแบบเดิม เปิดดูเต็มจอ แล้วบอกหมายเลขที่ถูกใจ</p>
+    <div class="grid">
+      <a class="card a" href="a-blueprint.html">
+        <div class="swatch"><span>A · BLUEPRINT</span></div>
+        <div class="body">
+          <h2>A — Blueprint</h2>
+          <p>พอร์ตโฟลิโอแบบพิมพ์เขียววิศวกรรม กระดาษหินปูน + หมึกน้ำเงิน โทนสงบ มั่นใจ เหมาะกับคนสร้างระบบระดับ enterprise</p>
+          <em>รู้สึก: สตูดิโอสถาปัตย์ / เอกสารเทคนิคพรีเมียม</em>
+        </div>
+      </a>
+      <a class="card b" href="b-signal.html">
+        <div class="swatch"><span>B · SIGNAL DESK</span></div>
+        <div class="body">
+          <h2>B — Signal Desk</h2>
+          <p>โต๊ะปฏิบัติการกลางคืน ถ่านหิน + ทองแดง ตัวเลขจริงเป็นฮีโร่ ไม่มีนีออนเขียว ไม่รู้สึก dashboard SaaS</p>
+          <em>รู้สึก: trading floor / control room ที่แต่งตัวมา</em>
+        </div>
+      </a>
+      <a class="card c" href="c-lacquer.html">
+        <div class="swatch"><span>C · LACQUER ROOM</span></div>
+        <div class="body">
+          <h2>C — Lacquer Room</h2>
+          <p>ห้องนิทรรศการเงียบ กระดาษอุ่น + หมึก + แดงไม้ชิงชัน ชื่อเป็นจุดศูนย์กลาง พิพิธภัณฑ์มากกว่าสตาร์ทอัพ</p>
+          <em>รู้สึก: gallery catalog / แบรนด์ส่วนตัวระดับโลก</em>
+        </div>
+      </a>
+    </div>
+    <p class="note">กลับไปเวอร์ชันปัจจุบัน: <a href="../index.html">index.html</a></p>
+  </div>
+</body>
+</html>

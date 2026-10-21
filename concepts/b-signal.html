@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B · Signal Desk — Maythas.tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --void: #0a0c10;
+      --panel: #12151c;
+      --panel-2: #1a1e28;
+      --ink: #ece8e1;
+      --mute: #8b909c;
+      --line: rgba(236,232,225,0.12);
+      --copper: #c47b3b;
+      --copper-bright: #e09a55;
+      --live: #d4a574;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Source Sans 3', 'IBM Plex Sans Thai', system-ui, sans-serif;
+      background: var(--void);
+      color: var(--ink);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(ellipse 70% 45% at 70% 0%, rgba(196,123,59,0.14), transparent 55%),
+        radial-gradient(ellipse 50% 40% at 0% 80%, rgba(26,30,40,0.9), transparent 50%),
+        linear-gradient(180deg, #0c0f15 0%, var(--void) 50%, #08090c 100%);
+      pointer-events: none;
+    }
+    .display { font-family: 'Oxanium', sans-serif; }
+    .mono { font-family: 'IBM Plex Mono', monospace; }
+
+    .top {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 28px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(10,12,16,0.85);
+      backdrop-filter: blur(14px);
+      position: sticky; top: 0; z-index: 40;
+    }
+    .mark {
+      font-family: 'Oxanium', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .mark .pulse {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--copper-bright);
+      box-shadow: 0 0 0 0 rgba(224,154,85,0.5);
+      animation: pulse 2.4s ease infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(224,154,85,0.45); }
+      70% { box-shadow: 0 0 0 10px rgba(224,154,85,0); }
+      100% { box-shadow: 0 0 0 0 rgba(224,154,85,0); }
+    }
+    @media (prefers-reduced-motion: reduce) { .mark .pulse { animation: none; } }
+    .top nav { display: flex; gap: 20px; align-items: center; }
+    .top a {
+      color: var(--mute); text-decoration: none; font-size: 0.88rem;
+    }
+    .top a:hover { color: var(--ink); }
+    .top .back {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--copper);
+      border: 1px solid rgba(196,123,59,0.35);
+      padding: 6px 10px;
+    }
+
+    .hero {
+      min-height: calc(100vh - 60px);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: clamp(40px, 7vw, 72px) clamp(24px, 5vw, 48px) clamp(36px, 5vw, 56px);
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-bg-name {
+      position: absolute;
+      left: -2%;
+      bottom: 18%;
+      font-family: 'Oxanium', sans-serif;
+      font-weight: 700;
+      font-size: clamp(5rem, 18vw, 14rem);
+      line-height: 0.8;
+      letter-spacing: -0.04em;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(236,232,225,0.07);
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    .live-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--live);
+      width: fit-content;
+    }
+    .hero h1 {
+      font-family: 'Oxanium', sans-serif;
+      font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.08;
+      max-width: 16ch;
+    }
+    .hero p {
+      color: var(--mute);
+      font-size: 1.08rem;
+      max-width: 42ch;
+    }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex; align-items: center;
+      padding: 12px 18px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      font-family: 'Oxanium', sans-serif;
+      letter-spacing: 0.02em;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .btn-copper {
+      background: var(--copper);
+      color: #120e0a;
+      border: 1px solid var(--copper);
+    }
+    .btn-copper:hover { background: var(--copper-bright); border-color: var(--copper-bright); }
+    .btn-line {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+    .btn-line:hover { border-color: var(--copper); color: var(--copper-bright); }
+
+    .ticker {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--line);
+      background: var(--panel);
+    }
+    @media (max-width: 720px) { .ticker { grid-template-columns: 1fr 1fr; } }
+    .tick {
+      padding: 22px 24px;
+      border-right: 1px solid var(--line);
+    }
+    .tick:last-child { border-right: none; }
+    .tick b {
+      display: block;
+      font-family: 'Oxanium', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      letter-spacing: -0.02em;
+      color: var(--copper-bright);
+      line-height: 1;
+    }
+    .tick span {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--mute);
+      margin-top: 8px;
+      display: block;
+    }
+
+    section.pad {
+      padding: clamp(48px, 8vw, 80px) clamp(24px, 5vw, 48px);
+      border-bottom: 1px solid var(--line);
+    }
+    .sec-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--copper);
+      margin-bottom: 14px;
+    }
+    .sec-title {
+      font-family: 'Oxanium', sans-serif;
+      font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+      letter-spacing: -0.02em;
+      max-width: 18ch;
+      margin-bottom: 32px;
+      line-height: 1.1;
+    }
+
+    .rail {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--line);
+    }
+    .rail-item {
+      display: grid;
+      grid-template-columns: 140px 1fr auto;
+      gap: 20px;
+      align-items: center;
+      padding: 22px 24px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(18,21,28,0.6);
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s;
+    }
+    .rail-item:last-child { border-bottom: none; }
+    .rail-item:hover { background: var(--panel-2); }
+    @media (max-width: 700px) {
+      .rail-item { grid-template-columns: 1fr; gap: 8px; }
+    }
+    .rail-item .code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--copper);
+    }
+    .rail-item h3 {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+    .rail-item p { color: var(--mute); font-size: 0.9rem; margin-top: 4px; }
+    .rail-item .go {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--mute);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    @media (max-width: 800px) { .split { grid-template-columns: 1fr; } }
+    .portrait {
+      aspect-ratio: 4/5;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      position: relative;
+    }
+    .portrait img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: contrast(1.05) saturate(0.85);
+    }
+    .portrait::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(10,12,16,0.55));
+      pointer-events: none;
+    }
+    .split h2 {
+      font-family: 'Oxanium', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .split p { color: var(--mute); max-width: 40ch; margin-bottom: 12px; }
+
+    footer {
+      padding: clamp(48px, 7vw, 72px) clamp(24px, 5vw, 48px);
+      display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+      align-items: end;
+    }
+    footer h2 {
+      font-family: 'Oxanium', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      letter-spacing: -0.02em;
+    }
+    footer a {
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--copper-bright);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-inner > * {
+        animation: up 0.65s ease both;
+      }
+      .hero-inner > *:nth-child(2) { animation-delay: 0.06s; }
+      .hero-inner > *:nth-child(3) { animation-delay: 0.12s; }
+      .hero-inner > *:nth-child(4) { animation-delay: 0.18s; }
+      @keyframes up {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="mark"><span class="pulse" aria-hidden="true"></span> MAYTHAS.TECH <span style="color:var(--mute);font-weight:500;font-size:0.72rem;">B</span></div>
+    <nav>
+      <a href="#systems">Systems</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="back" href="index.html">← เลือกแบบ</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-bg-name" aria-hidden="true">MAYTHAS</div>
+    <div class="hero-inner">
+      <div class="live-tag"><span class="pulse" style="width:6px;height:6px;display:inline-block;border-radius:50%;background:var(--copper-bright);animation:pulse 2.4s ease infinite;"></span> LIVE SYSTEMS · GROWFOX</div>
+      <h1>Data &amp; systems under real load</h1>
+      <p>I build the platforms operators depend on — creator catalogs, CRM approvals, SEO engines, FinOps. Shipped to production. Measured in the field.</p>
+      <div class="cta-row">
+        <a class="btn btn-copper" href="#systems">Open systems</a>
+        <a class="btn btn-line" href="../Maythas_Bodkennari_Portfolio_2026.pdf">PDF brief</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-label="Live metrics">
+    <div class="tick"><b>70,091</b><span>MUSTHERD CREATORS</span></div>
+    <div class="tick"><b>−73%</b><span>CLOUD SPEND</span></div>
+    <div class="tick"><b>6+</b><span>CORE PLATFORMS</span></div>
+    <div class="tick"><b>26+</b><span>PROD MODULES</span></div>
+  </div>
+
+  <section class="pad" id="systems">
+    <div class="sec-label">ACTIVE ROUTES</div>
+    <h2 class="sec-title">What stays online when nobody is watching</h2>
+    <div class="rail">
+      <a class="rail-item" href="https://mustherd.com" target="_blank" rel="noopener">
+        <span class="code">MH · CATALOG</span>
+        <div>
+          <h3>Mustherd</h3>
+          <p>Multi-platform creator intelligence — 70,091 profiles toward 200K.</p>
+        </div>
+        <span class="go">OPEN →</span>
+      </a>
+      <a class="rail-item" href="#about">
+        <span class="code">DC · WORKFLOW</span>
+        <div>
+          <h3>DenCRM</h3>
+          <p>1-click Gmail CEO approval for lead ops — fewer stalls, faster closes.</p>
+        </div>
+        <span class="go">DETAIL →</span>
+      </a>
+      <a class="rail-item" href="#about">
+        <span class="code">GF · STACK</span>
+        <div>
+          <h3>Marketing · Leave · AI SEO</h3>
+          <p>Internal Growfox stack plus technical SEO engines in daily use.</p>
+        </div>
+        <span class="go">DETAIL →</span>
+      </a>
+      <a class="rail-item" href="#about">
+        <span class="code">FO · GOVERN</span>
+        <div>
+          <h3>Cloud FinOps</h3>
+          <p>Governance that cut spend 73% while keeping delivery moving.</p>
+        </div>
+        <span class="go">DETAIL →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="pad" id="about">
+    <div class="split">
+      <div class="portrait">
+        <img src="../Maythas%20Bodkennari%20My%20Picture.png" alt="Maythas Bodkennari">
+      </div>
+      <div>
+        <div class="sec-label">OPERATOR</div>
+        <h2>Maythas Bodkennari</h2>
+        <p>Marketing Data Specialist &amp; Full-Stack Systems Engineer at Growfox. Thai · English. I care about pipelines that don’t lie, UIs operators don’t fight, and costs that stay explainable.</p>
+        <p>This desk metaphor isn’t decoration — it’s how the work feels: signals in, decisions out, systems holding.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div>
+      <h2>Transmit a brief.</h2>
+      <p style="color:var(--mute);margin-top:8px;font-size:0.95rem;">Bangkok · concept B</p>
+    </div>
+    <a href="mailto:bookmaythas@gmail.com">bookmaythas@gmail.com</a>
+  </footer>
+</body>
+</html>

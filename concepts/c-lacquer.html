@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C · Lacquer Room — Maythas.tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Sarabun:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f4efe6;
+      --paper-2: #ebe4d7;
+      --ink: #1a1614;
+      --mute: #6e655c;
+      --line: #d4cbbd;
+      --rosewood: #6b2c3e;
+      --rosewood-deep: #4a1e2b;
+      --gold: #a68b4b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Sarabun', system-ui, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(ellipse 60% 40% at 50% -5%, rgba(107,44,62,0.07), transparent 60%),
+        radial-gradient(ellipse 40% 30% at 100% 60%, rgba(166,139,75,0.08), transparent 50%),
+        linear-gradient(180deg, #f7f3eb 0%, var(--paper) 35%, var(--paper-2) 100%);
+    }
+    a { color: inherit; }
+
+    .nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 22px clamp(20px, 4vw, 48px);
+      position: sticky; top: 0; z-index: 40;
+      background: rgba(244,239,230,0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid transparent;
+    }
+    .nav.scrolled { border-bottom-color: var(--line); }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+    }
+    .logo em {
+      font-style: italic;
+      color: var(--rosewood);
+      font-weight: 500;
+    }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.88rem;
+      color: var(--mute);
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links .back {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--rosewood);
+      border-bottom: 1px solid rgba(107,44,62,0.35);
+      padding-bottom: 2px;
+    }
+
+    .hero {
+      min-height: calc(100vh - 70px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 48px 24px 64px;
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 8% 12% auto;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--line), transparent);
+    }
+    .hero-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.8rem, 12vw, 8.5rem);
+      font-weight: 600;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      margin-bottom: 28px;
+    }
+    .hero-brand span {
+      display: block;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--rosewood);
+      font-size: 0.42em;
+      letter-spacing: 0.02em;
+      margin-top: 0.15em;
+    }
+    .hero-line {
+      font-size: 1.15rem;
+      color: var(--mute);
+      max-width: 36ch;
+      margin: 0 auto 32px;
+    }
+    .hero-cta {
+      display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+    }
+    .btn {
+      display: inline-flex; align-items: center;
+      padding: 13px 22px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.15s, color 0.15s;
+    }
+    .btn-fill {
+      background: var(--rosewood);
+      color: var(--paper);
+    }
+    .btn-fill:hover { background: var(--rosewood-deep); }
+    .btn-text {
+      background: transparent;
+      color: var(--ink);
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      padding: 13px 4px;
+    }
+    .btn-text:hover { border-bottom-color: var(--rosewood); color: var(--rosewood); }
+
+    .band {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,0.35);
+      padding: 28px clamp(20px, 4vw, 48px);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+    @media (max-width: 700px) { .band { grid-template-columns: 1fr 1fr; } }
+    .band b {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 600;
+      line-height: 1;
+      color: var(--rosewood);
+    }
+    .band span {
+      font-size: 0.8rem;
+      color: var(--mute);
+      margin-top: 6px;
+      display: block;
+    }
+
+    .room {
+      padding: clamp(56px, 9vw, 100px) clamp(20px, 4vw, 48px);
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .room-intro {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .room-intro h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .room-intro p {
+      color: var(--mute);
+      max-width: 42ch;
+      margin: 0 auto;
+      font-size: 1.02rem;
+    }
+
+    .exhibit {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px 40px;
+    }
+    @media (max-width: 720px) { .exhibit { grid-template-columns: 1fr; } }
+    .piece {
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+    .piece h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .piece p { color: var(--mute); font-size: 0.95rem; margin-bottom: 12px; }
+    .piece a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--rosewood);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(107,44,62,0.3);
+    }
+
+    .portrait-block {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 48px;
+      align-items: center;
+      padding: clamp(48px, 8vw, 88px) clamp(20px, 4vw, 48px);
+      max-width: 1080px;
+      margin: 0 auto;
+      border-top: 1px solid var(--line);
+    }
+    @media (max-width: 800px) {
+      .portrait-block { grid-template-columns: 1fr; gap: 28px; }
+    }
+    .frame {
+      aspect-ratio: 3/4;
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      padding: 12px;
+      box-shadow: 0 24px 60px rgba(26,22,20,0.08);
+    }
+    .frame img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: sepia(0.12) contrast(1.02);
+    }
+    .portrait-copy h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .portrait-copy p {
+      color: var(--mute);
+      margin-bottom: 14px;
+      max-width: 38ch;
+    }
+    .portrait-copy .th {
+      font-size: 0.95rem;
+      color: var(--ink);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: clamp(48px, 8vw, 80px) clamp(20px, 4vw, 48px);
+      text-align: center;
+    }
+    footer h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    footer p { color: var(--mute); margin-bottom: 20px; }
+    footer a.mail {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--rosewood);
+      text-decoration: none;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-brand, .hero-line, .hero-cta {
+        animation: soft 0.9s ease both;
+      }
+      .hero-line { animation-delay: 0.1s; }
+      .hero-cta { animation-delay: 0.2s; }
+      @keyframes soft {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav" id="nav">
+    <a class="logo" href="#">Maythas<em>.tech</em></a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="back" href="index.html">← เลือกแบบ</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1 class="hero-brand">Maythas<span>Bodkennari</span></h1>
+    <p class="hero-line">Systems engineered with the patience of a craftsperson — platforms that hold under real company weight.</p>
+    <div class="hero-cta">
+      <a class="btn btn-fill" href="#work">Enter the room</a>
+      <a class="btn btn-text" href="../Maythas_Bodkennari_Portfolio_2026.pdf">Portfolio PDF</a>
+    </div>
+  </section>
+
+  <div class="band">
+    <div><b>70,091</b><span>creators catalogued</span></div>
+    <div><b>−73%</b><span>cloud cost</span></div>
+    <div><b>6+</b><span>live platforms</span></div>
+    <div><b>26+</b><span>modules in prod</span></div>
+  </div>
+
+  <section class="room" id="work">
+    <div class="room-intro">
+      <h2>Selected systems</h2>
+      <p>Each piece is a production surface — owned end to end, from data model to the people who use it.</p>
+    </div>
+    <div class="exhibit">
+      <article class="piece">
+        <h3>Mustherd</h3>
+        <p>Creator intelligence at catalog scale — enrichment and discovery across six social platforms.</p>
+        <a href="https://mustherd.com" target="_blank" rel="noopener">mustherd.com</a>
+      </article>
+      <article class="piece">
+        <h3>DenCRM</h3>
+        <p>Lead operations with one-click Gmail approval for the CEO — friction removed where it hurts.</p>
+        <a href="#about">view note</a>
+      </article>
+      <article class="piece">
+        <h3>Growfox stack</h3>
+        <p>Marketing, Leave, and technical AI SEO engines — internal tools that stay in daily rotation.</p>
+        <a href="#about">view note</a>
+      </article>
+      <article class="piece">
+        <h3>Cloud FinOps</h3>
+        <p>Spend governance that cut cloud cost by seventy-three percent without freezing delivery.</p>
+        <a href="#about">view note</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="portrait-block" id="about">
+    <div class="frame">
+      <img src="../Maythas%20Bodkennari%20My%20Picture.png" alt="Maythas Bodkennari">
+    </div>
+    <div class="portrait-copy">
+      <h2>A builder of quiet, durable systems.</h2>
+      <p class="th">เมธัส บุตรกินรี — Marketing Data Specialist &amp; Full-Stack Systems Engineer ที่ Growfox</p>
+      <p>I work where marketing data, product engineering, and operations meet. The goal is simple: systems that tell the truth and stay maintainable after the launch thread goes quiet.</p>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <h2>A conversation, not a pitch deck.</h2>
+    <p>Bangkok · concept C</p>
+    <a class="mail" href="mailto:bookmaythas@gmail.com">bookmaythas@gmail.com</a>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', scrollY > 20);
+    }, { passive: true });
+  </script>
+</body>
+</html>
