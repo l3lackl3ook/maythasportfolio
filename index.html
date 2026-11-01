@@ -1319,6 +1319,33 @@
       .tm-reel { grid-template-columns: repeat(2, 1fr); }
       .tm-reel img { height: 280px; }
     }
+
+    /* MODERN MOTION (SVGator-style): flow pulse, stagger, self-drawing line, mascot */
+    .flow-node { transition: transform .25s ease, box-shadow .25s ease; animation: nodePulse 6s ease-in-out infinite; animation-delay: calc(var(--i, 0) * .7s); }
+    .flow-node:hover { transform: translateY(-2px); }
+    @keyframes nodePulse {
+      0%, 14%, 100% { box-shadow: 0 0 0 0 rgba(110, 231, 183, 0); }
+      7% { box-shadow: 0 0 0 4px rgba(110, 231, 183, .22), 0 0 14px rgba(110, 231, 183, .35); }
+    }
+    .flow-sep { display: inline-block; animation: sepSlide 1.6s ease-in-out infinite; }
+    @keyframes sepSlide { 0%, 100% { transform: translateX(0); opacity: .45; } 50% { transform: translateX(4px); opacity: 1; } }
+    .sys-cols .sys-col { opacity: 0; transform: translateY(18px); transition: opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1), border-color .25s; transition-delay: calc(var(--i, 0) * .12s); }
+    .reveal.visible .sys-col, .sys-cols.visible .sys-col { opacity: 1; transform: none; }
+    .sys-col:hover { border-color: rgba(110, 231, 183, .4); }
+    .hero h1 .accent { background-image: linear-gradient(90deg, var(--mint), var(--amber)); background-repeat: no-repeat; background-size: 0% 2px; background-position: 0 100%; padding-bottom: 4px; animation: drawLine 1.4s .5s cubic-bezier(.22,1,.36,1) forwards; }
+    @keyframes drawLine { to { background-size: 100% 2px; } }
+    .mascot { position: fixed; left: 18px; bottom: 18px; width: 64px; height: 64px; z-index: 40; cursor: pointer; animation: mascotBob 3.4s ease-in-out infinite; filter: drop-shadow(0 6px 10px rgba(0,0,0,.35)); }
+    .mascot .lid { transform-origin: center; transform-box: fill-box; animation: blink 4.5s infinite; }
+    .mascot .arm { transform-origin: 8px 40px; transform-box: view-box; }
+    .mascot.wave .arm { animation: wave .9s ease-in-out 2; }
+    @keyframes mascotBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @keyframes blink { 0%, 94%, 100% { transform: scaleY(1); } 97% { transform: scaleY(.1); } }
+    @keyframes wave { 0%, 100% { transform: rotate(0); } 30% { transform: rotate(-35deg); } 70% { transform: rotate(15deg); } }
+    @media (max-width: 720px) { .mascot { width: 48px; height: 48px; } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+      .sys-cols .sys-col { opacity: 1; transform: none; }
+    }
   </style>
 
   <!-- Google Search Rich Structured Data (WebSite + Person + Logo/Favicon Binding) -->
@@ -2895,6 +2922,14 @@
       showImage('assets/3d/maythas-3d-preview.png', '3D Preview');
     });
   </script>
+    <svg class="mascot" id="mascot" viewBox="0 0 64 64" role="img" aria-label="Mascot">
+    <rect x="12" y="14" width="40" height="38" rx="14" fill="#0b1a13" stroke="#6ee7b7" stroke-width="2"/>
+    <line x1="32" y1="14" x2="32" y2="6" stroke="#6ee7b7" stroke-width="2"/><circle cx="32" cy="5" r="3" fill="#fbbf24"/>
+    <g class="lid"><circle cx="24" cy="32" r="7" fill="#fff"/><circle cx="40" cy="32" r="7" fill="#fff"/></g>
+    <circle class="pupil" cx="24" cy="32" r="3" fill="#0b1a13"/><circle class="pupil" cx="40" cy="32" r="3" fill="#0b1a13"/>
+    <path d="M25 44 Q32 49 39 44" stroke="#6ee7b7" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <rect class="arm" x="4" y="38" width="9" height="4" rx="2" fill="#6ee7b7"/>
+  </svg>
   <script>
     (function () {
       const root = document.querySelector("[data-tm-bot]");
@@ -2992,6 +3027,22 @@
         answer(input.value);
       });
       bubble(replies.th.hello, "bot");
+    })();
+  
+    /* Index stagger + mascot eye tracking */
+    document.querySelectorAll('.flow-strip').forEach(st => st.querySelectorAll('.flow-node').forEach((n, k) => n.style.setProperty('--i', k)));
+    document.querySelectorAll('.sys-cols').forEach(c => { [...c.children].forEach((ch, k) => ch.style.setProperty('--i', k)); const o = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { c.classList.add('visible'); o.disconnect(); } }), { threshold: .15 }); o.observe(c); });
+    (function () {
+      const m = document.getElementById('mascot'); if (!m) return;
+      const pupils = m.querySelectorAll('.pupil');
+      if (window.matchMedia('(pointer: fine)').matches) {
+        window.addEventListener('pointermove', e => {
+          const r = m.getBoundingClientRect(), dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2), d = Math.hypot(dx, dy) || 1, k = Math.min(3, d / 60);
+          pupils.forEach(p => p.style.transform = `translate(${dx / d * k}px, ${dy / d * k}px)`);
+        }, { passive: true });
+      }
+      m.addEventListener('click', () => { m.classList.remove('wave'); void m.getBoundingClientRect(); m.classList.add('wave'); });
+      setTimeout(() => m.classList.add('wave'), 1200);
     })();
   </script>
 </body>
